@@ -1,0 +1,92 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+    background-color: #171717;
+    color: grey;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    text-decoration: none;
+    background: var(--page);
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+/*Top bar shit*/
+.topbar {
+    background-color: #333;
+    overflow: hidden;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    width: 1350px;
+}
+
+    .topbar a {
+        color: #333;
+        text-align: center;
+        padding: 10px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: center;
+}
+/* Game Columns*/
+.game-columns {
+    display: flex;
+        justify-content: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 20px;
+    background-color: #171717;
+}
+
+.gamecolumn {
+        justify-content: center;
+}
+/* Game container*/
+.gamecontainer {
+        justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2.3em;
+    margin-top: 10px;
+}
+
+    .gamecontainer a {
+            justify-content: center;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: white;
+    }
+
+    .gamecontainer p {
+        margin-top: 5px;
+        align-text: center;
+    }
+.gamecontainer p:hover {
+    align-text: center;
+}
+.gamecontainer img {
+    border-radius: 20px;
+    transition: 0.7s;
+}
+.gamecontainer img:hover {
+    border-radius: 20px;
+ transform: scale(1.1);
+}
+.gamecontainer img p:hover {
+      bottom: 0;
+                opacity: 1;
+}
+    /*END*/

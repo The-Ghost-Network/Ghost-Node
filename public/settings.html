@@ -1,0 +1,384 @@
+<DOCTYPE html>
+  <!--NOBODYCARES IS A SKIDDY KID AF-->
+<link rel="stylesheet" href="school/school.css" />
+<link rel="stylesheet" href="/index.css" />
+<script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
+<style>
+    /* im so cool i can do css */
+    body {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        margin: 0;
+        color: white;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        color: white;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #171717;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 16px 12px;
+        z-index: 1;
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+            .nav-links li a:hover {
+  color: #ff6666 ;
+}
+
+/*insert settings panel css here lol :D*/
+.settingspanel {
+    background-color: #333;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 30px 20px;
+    margin-right: 25px;
+    float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    border: 5px;
+}
+
+.settingspanel:hover {
+    border: white;
+}
+
+.p {
+font-size: 40px;
+transition: 2.2s cubic-bezier(.36,-0.01,0,.77);
+}
+
+.dropbtn {
+  background-color: #171717;
+  color: white;
+  font-size: 16px;
+  border: none;
+  width: 400px;
+  height: 40px;
+    float: right;
+    transition: 2.2s cubic-bezier(.36,-0.01,0,.77);
+}
+
+/* I LOVE CATPUCCIN :DDDDDDD :3*/
+[data-theme='catppuccinma'] { 
+    background-color: #1e1e2e;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        border: none;
+        overflow: hidden;
+}
+[data-theme='catppuccinma']
+    .navbar {
+    background-color: #181925;
+    overflow: hidden;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='catppuccinma']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+  [data-theme='catppuccinma'] 
+  /*insert settings panel css here lol :D*/
+.settingspanel {
+    background-color: #574859;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 30px 20px;
+    margin-right: 25px;
+    float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #ff6666;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #ff6666;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+[data-theme='catppuccinma'] 
+.settingspanel:hover {
+    border: white;
+
+}
+
+[data-theme='catppuccinma'] 
+.p {
+font-size: 40px;
+}
+[data-theme='catppuccinma'] {
+  .button {
+    width: 300px ;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #181925;
+  border: none;
+  }
+
+  input:checked + .slider {
+  background-color: #181925;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #181925;
+}
+}
+
+</style>
+<head>
+    <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="title" content="Ghost" />
+  <meta name="theme-color" content="#ae2b2c">
+  <meta name="description" content="Ghost?? or is it." />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Ghost.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <script src="/assets/js/ads.js"></script>
+    <script src="./assets/js/settings.js"></script>
+    <title>Ghost</title>
+
+    <!-- Ultraviolet Scripts -->
+    <script src="./uv/uv.bundle.js"></script>
+    <script src="./uv/uv.config.js"></script>
+    <script src="./assets/register-sw.js"></script>
+
+<body>
+<nav class="navbar">
+    <div class="container">
+      <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
+        <br>
+            <!--Why are you looking through the code?-->
+            <!--Get out of here-->
+      <ul class="nav-links">
+              <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
+        <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
+<li><a href="/tutors/"><i class="fa-solid fa-gear"></i></a></li>
+            <a class="active"></a>
+      </ul>
+    </div>
+  </nav>
+<center>
+  <p>Settings</p>
+<div class="settingspanel" style="height: 385px;">
+    <center>
+<p>Themes</p>
+
+          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleTheme()">Catpuccin :3</a></button>
+          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeGhost()">Ghost</a></button>
+          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeLight()">Light</a></button>
+          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeRed()">Red</a></button>
+          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeBlue()">Blue</a></button>
+          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeGreen()">Green</a></button>
+        </div>
+      </div>
+</div>
+</center>
+    
+</div>
+</div>
+
+<!--Thanks to Clipped for the code :D-->
+<div class="settingspanel">
+  <center><h2>Advertisements</h2>
+  <label class="switch">
+      <input type="checkbox" id="toggleAds">
+      <span class="slider round"></span>
+  </label>
+</center>
+      </div>
+
+</div>
+
+<div class="settingspanel">
+    <center>
+        <h2>Extentions</h2>
+    </div>
+</center>
+</div>
+</div>
+<div class="settingspanel">
+    <center>
+        <h2>Title Change</h2>
+    </center>
+    <input type="text" id="titlechange" style="border: white;" class="input" placeholder="Enter A Title">
+</div>
+
+<div class="settingspanel">
+  <center>
+    <h2>Auto About:Blank</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round" onclick="abt()"></span>
+    </label>
+  </center>
+
+</div>
+<div class="settingspanel">
+  <center>
+    <h2>Click Off Tab Cloaking</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round" onclick="clickoff()"></span>
+    </label>
+  </center>
+</div>
+<div class="settingspanel">
+  <center>
+    <h2>Icon Change</h2>
+</center>
+</div>
+<div class="settingspanel">
+  <center>
+    <h2>Tabs</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round" onclick="tabs()"></span>
+    </label>
+  </center>
+</div>
+<div class="settingspanel">
+  <center>
+    <h2>Anti Tab Close</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round" onclick="close()"></span>
+    </label>
+  </center>
+</div>
+<div class="settingspanel">
+  <center>
+    <h2>Particles</h2>
+    <label class="switch">
+      <input type="checkbox">
+      <span class="slider round" onclick="particles()"></span>
+    </label>
+  </center>
+</div>
+</center>
+  <!--Scripts those are saved for later :3-->
+  <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-WFWKKRRXLT');
+        </script>
+
+        <!--THEME SCRIPTS OMG :3-->
+        <script>
+        // nobodycares is a skiddy kid af LOL
+
+function initTheme() {
+    const savedTheme = localStorage.getItem('themeSwitch');
+    if (savedTheme) {
+        document.body.setAttribute('data-theme', savedTheme);
+    }
+}
+
+initTheme(); 
+
+setInterval(function() {
+            initTheme(); 
+  console.log("Refreshed Themes!");
+}, 2000);
+            </script>
+
+<!--The code of all sigma ohio rizzlers-->
+<!--this shits top secret you know-->
+<script>
+    const keys = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+let currentKeys = [];
+
+document.addEventListener('keydown', (event) => {
+  const pressedKey = event.key;
+  currentKeys.push(pressedKey);
+
+  if (currentKeys.join('') === keys.join('')) {
+    href = '/assets/js/never/gunna/give/you/up/nobodycaresiscool/index.html'; 
+  }
+});
+</script>
+</body>

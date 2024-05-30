@@ -1,0 +1,455 @@
+<DOCTYPE html>
+<link rel="stylesheet" href="school/school.css" />
+<link rel="stylesheet" href="/index.css" />
+<script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
+    <meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+<style>
+    body {
+        font-family: 'Be Vietnam Pro', sans-serif;
+        margin: 0;
+    }
+
+    .topbar {
+        background-color: #333;
+        overflow: hidden;
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        z-index: 1;
+    }
+
+        .topbar a {
+            color: #333;
+            text-align: center;
+            padding: 10px;
+            text-decoration: none;
+            font-size: 17px;
+            z-index: 1;
+        }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: auto;
+        margin-left: 10px;
+        z-index: 1;
+    }
+
+    .search {
+        padding: 15px 18px;
+        border: none;
+        width: 1000px;
+        border-radius: 5px;
+        background-color: floralwhite;
+        color: var(--main-text-color);
+        outline: none;
+        margin-right: 10px;
+        z-index: 1;
+    }
+
+        .search:focus::placeholder {
+            color: floralwhite;
+            padding: 20px 15px;
+            z-index: 1;
+        }
+
+    .material-symbols-outlined {
+        padding: 10px;
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        z-index: 1;
+    }
+
+    p.ex2 {
+        font-size: 50px;
+        color: white;
+    }
+
+    p {
+        color: white;
+        padding: 20px 15px;
+    }
+
+    xn {
+        font-size: 30;
+    }
+
+    .mint {
+        background-color: #b4ebcc;
+        color: white;
+    }
+
+        .mint .topbar {
+            background-color: #8cb79f;
+            overflow: hidden;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+            .mint .topbar a {
+                color: white;
+                text-align: center;
+                padding: 10px;
+                text-decoration: none;
+                font-size: 17px;
+                z-index: 1;
+            }
+
+        .mint .dropdown {
+            position: relative;
+            display: inline-block;
+            left: 150px;
+        }
+
+        .mint .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            padding: 16px 12px;
+            z-index: 1;
+        }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+        left: 150px;
+        color: white;
+    }
+
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #171717;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 16px 12px;
+        z-index: 1;
+        color: white;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 17px;
+        font-family: 'Poppins', sans-serif;
+    }
+    input {
+        background: none;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        padding: 0px 17px;
+        border: none;
+        height: 20px;
+        color: var(--text-color);
+        outline: none;
+        width: 200px;
+        margin-top: 5px;
+        border-radius: 30px;
+        color: #fff;
+        transition: border-radius 0.1s;
+    }
+                    .game-icon {
+                text-align: center;
+                width: 120px;
+                height: 120px;
+                position: relative;
+                overflow: hidden;
+                transition: transform 0.3s ease-in-out;
+                  border-radius:10px;
+                  margin: 15px;
+                  display: inline-block;
+                    flex-wrap: wrap;
+            }
+
+            .game-icon button {
+                border: none;
+                background: none;
+                padding: 0;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                height: 100%; 
+                border-radius:10px;
+            }
+
+            .game-icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+                transition: transform 0.3s ease-in-out;
+                border-radius:10px;
+            }
+
+            .game-icon p {
+                margin-top: 10px;
+                color: #fff;
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-family: 'Be Vietnam Pro', sans-serif;
+                opacity: 0;
+                transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+                 border-radius:10px;
+            }
+
+            .game-icon:hover {
+                    transform: scale(1.1);
+            }
+
+            .game-icon:hover img {
+                transform: scale(1.1);
+                border-radius: 15px;
+            }
+
+            .game-icon:hover p {
+                bottom: 0;
+                opacity: 1;
+            }
+            
+            .nav-links li a:hover {
+  color: #ff6666 ;
+}
+
+/* I LOVE CATPUCCIN :DDDDDDD :3*/
+[data-theme='catppuccinma'] { 
+    background-color: #1e1e2e;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        border: none;
+        overflow: hidden;
+}
+[data-theme='catppuccinma']
+    .navbar {
+    background-color: #181925;
+    overflow: hidden;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='catppuccinma']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./Ghost.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <title>Ghost</title>
+
+    <!-- Ultraviolet Scripts -->
+    <script src="./uv/uv.bundle.js"></script>
+    <script src="./uv/uv.config.js"></script>
+    <script src="./assets/register-sw.js"></script>
+
+</head>
+
+<body>
+    <script>
+(function(yvce){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = yvce || {};
+s.src = "\/\/glum-mortgage.com\/b\/XAV.sfdyGflQ0\/YYWdct\/deNm\/9GuzZAUpl\/k-PTTmUzzYMQjngr2KO\/TfMEtvNeTnMsyIOXD_Yn5sNmAU";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+    <script>
+(function(lpjv){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = lpjv || {};
+s.src = "\/\/glum-mortgage.com\/aYWe5.wIYAWSdalzQ\/2x9\/kQZQTG9\/6zbu2\/5jlhSJWdQ\/9_NnTxMSyLORD\/Yh5FMoSX0I1BMOzoI\/4oNVjrkByS";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+    <script>
+(function(cyuaby){
+var d = document,
+    s = d.createElement('script'),
+    l = d.scripts[d.scripts.length - 1];
+s.settings = cyuaby || {};
+s.src = "\/\/biodegradablegrand.com\/c.DX9g6kb_2A5tl\/SCWIQd9sNzTVMbyUOHDxYh4kM-ST0W1zM-zcIF4\/NljigsyF";
+s.async = true;
+l.parentNode.insertBefore(s, l);
+})({})
+</script>
+     <nav class="navbar">
+    <div class="container">
+      <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
+        <br>
+      <ul class="nav-links">
+              <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
+        <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
+        <li><a href="/tutors/"><i class="fa-solid fa-gear"></i></a></li>
+            <a class="active"></a>
+      </ul>
+    </div>
+  </nav>
+       <center>
+       <br>
+<br>
+<h1>Apps</h1>
+    </center>
+<div class="center">
+    <div class="game-columns" style="background-color: transparent;">
+        <div class="gamecolumn">
+            <div class="game-icons">
+          <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://tiktok.com');">
+              <button>
+                  <img src="assets/img/apps/tiktok.jpg" alt="1v1.lol">
+              </button>
+              <p>TikTok</p>
+          </div>
+ <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');">
+              <button>
+                  <img src="assets/img/apps/youtube.png" alt="youtube">
+              </button>
+              <p>Youtube</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://crazygames.com');">
+              <button>
+                  <img src="assets/img/apps/crazygames.png" alt="crazygames">
+              </button>
+              <p>Crazy Games</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.xbox.com/en-us/play');">
+              <button>
+                  <img src="assets/img/apps/xbox.png" alt="xbox">
+              </button>
+              <p>Xbox Cloud Gaming</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.spotify.com');">
+              <button>
+                  <img src="assets/img/apps/spotify2.png" alt="spotify">
+              </button>
+              <p>Spotify</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.nowgg.nl');">
+              <button>
+                  <img src="assets/img/apps/nowgg2.png" alt="nowgg">
+              </button>
+              <p>Now.gg</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://vscode.dev');">
+              <button>
+                  <img src="assets/img/apps/vscode2.png" alt="vscode">
+              </button>
+              <p>Visual Studio Code</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://coolmathgames.com');">
+              <button>
+                  <img src="assets/img/apps/cmg2.png" alt="vscode">
+              </button>
+              <p>Cool math games</p>
+          </div>
+                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com/app');">
+              <button>
+                  <img src="assets/img/apps/discord.jpg" alt="vscode">
+              </button>
+              <p>Discord</p>
+          </div>
+                <div class="game-icon" onclick="window.location.href='/widget.html'">
+              <button>
+                  <img src="assets/img/apps/discord.jpg" alt="vscode">
+              </button>
+              <p>Discord - Widget Chat</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://c.ai');">
+              <button>
+                  <img src="assets/img/apps/cai.png" alt="cai">
+              </button>
+              <p>C.ai</p>
+          </div>
+<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://play.geforcenow.com/');">
+              <button>
+                  <img src="assets/img/apps/geforce.png" alt="geforce">
+              </button>
+              <p>Ge Force Now</p>
+          </div>
+ <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://jmwubg.com.au');">
+            <button>
+                <img src="assets/img/apps/jmw.png" alt="jmw">
+            </button>
+            <p>Jordans Math Work V5</p>
+        </div>
+        </div>
+        </div>
+    </div>
+</div>
+</div>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-WFWKKRRXLT');
+        </script>
+        <!--Settings-->
+        <script>
+            function settings() {
+                document.getElementById("settingsiframe").style.zIndex = "1";
+            }
+        </script>
+               <!--THEME SCRIPTS OMG :3-->
+    <script>
+        // nobodycares is a skiddy kid af LOL
+    
+    function initTheme() {
+        const savedTheme = localStorage.getItem('themeSwitch');
+        if (savedTheme) {
+            document.body.setAttribute('data-theme', savedTheme);
+            console.log(`Themes Loaded! :3 from nobodycares`)
+        }
+    }
+    
+    initTheme(); 
+
+    setInterval(function() {
+            initTheme(); 
+  console.log("Refreshed Themes!");
+}, 2000);
+        </script>
+
+        <!-- Gotta get that copyright in-->
+        <p align="center">© Copyright Ghost Network 2024</p>
+
+        <script src="./assets/script.js" defer></script>
+<script async src="https://arc.io/widget.min.js#vJLocr6G"></script>
+</body>
+
+</html>
