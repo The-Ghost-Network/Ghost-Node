@@ -41,11 +41,11 @@
     background-color: #333;
     border-radius: 5px;
     width: 300px;
-    height: 150px;
+    height: 200px;
     padding: 30px 20px;
     margin-right: 25px;
     float: left;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 16px 8px 16px 8px rgba(0,0,0,0.2);
     margin-bottom: 20px;
     border: 5px;
 }
@@ -110,6 +110,7 @@ transition: 2.2s cubic-bezier(.36,-0.01,0,.77);
     float: left;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     margin-bottom: 20px;
+    color: white;
 }
 
 .switch {
@@ -198,6 +199,132 @@ input:focus + .slider {
   box-shadow: 0 0 1px #181925;
 }
 }
+[data-theme='red'] { 
+    background-color: #d52538;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        border: none;
+        overflow: hidden;
+}
+[data-theme='red']
+    .navbar {
+    background-color: #881723;
+    overflow: hidden;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='red']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+  [data-theme='red'] {
+    .button {
+    width: 300px ;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #e92331;
+  border: none;
+  }
+  .settingspanel {
+    background-color: #881723;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 30px 20px;
+    margin-right: 25px;
+    float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    color: white;
+}
+  }
+  [data-theme='blue'] {
+    .button {
+    width: 300px ;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #13243c;
+  border: none;
+  }
+  .settingspanel {
+    background-color: #1569ac;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 30px 20px;
+    margin-right: 25px;
+    float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    color: white;
+    
+}
+input:checked + .slider {
+  background-color: #1b4c83;
+}
+  }
+
+  [data-theme='white'] {
+    .button {
+    width: 300px ;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #fefefe;
+  border: none;
+  color: black;
+  }
+  .settingspanel {
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 30px 20px;
+    margin-right: 25px;
+    float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    color: black;
+}
+input:checked + .slider {
+  background-color: black;
+}
+  }
+
+  [data-theme='green'] {
+    .button {
+    width: 300px ;
+  height: 40px;
+  border-radius: 10px;
+  background-color: #49d533;
+  border: none;
+  color: white;
+  }
+  .settingspanel {
+    background-color: #1c5514;
+    border-radius: 5px;
+    width: 300px;
+    height: 150px;
+    padding: 30px 20px;
+    margin-right: 25px;
+    float: left;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    margin-bottom: 20px;
+    color: white;
+}
+input:checked + .slider {
+  background-color: #49d533;
+}
+  }
+
 
 </style>
 <head>
@@ -208,10 +335,13 @@ input:focus + .slider {
   <meta name="description" content="Ghost?? or is it." />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./Ghost.png" type="image/png">
+    <link id="favicon" rel="icon"
+    href="./assets/img/Ghost.png"
+    type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
     <link rel="stylesheet" href="/assets/css/index.css" />
     <script src="/assets/js/ads.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./assets/js/settings.js"></script>
     <title>Ghost</title>
 
@@ -219,120 +349,115 @@ input:focus + .slider {
     <script src="./uv/uv.bundle.js"></script>
     <script src="./uv/uv.config.js"></script>
     <script src="./assets/register-sw.js"></script>
-
+    <script src="./assets/js/onload.js"></script>
+</head>
 <body>
 <nav class="navbar">
     <div class="container">
       <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
         <br>
+        <div class="desc left-margin" style="height: 50px;">
+          <p id="uv-error"></p>
+          <pre id="uv-error-code"></pre>
+      </div>
+      <div class="desc left-margin">
+      </div>
             <!--Why are you looking through the code?-->
             <!--Get out of here-->
       <ul class="nav-links">
               <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
         <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
-<li><a href="/tutors/"><i class="fa-solid fa-gear"></i></a></li>
+<li><a href="/settings.html"><i class="fa-solid fa-gear"></i></a></li>
             <a class="active"></a>
       </ul>
     </div>
   </nav>
-<center>
-  <p>Settings</p>
-<div class="settingspanel" style="height: 385px;">
+  <center>
+  <h2>Settings</h2>
+  </center>
+  <div class="settingsdisplay">
+<div class="settingspanel" style="height: 480px;">
     <center>
-<p>Themes</p>
+<h1>Themes</h1>
 
-          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleTheme()">Catpuccin :3</a></button>
-          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeGhost()">Ghost</a></button>
-          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeLight()">Light</a></button>
-          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeRed()">Red</a></button>
-          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeBlue()">Blue</a></button>
-          <button class="button" style="margin-bottom: 15px; color: white ;"><a onclick="toggleThemeGreen()">Green</a></button>
-        </div>
+          <button class="button" style="margin-bottom: 15px;"><a onclick="toggleTheme()">Catpuccin :3</a></button>
+          <button class="button" style="margin-bottom: 15px;"><a onclick="toggleThemeGhost()">Ghost</a></button>
+          <button class="button" style="margin-bottom: 15px; "><a onclick="toggleThemeLight()">Light</a></button>
+          <button class="button" style="margin-bottom: 15px; "><a onclick="toggleThemeRed()">Red</a></button>
+          <button class="button" style="margin-bottom: 15px; "><a onclick="toggleThemeBlue()">Blue</a></button>
+          <button class="button" style="margin-bottom: 15px; "><a onclick="toggleThemeGreen()">Green</a></button>
       </div>
-</div>
-</center>
-    
-</div>
-</div>
 
 <!--Thanks to Clipped for the code :D-->
 <div class="settingspanel">
-  <center><h2>Advertisements</h2>
+  <center>
+    <h2>Advertisements</h2>
   <label class="switch">
-      <input type="checkbox" id="toggleAds">
+      <input type="checkbox" id="toggleAds" id="ads">
       <span class="slider round"></span>
   </label>
 </center>
       </div>
-
-</div>
-
 <div class="settingspanel">
     <center>
         <h2>Extentions</h2>
     </div>
-</center>
-</div>
-</div>
 <div class="settingspanel">
     <center>
         <h2>Title Change</h2>
-    </center>
-    <input type="text" id="titlechange" style="border: white;" class="input" placeholder="Enter A Title">
+    <input type="text" id="titleform" style="border: black;" class="input" placeholder="Enter A Title">
+    <button class="button" style="margin-bottom: 15px;" onclick="updatetitle()">Set Title!</button>
 </div>
 
 <div class="settingspanel">
   <center>
     <h2>Auto About:Blank</h2>
     <label class="switch">
-      <input type="checkbox">
+      <input type="checkbox" id="abt">
       <span class="slider round" onclick="abt()"></span>
     </label>
-  </center>
 
 </div>
 <div class="settingspanel">
   <center>
     <h2>Click Off Tab Cloaking</h2>
     <label class="switch">
-      <input type="checkbox">
-      <span class="slider round" onclick="clickoff()"></span>
+      <input type="checkbox" id="clickoff">
+      <span class="slider round" onclick="clickoff()" id="cloak"></span>
     </label>
-  </center>
-</div>
+  </div>
 <div class="settingspanel">
   <center>
     <h2>Icon Change</h2>
-</center>
+<img src="./assets/img/docs.png" height="20px" style="padding-right: 10px;" onclick="icondocs()">
+<img src="./assets/img/drive.png" height="20px" style="padding-right: 10px;" onclick="icondrive()">
+<img src="./assets/img/desmos.png" height="20px" style="padding-right: 10px;" onclick="icondesmos()">
+<img src="./assets/img/canvas.png" height="20px" style="padding-right: 10px;" onclick="iconcanvas()">
+<img src="./assets/img/classroom.png" height="20px" style="padding-right: 10px;" onclick="iconclass()">
 </div>
 <div class="settingspanel">
   <center>
     <h2>Tabs</h2>
     <label class="switch">
-      <input type="checkbox">
-      <span class="slider round" onclick="tabs()"></span>
+      <input type="checkbox" id="tabs">
+      <span class="slider round" onclick="tabs()" id="switch1"></span>
     </label>
-  </center>
 </div>
 <div class="settingspanel">
   <center>
     <h2>Anti Tab Close</h2>
     <label class="switch">
-      <input type="checkbox">
-      <span class="slider round" onclick="close()"></span>
+      <input type="checkbox" id="close">
+      <span class="slider round" id="mytoggle" onclick="noleave()"></span>
     </label>
-  </center>
 </div>
 <div class="settingspanel">
   <center>
-    <h2>Particles</h2>
-    <label class="switch">
-      <input type="checkbox">
-      <span class="slider round" onclick="particles()"></span>
-    </label>
-  </center>
+  <h1>Switch Key Thingy</h1>
+  <button class="button" onclick="recordkey()">Record Key</button>
 </div>
 </center>
+</div>
   <!--Scripts those are saved for later :3-->
   <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
@@ -346,30 +471,47 @@ input:focus + .slider {
 
             gtag('config', 'G-WFWKKRRXLT');
         </script>
-
-        <!--THEME SCRIPTS OMG :3-->
+        <!--Load the fucking settings already please-->
         <script>
-        // nobodycares is a skiddy kid af LOL
-
-function initTheme() {
-    const savedTheme = localStorage.getItem('themeSwitch');
-    if (savedTheme) {
-        document.body.setAttribute('data-theme', savedTheme);
+          addEventListener("DOMContentLoaded", (event) => { 
+    const ads = localStorage.getItem("ads")
+    const abt = localStorage.getItem("blanker")
+    const click = localStorage.getItem("clickoff")
+    const tabs = localStorage.getItem("tabs")
+    const close = localStorage.getItem('leave')
+    if (tabs === 'on') {
+        const id = document.getElementById('tabs')
+        id.checked = 'true'
+        console.log("loaded setting!")
     }
-}
 
-initTheme(); 
+    if (ads === 'on') {
+      const id = document.getElementById('ads')
+        id.checked = 'true'
+        console.log("loaded setting!")
+    }
 
-setInterval(function() {
-            initTheme(); 
-  console.log("Refreshed Themes!");
-}, 2000);
-            </script>
-
+    if (abt === 'on') {
+      const id = document.getElementById('abt')
+        id.checked = 'true'
+        console.log("loaded setting!")
+    }
+    if (click === 'true') {
+      const id = document.getElementById('clickoff')
+        id.checked = 'true'
+        console.log("loaded setting!")
+    }
+    if (close === 'on') {
+      const id = document.getElementById('close')
+        id.checked = 'true'
+        console.log("loaded setting!")
+    }
+  });
+        </script>
 <!--The code of all sigma ohio rizzlers-->
 <!--this shits top secret you know-->
 <script>
-    const keys = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a', 'Enter'];
+    const keys = [':', '3'];
 let currentKeys = [];
 
 document.addEventListener('keydown', (event) => {
@@ -377,7 +519,7 @@ document.addEventListener('keydown', (event) => {
   currentKeys.push(pressedKey);
 
   if (currentKeys.join('') === keys.join('')) {
-    href = '/assets/js/never/gunna/give/you/up/nobodycaresiscool/index.html'; 
+    top.location.replace("/assets/js/never/gunna/give/you/up/nobodycaresiscool/index.html");
   }
 });
 </script>

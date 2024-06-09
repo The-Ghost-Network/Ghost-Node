@@ -1,8 +1,11 @@
 <DOCTYPE html>
+    <head>
 <link rel="stylesheet" href="school/school.css" />
 <link rel="stylesheet" href="/index.css" />
 <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
     <meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+    <script src="./assets/js/onload.js"></script>
+    </head>
 <style>
     body {
         font-family: 'Be Vietnam Pro', sans-serif;
@@ -224,6 +227,33 @@
             .nav-links li a:hover {
   color: #ff6666 ;
 }
+[data-theme='red'] { 
+    background-color: #d52538;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        border: none;
+        overflow: hidden;
+}
+[data-theme='red']
+    .navbar {
+    background-color: #881723;
+    overflow: hidden;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='red']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
 
 /* I LOVE CATPUCCIN :DDDDDDD :3*/
 [data-theme='catppuccinma'] { 
@@ -263,54 +293,29 @@
     <title>Ghost</title>
 
     <!-- Ultraviolet Scripts -->
-    <script src="./uv/uv.bundle.js"></script>
-    <script src="./uv/uv.config.js"></script>
-    <script src="./assets/register-sw.js"></script>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js"></script>
 
 </head>
 
 <body>
-    <script>
-(function(yvce){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = yvce || {};
-s.src = "\/\/glum-mortgage.com\/b\/XAV.sfdyGflQ0\/YYWdct\/deNm\/9GuzZAUpl\/k-PTTmUzzYMQjngr2KO\/TfMEtvNeTnMsyIOXD_Yn5sNmAU";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-    <script>
-(function(lpjv){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = lpjv || {};
-s.src = "\/\/glum-mortgage.com\/aYWe5.wIYAWSdalzQ\/2x9\/kQZQTG9\/6zbu2\/5jlhSJWdQ\/9_NnTxMSyLORD\/Yh5FMoSX0I1BMOzoI\/4oNVjrkByS";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
-    <script>
-(function(cyuaby){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = cyuaby || {};
-s.src = "\/\/biodegradablegrand.com\/c.DX9g6kb_2A5tl\/SCWIQd9sNzTVMbyUOHDxYh4kM-ST0W1zM-zcIF4\/NljigsyF";
-s.async = true;
-l.parentNode.insertBefore(s, l);
-})({})
-</script>
      <nav class="navbar">
     <div class="container">
       <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
         <br>
+        <div class="desc left-margin" style="height: 50px;">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+        </div>
+        <div class="desc left-margin">
+        </div>
       <ul class="nav-links">
               <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
         <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
-        <li><a href="/tutors/"><i class="fa-solid fa-gear"></i></a></li>
+        <li><a href="/settings.html"><i class="fa-solid fa-gear"></i></a></li>
             <a class="active"></a>
       </ul>
     </div>
@@ -377,13 +382,7 @@ l.parentNode.insertBefore(s, l);
                   <img src="assets/img/apps/discord.jpg" alt="vscode">
               </button>
               <p>Discord</p>
-          </div>
-                <div class="game-icon" onclick="window.location.href='/widget.html'">
-              <button>
-                  <img src="assets/img/apps/discord.jpg" alt="vscode">
-              </button>
-              <p>Discord - Widget Chat</p>
-          </div>
+            </div>
 <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://c.ai');">
               <button>
                   <img src="assets/img/apps/cai.png" alt="cai">
@@ -402,6 +401,87 @@ l.parentNode.insertBefore(s, l);
             </button>
             <p>Jordans Math Work V5</p>
         </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://chatgpt.com');">
+            <button>
+                <img src="assets/img/apps/chat.png" alt="chat">
+            </button>
+            <p>ChatGPT</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://amazon.com');">
+            <button>
+                <img src="assets/img/apps/amazon.png" alt="rainforest frfr">
+            </button>
+            <p>Amazon</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://mail.google.com');">
+            <button>
+                <img src="assets/img/apps/gmail.png" alt="rainforest frfr">
+            </button>
+            <p>Gmail</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://github.com');">
+            <button>
+                <img src="assets/img/apps/github.png" alt="rainforest frfr">
+            </button>
+            <p>Github</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gemini.google.com/');">
+            <button>
+                <img src="assets/img/apps/gem.png" alt="rainforest frfr">
+            </button>
+            <p>Gemini</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://scratch.mit.edu/');">
+            <button>
+                <img src="assets/img/apps/scratch.png" alt="rainforest frfr">
+            </button>
+            <p>Scratch</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://x.com');">
+            <button>
+                <img src="assets/img/apps/x.png" alt="rainforest frfr">
+            </button>
+            <p>X</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://twitch.tv');">
+            <button>
+                <img src="assets/img/apps/twitch.png" alt="rainforest frfr">
+            </button>
+            <p>Twitch</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://music.youtube.com');">
+            <button>
+                <img src="assets/img/apps/youtubem.png" alt="rainforest frfr">
+            </button>
+            <p>Youtube Music</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://replit.com');">
+            <button>
+                <img src="assets/img/apps/replit.png" alt="rainforest frfr">
+            </button>
+            <p>Replit</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://pinterest.com');">
+            <button>
+                <img src="assets/img/apps/pintrest.png" alt="rainforest frfr">
+            </button>
+            <p>Pintrest</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://duckduckgo.com');">
+            <button>
+                <img src="assets/img/apps/ddg.png" alt="rainforest frfr">
+            </button>
+            <p>DuckDuckGo</p>
+        </div>
+        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://bing.com');">
+            <button>
+                <img src="assets/img/apps/bing.png" alt="rainforest frfr">
+            </button>
+            <p>Bing</p>
+        </div>
+        
+        
+        
         </div>
         </div>
     </div>

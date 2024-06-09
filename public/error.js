@@ -4,7 +4,7 @@ const errorCode = document.getElementById("uv-error-code");
 const registerButton = document.getElementById("uv-register-sw");
 
 if (location.pathname.startsWith(__uv$config.prefix)) {
-  error.textContent = "Error: serviceworker no register lol fix it";
+  error.textContent = "Error: The service worker is not registered.";
   registerButton.classList.add("show");
 }
 
@@ -13,7 +13,7 @@ registerButton.addEventListener("click", async () => {
     await registerSW();
     location.reload();
   } catch (err) {
-    error.textContent = "The service worker failed to register lmao couldnt be me rn";
+    error.textContent = "Failed to register service worker.";
     errorCode.textContent = err.toString();
     registerButton.classList.remove("show");
   }

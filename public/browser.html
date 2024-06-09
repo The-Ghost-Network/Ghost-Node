@@ -2,6 +2,7 @@
 <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
     <script src="index.js" defer></script>
 <meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style>
     body {
@@ -84,16 +85,36 @@
       font-size: 17px;
       z-index: 1;
   }
-
-  [data-theme='retrotheme'] { 
-    background-color: #2c68ff;
-        color: white;
-        font-family: 'Retro';
+  [data-theme='red'] { 
+    background-color: #d52538;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
         -ms-overflow-style: none;
         scrollbar-width: none; 
         border: none;
         overflow: hidden;
-        font-family: retro, sans-serif;
+}
+[data-theme='red']
+    .navbar {
+    background-color: #881723;
+    overflow: hidden;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='red']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+
+.fa-solid fa-gear:hover {
+    transform: rotate(360deg);
 }
 
 </style>
@@ -101,17 +122,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./assets/img/Ghost.png" type="image/png">
-    <script src="./ads.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
     <link rel="stylesheet" href="/assets/css/index.css" />
     <title>Home</title>
 
     <!-- Ultraviolet Scripts -->
-    <script src="./uv/uv.bundle.js"></script>
-    <script src="./uv/uv.config.js"></script>
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
     <script src="index.js"></script>
-    <script src="./assets/register-sw.js"></script>
-
+    <script src="./assets/js/onload.js"></script>
+    <script src="./assets/script.js"></script>
 </head>
 
 <body>
@@ -121,17 +143,17 @@
     <div class="container">
       <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
         <br>
- <input type="text" id="uv-form" class="input" placeholder="Search or enter a URL">
-            <div class="desc left-margin" style="height: 50px;">
-                <p id="uv-error"></p>
-                <pre id="uv-error-code"></pre>
-            </div>
-            <div class="desc left-margin">
-            </div>
+        <input type="text" class="input" id="uv-form" placeholder="Search or enter a URL">
+        <div class="desc left-margin" style="height: 50px;">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+        </div>
+        <div class="desc left-margin">
+        </div>
       <ul class="nav-links">
               <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
         <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
-<li><a href="/tutors/"><i class="fa-solid fa-gear"></i></a></li>
+<li><a href="/settings.html"><i class="fa-solid fa-gear"></i></a></li>
             <a class="active"></a>
       </ul>
     </div>
@@ -165,11 +187,8 @@
             // Change this or add subtitles
             var tell = [
                 "Nobodycares is a skiddy kid af",
-                "Join Our Discord! https://discord.gg/mBje25Yqkk",
                 "What even is that?",
                 "You need help",
-                "Get Recked",
-                "Hate them damn admins",
                 "Ghost is crazy",
                 "CoolOnlineGames",
                 "got suspended again lmao",
@@ -221,13 +240,6 @@
                 return sub;
             }
         </script>
-        <!--Settings-->
-        <script>
-            function settings() {
-                document.getElementById("settingsiframe").style.zIndex = "1";
-            }
-        </script>
-        <!--THEME SCRIPTS OMG :3-->
     <script>
     // nobodycares is a skiddy kid af LOL
 
@@ -251,13 +263,58 @@ setInterval(function() {
             initTheme(); 
 }, 2000);
     </script>
+<!--If tabs are disabled-->
+<script>
+    const tabs = localStorage.getItem('tabs')
 
+    if(tabs === 'off') {
+        //NOOOOO
+addEventListener("DOMContentLoaded", (event) => {
+  const blanky = localStorage.getItem('blanker');
+  if (blanky === 'on') {
+
+    if (top.location.href === 'about:blank') {
+      console.log("In About:blank! Disabling the Cloaker!");
+    } 
+
+    else {
+        //blanket
+var win = window.open('about:blank', '_blank');
+const url = '/'
+  console.log(`opening...`)
+  var iframe = win.document.createElement('iframe');
+  iframe.style.position = "fixed";
+  iframe.style.top = "0";
+  iframe.style.left = "0";
+  iframe.style.width = "100%";
+  iframe.style.height = "100%";
+  iframe.style.border = "none";
+  iframe.style.outline = "none";
+  iframe.src = url;
+  win.document.body.appendChild(iframe);
+
+  top.location.replace("https://www.google.com/search?q=how+to+find+ghosts&rlz=1C1JSBI_enUS1089US1090&oq=how+to+find+ghosts&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIHCAEQABiABDIHCAIQABiABDIHCAMQABiABDIHCAQQABiABDIHCAUQABiABDIHCAYQABiABDIHCAcQABiABDIHCAgQABiABNIBCDM3NzRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8")
+
+      if (!win || win.closed) {
+        alert("Please Allow Popups And Redirects so that blanky :D");
+      }
+      }}
+
+   else {
+    console.log(`Blanker Disabled!`);
+    console.log(`No Further Action Needed.`);
+   }}
+);
+
+    }
+    else {
+        console.log(`owo`)
+    }
+</script>
 
 </script>
         <!-- Gotta get that copyright in-->
         <p align="center">© Copyright Ghost Network 2024</p>
-        <script src="./assets/script.js" defer></script>
-        <div class="git"><i class="fa-solid fa-github"></i></div>
 </body>
 
 </html>

@@ -1,0 +1,139 @@
+
+Fix UV
+Fix tabs
+Deploy!
+
+const adblocked = [
+    "ad",
+    "ads",
+    "ads.yahoo.com"
+]
+
+const blocked = [
+    "porn",
+    "xxx",
+    "hentai",
+    "test",
+    "p0rn"
+]
+
+const injectsites = [
+    "now.gg",
+    "discord.com"
+]
+
+const adsblocked = localStorage.getItem.adblocked
+
+if (adsblocked === true) {
+
+}
+-------
+
+document.addEventListener('DOMContentLoaded', () => {
+  const input = document.querySelector(".input")
+  input.addEventListener("keydown", handleInput)
+
+  function handleInput(e) {
+    // We only want the function to run if the key pressed is the Enter key
+    if (e.key !== 'Enter') return;
+
+    // We Intercept The URL
+    // Check if it contains a blocked keyword or website
+    if (containsBlockedKeyword(input.value, blocked)) {
+      // Redirect to blockpage
+      window.location.replace('/blocked.html')
+    }
+    else {
+      // If it doesn't contain a blocked keyword then proceed
+      // Run the formatSearch function on the current value of the input
+      const query = formatSearch(input.value)
+
+      // Redirect to [uv prefix] + [encoded search query]
+      window.location.href = __uv$config.prefix + __uv$config.encodeUrl(query)
+    }
+  }
+
+  function containsBlockedKeyword(input, blockedList) {
+    for (let i = 0; i < blockedList.length; i++) {
+      if (input.includes(blockedList[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function formatSearch(query) {
+    // This function turns the inputted value into a Google search if it's not a normal URL
+    try {
+      return new URL(query).toString()
+    } catch (e) { }
+
+    try {
+      const url = new URL(`http://${query}`)
+      if (url.hostname.includes('.')) return url.toString()
+    } catch (e) { }
+
+    return new URL(`https://google.com/search?q=${query}`).toString()
+  }
+
+  const blocked = [
+    "porn",
+    "sex",
+    "xxx",
+    "hentai",
+    "pornhub.com",
+    "xxx.com",
+    "4chan.org"
+  ]
+})
+
+-------
+
+    // Close the tab
+  function closetab() {
+    const tabContainers = document.documentElement.parentNode;
+    const targetDiv = document.querySelector('.tabcontaineractive');
+    const previousDiv = targetDiv?.previousElementSibling;
+
+    if (previousDiv) {
+        tabContainers.remove();
+        previousDiv.classList.add('tabcontaineractive');
+        console.log('Closed a tab! :3 WOW ');
+    } else {
+        console.log('Failed to close a tab :( report this to nobodycares if u see this pls thx :3 unless you have no tabs then no duh sherlock');
+    }
+}
+
+----------
+
+// Middleware to decode URLs
+function decodeUrlMiddleware(req, res, next) {
+    const decodedUrl = decodeUrl(req.url);
+    req.url = decodedUrl;
+    next();
+    //checked the decoded url
+
+    if (containsBlockedKeyword(decodedUrl, blocked)) {
+        window.location.replace('/blocked.html')
+    }
+}
+
+  //should block these urls
+
+  
+  function containsBlockedKeyword(input, blockedList) {
+    for (let i = 0; i < blockedList.length; i++) {
+      if (input.includes(blockedList[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  const blocked = 
+  [
+    "porn",
+    "test",
+    "xxx",
+    "pornhub.com"
+  ]

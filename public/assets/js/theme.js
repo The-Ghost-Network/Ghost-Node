@@ -6,5 +6,4 @@ addEventListener("DOMContentLoaded", (event) => {
         document.body.setAttribute('data-theme', savedTheme);
     }
 }
-
 initTheme(); });

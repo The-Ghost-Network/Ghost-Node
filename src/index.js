@@ -2,43 +2,60 @@
 import { createBareServer } from '@tomphttp/bare-server-node';
 import express from 'express';
 import http from 'node:http';
-//i think were imporitng shit here
+import decodeUrl from '@titaniumnetwork-dev/ultraviolet'
+// i think were imporing shit here
 
 
-//tf you mean "uv based proxy"
 const app = express();
-const bareServer = createBareServer("/bare/");
+const bare = createBareServer("/bare/");
 const server = http.createServer();
-const PORT = 8080
+const PORT = 8080;
+
+
 app.use(express.static("./public"));
 
-// porn block thanks to russell2259 for the code :D
-
-server.on('request', (req, res) => {
-    if (bareServer.shouldRoute(req)) bareServer.routeRequest(req, res);
-    else app(req, res); 
+app.get('*', function(req, res) {
+	res.send('404');
 });
 
-server.on('upgrade', (req, socket, head) => {
-    if (bareServer.shouldRoute(req)) bareServer.routeUpgrade(req, socket, head);
-    else socket.end();
+// bar
+server.on("request", (req, res) => {
+    if (bare.shouldRoute(req)) {
+        bare.routeRequest(req, res);
+    } else {
+        app(req, res);
+    }
 });
 
+server.on("upgrade", (req, socket, head) => {
+    if (bare.shouldRoute(req)) {
+        bare.routeUpgrade(req, socket, head);
+    } else {
+        socket.end();
+    }
+});
+
+
+///idrk what port were listinging on
+//dont quote me on that
 server.on("listening", () => {
+    console.log('We are listening on port 8080');
+    console.log('Femboys are cool :3');
+    console.log('If you were wondering, it\'s http://localhost:8080');
+});
 
-    //We listen on port 8080 because i said so lmfaoa
-    //at least i think?
-    console.log('Were listedning on that port we call 8080 :3 at least i think dont quote me lol')
-	console.log('femboys are cool :3')
-	console.log('if you were wondering its http://localhost:8080')
-})
-
-//the sigma shutdown
+// The sigma shutdown
 process.on('SIGTERM', () => {
-  debug('SIGTERM signal received: closing HTTP server')
-  server.close(() => {
-    debug('HTTP server closed')
-  })
-})
+    console.log('SIGTERM signal received: closing HTTP server');
+    server.close(() => {
+        console.log('HTTP server closed');
+    });
+});
 
-server.listen({ port: PORT, })
+server.listen({ port: PORT }, () => {
+});
+
+app.use((req, res, next) => {
+    console.log(`Received request for: ${req.url}`);
+    next();
+});
