@@ -62,15 +62,13 @@
     background-color: #1e1e2e;
         color: #574859;
         font-family: 'Be Vietnam Pro', sans-serif;
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
+
         border: none;
-        overflow: hidden;
 }
 [data-theme='catppuccinma']
     .navbar {
     background-color: #181925;
-    overflow: hidden;
+ 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -89,15 +87,14 @@
     background-color: #d52538;
         color: #574859;
         font-family: 'Be Vietnam Pro', sans-serif;
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
+
         border: none;
-        overflow: hidden;
+     
 }
 [data-theme='red']
     .navbar {
     background-color: #881723;
-    overflow: hidden;
+ 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -117,14 +114,26 @@
     transform: rotate(360deg);
 }
 
+.ex3 {
+    font-size: 50px;
+    padding: 0px;
+}
+
+[data-theme='catppuccinma'] {
+  .active {
+    color: #9194ab;
+  }
+}
+
 </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./assets/img/Ghost.png" type="image/png">
+    <link rel="shortcut icon" id="favicon" href="./assets/img/Ghost.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
     <link rel="stylesheet" href="/assets/css/index.css" />
-    <title>Home</title>
+    <link rel="stylesheet" href="./assets/css/themes.css" />
+    <title>Ghost</title>
 
     <!-- Ultraviolet Scripts -->
     <script src="uv/uv.bundle.js"></script>
@@ -134,6 +143,7 @@
     <script src="index.js"></script>
     <script src="./assets/js/onload.js"></script>
     <script src="./assets/script.js"></script>
+    <script src="./assets/js/pointblank.js"></script>
 </head>
 
 <body>
@@ -141,28 +151,28 @@
 <!--What do you hope to accomplish-->
        <nav class="navbar">
     <div class="container">
-      <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
+      <img onclick="window.location.href='/index.html'" style="width:50px;" src="/school/ghost.png"></img>
         <br>
         <input type="text" class="input" id="uv-form" placeholder="Search or enter a URL">
-        <div class="desc left-margin" style="height: 50px;">
+        <div class="desc left-margin" style="height: 50px; width: 20%;">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
         </div>
-        <div class="desc left-margin">
-        </div>
-      <ul class="nav-links">
-              <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
-        <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
-<li><a href="/settings.html"><i class="fa-solid fa-gear"></i></a></li>
-            <a class="active"></a>
-      </ul>
+        <ul class="nav-links">
+            <li><a href="/school/"><i class="fa-solid fa-gamepad active"></i> Games</a></li>
+            <li><a href="/algebra.html"><i class="fa-solid fa-phone active"></i> Apps</a></li>
+           <li><a href="/settings.html"><i class="fa-solid fa-gear active"></i> Settings</a></li>
+           <li><a href="/browser.html"><i class="fa-solid fa-search active"></i> Pro<x>xy</x></a></li>
+           <li><a href="/disc.html"><i class="fa-brands fa-discord active"></i> Dis<x>cord</x></a></li>
+           
+                 </ul>
     </div>
   </nav>
 
-        <p align="center"><img id="logo2" src="/assets/img/Ghost.png" height="200"></p>
+        <p align="center" class="ex2"><img id="logo2" src="/assets/img/Ghost.png" height="200"></p>
         <center>
 <!--Title shit lol-->
-            <p class="ex2">Ghost Proxy</p>
+            <p class="ex3">Ghost Proxy</p>
             <h2><span id="subtitle">...</span></h2>
         </center>
         <!-- Google tag (gtag.js) -->
@@ -179,12 +189,10 @@
         </script>
         <!--subtitle shit-->
         <script>
-            // Function to change the subtitle
             function changeSub(num) {
                 document.getElementById("subtitle").innerText = tell[num];
             }
 
-            // Change this or add subtitles
             var tell = [
                 "Nobodycares is a skiddy kid af",
                 "What even is that?",
@@ -233,23 +241,13 @@
 
             document.getElementById("subtitle").innerText = tell[randomIndex];
 
-            // Function to change the subtitle
             function changeSplash(num) {
-                var sub = "Set current splash to splash " + num + ", " + tell[num];
+                var sub = "guh " + num + ", " + tell[num];
                 document.getElementById("subtitle").innerText = tell[num];
                 return sub;
             }
         </script>
     <script>
-    // nobodycares is a skiddy kid af LOL
-
-function initTheme() {
-    const savedTheme = localStorage.getItem('themeSwitch');
-    if (savedTheme) {
-        document.body.setAttribute('data-theme', savedTheme);
-    }
-}
-
 initTheme(); 
 
 function initads() {
@@ -258,10 +256,6 @@ function initads() {
 
         }
 }
-
-setInterval(function() {
-            initTheme(); 
-}, 2000);
     </script>
 <!--If tabs are disabled-->
 <script>
@@ -301,8 +295,6 @@ const url = '/'
       }}
 
    else {
-    console.log(`Blanker Disabled!`);
-    console.log(`No Further Action Needed.`);
    }}
 );
 
@@ -313,8 +305,6 @@ const url = '/'
 </script>
 
 </script>
-        <!-- Gotta get that copyright in-->
-        <p align="center">© Copyright Ghost Network 2024</p>
 </body>
 
 </html>

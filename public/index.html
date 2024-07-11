@@ -1,262 +1,419 @@
 <!DOCTYPE html>
 <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
-    <script src="index.js" defer></script>
 <meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
-<script src="./assets/js/onload.js"></script>
-<!--Nobodycares is a skiddy kid af-->
-<!--This is what we like to call nobodycares's shit css :3-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style>
 
-body {
-    background-color: #171717;
-    color: grey;
-    font-family: 'Be Vietnam Pro', sans-serif;
-    -ms-overflow-style: none;
-    scrollbar-width: none; 
-    border: none;
-    overflow: hidden;
-    transition: 2.2s cubic-bezier(.36,-0.01,0,.77);
-}
+    body {
+        color: grey;
+        font-family: 'Be Vietnam Pro', sans-serif;
+    }
 
-body -webkit-scrollbar {
-  display: none;
+    .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: auto;
+        margin-left: 10px;
+        z-index: 1;
+    }
+
+    .search {
+        padding: 15px 18px;
+        border: none;
+        width: 1000px;
+        border-radius: 5px;
+        background-color: floralwhite;
+        color: var(--main-text-color);
+        outline: none;
+        margin-right: 10px;
+        z-index: 1;
+    }
+
+        .search:focus::placeholder {
+            color: floralwhite;
+            padding: 20px 15px;
+            z-index: 1;
+        }
+
+
+    p.ex2 {
+        font-size: 50px;
+        color: white;
+        padding-top: 10px;
+    }
+
+    p {
+        color: white;
+        padding: 20px 15px;
+    }
+
+    xn {
+        font-size: 30;
+    }
+
+.nav-links li a:hover {
+  color: #ff6666 ;
 }
 
 /* I LOVE CATPUCCIN :DDDDDDD :3*/
-[data-theme='catppuccinma'] {
-     
+[data-theme='catppuccinma'] { 
     background-color: #1e1e2e;
-        color: #9194ab;
+        color: #574859;
         font-family: 'Be Vietnam Pro', sans-serif;
         -ms-overflow-style: none;
         scrollbar-width: none; 
         border: none;
-        overflow: hidden;
-        transition: 2.2s cubic-bezier(.36,-0.01,0,.77);
+     
+}
+[data-theme='catppuccinma']
+    .navbar {
+    background-color: #181925;
+ 
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='catppuccinma']{
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+  .active {
+    color: #9194ab;
+  }
+}
+  [data-theme='red'] { 
+    background-color: #d52538;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        -ms-overflow-style: none;
+        scrollbar-width: none; 
+        border: none;
+     
+}
+[data-theme='red']
+    .navbar {
+    background-color: #881723;
+ 
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='red']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+
+.fa-solid fa-gear:hover {
+    transform: rotate(360deg);
 }
 
-.material-symbols-outlined {
-    width: 0px;
-    height: 0px;
-    padding: 0px 0px 0px 0px;
+.trendingtop {
+    width: 98%;
+    background-color: #333333;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 10%;
+    color: white;
+    border-bottom: 3px solid white;
 }
 
+.trendingbottom {
+    width: 98%;
+    background-color: #333333;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 20%;
+    color: white;
+}
+
+.active {
+    color: #ff6666;
+}
+
+.game-icon {
+                text-align: center;
+                width: 120px;
+                height: 120px;
+                position: relative;
+             
+                transition: transform 0.3s ease-in-out;
+                     border-radius:10px;
+                      margin: 15px;
+                      display: inline-block;
+                    flex-wrap: wrap;
+            }
+
+            .game-icon button {
+                border: none;
+                background: none;
+                padding: 0;
+                cursor: pointer;
+                display: block;
+                width: 100%;
+                height: 100%; 
+                border-radius:10px;
+            }
+
+            .game-icon img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+                margin: 0 auto;
+                transition: transform 0.3s ease-in-out;
+                border-radius:10px;
+            }
+
+            .game-icon p {
+                margin-top: 10px;
+                color: #fff;
+                position: absolute;
+                bottom: -20px;
+                left: 50%;
+                transform: translateX(-50%);
+                font-family: 'Be Vietnam Pro', sans-serif;
+                opacity: 0;
+                transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
+                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+                 border-radius:10px;
+            }
+
+            .game-icon:hover {
+                    transform: scale(1.1);
+            }
+
+            .game-icon:hover img {
+                transform: scale(1.1);
+                border-radius: 15px;
+            }
+
+            .game-icon:hover p {
+                bottom: 0;
+                opacity: 1;
+            }
+
+            @keyframes fadeIn {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+                    0% {
+                        transform: translateY(20px);
+                    }
+                    100% {
+                        transform: translateY(0px);
+                    }
+            }
+
+            @keyframes owo {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+            }
+
+            [data-theme='blue'] {
+                .px2 {
+                    color: white;
+                }
+                .te {
+                    color: white
+                }
+            }
 
 </style>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="title" content="Ghost" />
-    <meta name="theme-color" content="#ae2b2c">
-    <meta name="description" content="Ghost?? or is it." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1233227314511216823/1244554748632240188/Ghost.png?ex=6655896e&is=665437ee&hm=0a4aecb35ba485bc1656329d8c661a35b0e6f26dfce6642db69d1ea72914570b&">
-    <link id="favicon" rel="icon"
-          href="./assets/img/Ghost.png"
-          type="image/png">
-    <script src="./assets/js/pointblank.js"></script>
+    <link rel="shortcut icon" id="favicon" href="/assets/img/ghost.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="stylesheet" href="/assets/css/index.css" />
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
-    <script src="./assets/js/clickoff.js"></script>
-    <script src="./assets/js/onload.js"></script>
-    <title>Ghost</title>
+    <link rel="stylesheet" href="./assets/css/themes.css" />
+    <title>Home</title>
 
     <!-- Ultraviolet Scripts -->
-    <script src="./uv/uv.bundle.js"></script>
-    <script src="./uv/uv.config.js"></script>
-
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="./assets/js/onload.js"></script>
+    <script src="./assets/js/pointblank.js"></script>
 </head>
-<html lang="en">
-<body> 
 
-</div>
-<!--This is the tab container it contains tabs :3-->
-<div class="tabs" id="tabs">
-
-            </div>
-            </div>
-            </div>
-                <!--now if you couldnt tell these are tab buttons-->
-    <!-- i mean i think you know what those do dont you?-->
-    <!--why are you peaking into the code anyway? dont you have better things to do???-->
-    <!--They add tabs and delete them-->
-    <!--BUT IM JUST A NOTE WHAT WOULD I KNOW-->
-            <div class="tbttn">
-                <span class="material-symbols-outlined" style="font:bold;" onclick="e()">
-                    code
-                    </span>
-                    <span class="material-symbols-outlined" style="font:bold; padding-right: 15px;" onclick="newtab()">
-                        Add
-                        </span>
-            <span class="material-symbols-outlined" style="font:bold; padding-right: 15px;" onclick="forward(); ">
-                arrow_forward
-                </span>
-                <span class="material-symbols-outlined" style=" font:bold; padding-right: 15px; " onclick="refresh()">
-                    refresh
-                </span>
-                <span class="material-symbols-outlined" style=" font:bold; padding-right: 20px;" onclick="back()">
-                    arrow_back
-                    </span>
-                    <span class="material-symbols-outlined" style=" font:bold; padding-right: 20px;" onclick="closetab()">
-                        Close
-                        </span>
-                   </div>
-              </div>
+<body>
+<!--femboys-->
+<!--What do you hope to accomplish-->
+       <nav class="navbar">
+    <div class="container">
+        <img onclick="window.location.href='/index.html'" style="width:50px;" src="/school/ghost.png"></img>
+        <br>
+        <div class="desc left-margin" style="height: 50px;">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
         </div>
-     </div>
-</div>
-    <!-- Adding the refresh buttons and shit lol-->
+      <ul class="nav-links" style="animation: owo 2s;">
+ <li><a href="/school/"><i class="fa-solid fa-gamepad active"></i> Games</a></li>
+ <li><a href="/algebra.html"><i class="fa-solid fa-phone active"></i> Apps</a></li>
+<li><a href="/settings.html"><i class="fa-solid fa-gear active"></i> Settings</a></li>
+<li><a href="/browser.html"><i class="fa-solid fa-search active"></i> Pro<x>xy</x></a></li>
+<li><a href="/disc.html"><i class="fa-brands fa-discord active"></i> Dis<x>cord</x></a></li>
 
+      </ul>
     </div>
-    <!--These are the tab scripts-->
-    <!--How they work is very simple-->
-    <!--To make a tab we just simply set clonenode to true when the button is clicked to remove a tab we delete the div thats currently active and to set an active tab we change the class of the tab and iframe-->
-    <script>
-    var i = 0;
-  var tab = document.getElementById('tab')
-  let tabCounter = 1; 
+  </nav>
+        <center>
+<!--Title shit lol-->
+            <p class="ex2" style="animation: fadeIn 2s;">Ghost</p>
+            <div style="margin: 0; padding-top:0; padding : 0; display: inline;" class="te">
+            <p style="margin: 0; padding-top:0;">
+                <span style="animation: owo .5s;">A </span>
+                <span style="animation: owo .5s; animation-delay: .5s;">cool</span>
+                <span style="animation: owo .5s; animation-delay: 1s;"> Games</span>
+                <span style="animation: owo .5s; animation-delay: 1.5s;"> Website</span>
+                <span style="animation: owo .5s; animation-delay: 2s;"> :D</span>
+                </p>
+                </div>
+                <button class="button2" onclick="blank()">Open in about:blank</button>
+            <div class="trendingtop">
+                <center>
+                    <h1>Trending Games</h1>
+                </center>
+            </div>
+            <div class="trendingbottom">
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://slope.lol/games/slope/index.html');">
+                    <button>
+                        <img src="./school/assets/slope.png" alt="slope">
+                    </button>
+                    <p>Slope</p> 
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://ovoclassic.github.io/file/');">
+                    <button>
+                        <img src="./school/assets/OvO.png" alt="OvO"> 
+                    </button>
+                    <p>OvO</p>
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gnhustgames.github.io/timeshooter2/');">
+                    <button>
+                        <img src="./school/assets/shoot.png" alt="timeshooter"> 
+                    </button>
+                    <p>TimeShooter</p>
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/drift-boss/index.html'">
+                    <button>
+                        <img src="./school/assets/driftboss.png" alt="driftboss">
+                    </button>
+                    <p>Drift Boss</p>
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/phisibox/index.html'">
+                    <button>
+                        <img src="./school/assets/physibox.png" alt="cuttherope">
+                    </button>
+                    <p>PhisiBox</p>
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basket-bros.github.io/a7/basket-bros');">
+                    <button>
+                        <img src="./school/assets/basketbros.png" alt="basketbros">
+                    </button>
+                    <p>Basket Bros</p>
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://healthstudies.commwebworks.com/game/baldi/index.html');">
+                    <button>
+                        <img src="./school/assets/baldi.png" alt="slope">
+                    </button>
+                    <p>Baldi's Basics</p> 
+                </div>
+                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basketball-stars.me/g/41');">
+                    <button>
+                        <img src="./school/assets/basketball-stars.png" alt="bbstars">
+                    </button>
+                    <p>BasketBall Stars</p>
+                </div>
+                </div>
+                <div class="trendingtop">
+                    <center>
+                    <h1>Trending Apps</h1>
+                </center>
+                </div>
+                <div class="trendingbottom">
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');">
+                        <button>
+                            <img src="assets/img/apps/youtube.png" alt="youtube">
+                        </button>
+                        <p>Youtube</p>
+                    </div>
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.xbox.com/en-us/play');">
+                        <button>
+                            <img src="assets/img/apps/xbox.png" alt="xbox">
+                        </button>
+                        <p>Xbox Cloud Gaming</p>
+                    </div>
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com/app');">
+                        <button>
+                            <img src="assets/img/apps/discord.jpg" alt="vscode">
+                        </button>
+                        <p>Discord</p>
+                      </div>
+                      <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://chatgpt.com');">
+                        <button>
+                            <img src="assets/img/apps/chat.png" alt="chat">
+                        </button>
+                        <p>ChatGPT</p>
+                    </div>
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://play.geforcenow.com/');">
+                        <button>
+                            <img src="assets/img/apps/geforce.png" alt="geforce">
+                        </button>
+                        <p>Ge Force Now</p>
+                    </div>
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://crazygames.com');">
+                        <button>
+                            <img src="assets/img/apps/crazygames.png" alt="crazygames">
+                        </button>
+                        <p>Crazy Games</p>
+                    </div>
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://coolmathgames.com');">
+                        <button>
+                            <img src="assets/img/apps/cmg2.png" alt="vscode">
+                        </button>
+                        <p>Cool math games</p>
+                    </div>
+                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gemini.google.com/');">
+                        <button>
+                            <img src="assets/img/apps/gem.png" alt="rainforest frfr">
+                        </button>
+                        <p>Gemini</p>
+                    </div>
+                </div>
+        </center>
+        <script>
+            alert('hello my name is fussybabycrust')
+        </script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
 
-// new tab
-  function newtab() {
-// Remove the old tabcontaineractive before continuing
-    const tabContainers = document.querySelectorAll('.tabcontaineractive');
-    const tabs = document.getElementsByClassName('tabs').children
-    tabContainers.forEach((container) => {
-        container.classList.remove('tabcontaineractive');
-        tabs.classList.add('tabcontainerunactive');
-    });
-// set the tab contianer
-            const tabsContainer = document.querySelector('.tabs');
-// Create the new tab
-            const tbttn = document.querySelectorAll("tbttn")
-            const newTabContainer = document.createElement('div');
-            newTabContainer.classList.add('tabcontaineractive');
-            newTabContainer.id = `tab${++tabCounter}`;
-            newTabContainer.innerHTML = `
-                <iframe style="display: block; position: absolute; right: 0%; top: 100px;" id="uv-frame" title="ghost-frame" class="uv-frame" src="/browser.html"></iframe>
-                <div class="tab" onclick="switchtab()">New Tab</div>
-            `;
-            tabsContainer.appendChild(newTabContainer);
-            resizeTabs();
-            console.log('Made A New Tab! :3')
-  }
-//close tab
-function closetab() {
-    //remove the tab
-    const tabContainers = document.querySelectorAll('.tabcontaineractive');
-    const targetDiv = document.querySelector('.tabcontaineractive');
-    const previousDiv = targetDiv?.previousElementSibling;
-    if (previousDiv) {
-    tabContainers.forEach((container) => {
-        previousDiv.classList.add('tabcontaineractive');
-        container.remove('tabcontaineractive');
-        resizeTabs();
-    });
-} else {
-    console.log(`idfk`)
-}
-
-    if (parent.id === 'tab') {
-        console.log('Hey you cant delete the first tab!');
-    } else {
-        console.log('Hey you cant delete the first tab!');
-}
-  }
-
-// switch the tabs
-function switchtab(event) {
-    // remove tabcontaineractive from all the other tabs
-    const tabContainers = document.querySelectorAll('.tabcontaineractive');
-    const tabs = document.getElementsByClassName('tabs').children
-    tabContainers.forEach((container) => {
-        container.classList.remove('tabcontaineractive');
-    });
-
-    tabs.classList.add('tabcontainerunactive');
-    
-    // add tabcontaineractive to the tab
-    const parent = event.target.parentNode;
-    parent.classList.remove('tabcontainerunactive')
-    parent.classList.add('tabcontaineractive'); 
-}
-
-function refresh() {
-    document.getElementsByClassName('.tabcontaineractive').src = document.getElementsByClassName('.tabcontaineractive').src
-}
-
-function resizeTabs() {
-    //define thatabs
-            const tabsContainer = document.getElementById('tabs');
-            const tabs = tabsContainer.getElementsByClassName('tab');
-            const containerWidth = tabsContainer.clientWidth;
-            const tabCount = tabs.length;
-            const tabWidth = containerWidth / tabCount;
-            //resize them according to the size of the shit
-            for (let i = 0; i < tabCount; i++) {
-                tabs[i].style.width = `${tabWidth}px`;
+            function gtag() {
+                dataLayer.push(arguments);
             }
-        }
+            gtag('js', new Date());
 
-        function updatetitle() {
-        }
-//Activate eruda :3
-
-function e() {
-    eruda.init();
-}
-
-//back and forward button
-
-function back() {
-    var iframe = document.getElementsByClassName('.tabcontaineractive');
-    iframe.contentWindow.history.back();
-}
-
-function forward() {
-    var iframe = document.getElementsByClassName('.tabcontaineractive')
-    iframe.history.forward()
-}
-
-//remove the tabs because there annoying
-//yes i thought of this
-
-function notab() {
-    const currenttab = document.getElementsByClassName("tabcontaineractive")
-    currenttab.style.width = "100%"
-    currenttab.style.height = "100%"
-}
-
-    </script>
-            <!--disable tabs-->
-            <script>
-                const tabslocal = localStorage.getItem('tabs')
-    
-                if (tabslocal === 'off') {
-                    console.log(`Tabs Disbled!`)
-                    console.log(`Redirecting...`)
-                    top.location.replace("/browser.html")
-                }
-                else {
-                    console.log(`Tabs Enabled!`) 
-                    console.log(`No further Action Needed.`)
-                }
-
-                newtab()
-            </script>
-
-            <!---uwu-->
-            <script>
-        setInterval(function() {
-        resizeTabs()
-        updatetitle()
-         }, 2000);
-            </script>
-<button onclick="parent.open('https://billing.billigerhost.com', '_blank');" style="font-family: 'Poppins', sans-serif; position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: rgba(153, 153, 153, 0.35); color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; font-family: 'Poppins', sans-serif; font-weight: 700; z-index: 99999999999;">
-<i class="fa-solid fa-server" style="margin-right: 5px;"></i>
-Powered by <span style="color: #ad271f;">Billiger</span>Host
-</button>
+            gtag('config', 'G-WFWKKRRXLT');
+        </script>
+        <button onclick="parent.open('https://billing.billigerhost.com', '_blank');" style="font-family: 'Poppins', sans-serif; position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: rgba(153, 153, 153, 0.35); color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; font-family: 'Poppins', sans-serif; font-weight: 700; z-index: 99999999999;">
+            <i class="fa-solid fa-server" style="margin-right: 5px;"></i>
+            Powered by <span style="color: #ad271f;">Billiger</span>Host
+            </button>
+            <a onclick="parent.open('https://github.com/The-Ghost-Network/Ghost-Node', '_blank');"><i style="font-size:40px; position: fixed; left: 10px; bottom: 10px; cursor: pointer;" class="fa-brands fa-github active"></i></a>
+            <a onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"><i style="font-size:40px; position: fixed; left: 70px; bottom: 10px; cursor: pointer;" class="fa-brands fa-discord active"></i></a>
 </body>
 
 </html>

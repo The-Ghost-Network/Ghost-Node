@@ -9,7 +9,7 @@ import decodeUrl from '@titaniumnetwork-dev/ultraviolet'
 const app = express();
 const bare = createBareServer("/bare/");
 const server = http.createServer();
-const PORT = 8080;
+const PORT = 5505;
 
 
 app.use(express.static("./public"));

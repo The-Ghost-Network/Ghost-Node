@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+<meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+    body {
+        color: grey;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        margin: 0;
+    }
+
+    .search-container {
+        display: flex;
+        align-items: center;
+        position: relative;
+        margin-right: auto;
+        margin-left: 10px;
+        z-index: 1;
+    }
+
+    .search {
+        padding: 15px 18px;
+        border: none;
+        width: 1000px;
+        border-radius: 5px;
+        background-color: floralwhite;
+        color: var(--main-text-color);
+        outline: none;
+        margin-right: 10px;
+        z-index: 1;
+    }
+
+        .search:focus::placeholder {
+            color: floralwhite;
+            padding: 20px 15px;
+            z-index: 1;
+        }
+
+
+    p.ex2 {
+        font-size: 50px;
+        color: white;
+    }
+
+    p {
+        color: white;
+        padding: 20px 15px;
+    }
+
+    xn {
+        font-size: 30;
+    }
+
+.nav-links li a:hover {
+  color: #ff6666 ;
+}
+
+/* I LOVE CATPUCCIN :DDDDDDD :3*/
+[data-theme='catppuccinma'] { 
+    background-color: #1e1e2e;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+
+        border: none;
+        
+}
+[data-theme='catppuccinma']
+    .navbar {
+    background-color: #181925;
+    
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='catppuccinma']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+  [data-theme='red'] { 
+    background-color: #d52538;
+        color: #574859;
+        font-family: 'Be Vietnam Pro', sans-serif;
+
+        border: none;
+        
+}
+[data-theme='red']
+    .navbar {
+    background-color: #881723;
+    
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+  }
+  [data-theme='red']
+    .navbar a {
+      color: white;
+      text-align: center;
+      padding: 10px;
+      text-decoration: none;
+      font-size: 17px;
+      z-index: 1;
+  }
+
+.fa-solid fa-gear:hover {
+    transform: rotate(360deg);
+}
+
+.trendingtop {
+    width: 98%;
+    background-color: #333333;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    height: 10%;
+    color: white;
+    border-bottom: 3px solid white;
+}
+
+.trendingbottom {
+    width: 98%;
+    background-color: #333333;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: 20%;
+    color: white;
+}
+
+.active {
+    color: #ff6666;
+}
+
+            @keyframes fadeIn {
+                0% {opacity: 0;}
+                100% {opacity: 1;}
+                transform {
+                    to {
+                        transform: translateY(0px);
+                    }
+                    from {
+                        transform: translateY(-20px);
+                    }
+                }
+            }
+
+        .discord {
+            width: 15%;
+            height: 25%;
+            background-color: #333333;
+            cursor: pointer;
+            color: white;
+            border-radius: 10px;
+            margin-right: 20px;
+            display: inline-block;
+        }
+
+        .disc-frame {
+            height: 100%;
+            width: 100%;
+            position: fixed;
+            border: none;
+            z-index: -1;
+        }
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" id="favicon" href="./assets/img/Ghost.png" type="image/png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="/assets/css/themes.css" />
+    <title>Home</title>
+
+    <!-- Ultraviolet Scripts -->
+    <script src="uv/uv.bundle.js"></script>
+    <script src="uv/uv.config.js"></script>
+    <script src="register-sw.js" defer></script>
+    <script src="search.js" defer></script>
+    <script src="index.js"></script>
+    <script src="./assets/js/onload.js"></script>
+    <script src="./assets/script.js"></script>
+    <script src="./assets/js/pointblank.js"></script>
+</head>
+
+<body>
+<!--femboys-->
+<!--What do you hope to accomplish-->
+       <nav class="navbar">
+    <div class="container">
+        <img onclick="window.location.href='/index.html'" style="width:50px;" src="/school/ghost.png"></img>
+        <br>
+        <div class="desc left-margin" style="height: 50px;">
+            <p id="uv-error"></p>
+            <pre id="uv-error-code"></pre>
+        </div>
+      <ul class="nav-links">
+ <li><a href="/school/"><i class="fa-solid fa-gamepad active"></i> Games</a></li>
+ <li><a href="/algebra.html"><i class="fa-solid fa-phone active"></i> Apps</a></li>
+<li><a href="/settings.html"><i class="fa-solid fa-gear active"></i> Settings</a></li>
+<li><a href="/browser.html"><i class="fa-solid fa-search active"></i> Pro<x>xy</x></a></li>
+<li><a href="/disc.html"><i class="fa-brands fa-discord active"></i> Dis<x>cord</x></a></li>
+
+      </ul>
+    </div>
+  </nav>
+<!--Title shit lol-->
+<center>
+    <p class="ex2">Select A Dis<x>cord!</x></p>
+            <div class="discord" onclick="ghost()">
+                <img height="100px" style="border-radius: 10px;" src="/assets/img/ghost.png">
+                <h1>The Ghost Network</h1>
+            </div>
+            <div class="discord" onclick="elect()">
+                <img height="100px" style="border-radius: 10px;" src="/assets/img/electrical.png">
+                <h1>Electrical Proxies</h1>
+            </div>
+            <div class="discord" onclick="oculus()">
+                <img height="100px" style="border-radius: 10px;" src="/assets/img/ocular.png">
+                <h1>The Ocular Network</h1>
+            </div>
+            <div class="discord" onclick="blanket()">
+                <img height="100px" style="border-radius: 10px;" src="/assets/img/blanket.png">
+                <h1>The Blanket Network</h1>
+            </div>
+            <div class="discord" onclick="sunset()">
+                <img height="100px" style="border-radius: 10px;" src="/assets/img/sunset.png">
+                <h1>The Sunset-Network</h1>
+            </div>
+</center>
+<iframe class="disc-frame" id="iframe" style="display: block;"></iframe>
+<script>
+    //:O
+    const iframe = document.getElementById('iframe')
+
+    function ghost() {
+    iframe.src = '/uv/service/ghost/hvtrs8%2F-e%2Cwkdeevbmt%2Cim%2Fahcnlens-10148%3A048217672%3A7%3B1-103%3A64819%3B76877%3B379'
+    iframe.style.zIndex = "100"
+     }
+
+    function elect() {
+    iframe.src = '/uv/service/ghost/hvtrs8%2F-e%2Cwkdeevbmt%2Cim%2Fahcnlens-1032140%3B52100%3A10614-1032140%3B52100%3A10617'
+    iframe.style.zIndex = "100"
+    }
+
+    function oculus() {
+    iframe.src = '/uv/service/ghost/hvtrs8%2F-e%2Cwkdeevbmt%2Cim%2Fahcnlens-1306871%3A313%3A3773458-1346857642073%3A23440'
+    iframe.style.zIndex = "100"
+    }
+
+    function blanket() {
+    iframe.src = '/uv/service/ghost/hvtrs8%2F-e%2Cwkdeevbmt%2Cim%2Fahcnlens-1034315121721512969-10431566528%3A7%3A41841'
+    iframe.style.zIndex = "100"
+    }
+
+    function sunset() {
+    iframe.src = '/uv/service/ghost/hvtrs8%2F-e%2Cwkdeevbmt%2Cim%2Fahcnlens-100%3A623263072%3B01525-10348773413%3B5416861'
+    iframe.style.zIndex = "100"
+    }
+
+
+</script>
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag('js', new Date());
+
+            gtag('config', 'G-WFWKKRRXLT');
+        </script>
+        <button onclick="parent.open('https://billing.billigerhost.com', '_blank');" style="font-family: 'Poppins', sans-serif; position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: rgba(153, 153, 153, 0.35); color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; font-family: 'Poppins', sans-serif; font-weight: 700; z-index: 99999999999;">
+            <i class="fa-solid fa-server" style="margin-right: 5px;"></i>
+            Powered by <span style="color: #ad271f;">Billiger</span>Host
+            </button>
+            <a onclick="parent.open('https://github.com/The-Ghost-Network/Ghost-Node', '_blank');"><i style="font-size:40px; position: fixed; left: 10px; bottom: 10px; cursor: pointer;" class="fa-brands fa-github active"></i></a>
+            <a onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"><i style="font-size:40px; position: fixed; left: 70px; bottom: 10px; cursor: pointer;" class="fa-brands fa-discord active"></i></a>
+</body>
+
+</html>

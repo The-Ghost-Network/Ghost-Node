@@ -3,8 +3,9 @@
 <link rel="stylesheet" href="school/school.css" />
 <link rel="stylesheet" href="/index.css" />
 <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
-    <meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+    <link rel="shortcut icon" id="favicon" href="/assets/img/ghost.png" type="image/png">
     <script src="./assets/js/onload.js"></script>
+    <script src="./assets/js/pointblank.js"></script>
     </head>
 <style>
     body {
@@ -14,7 +15,7 @@
 
     .topbar {
         background-color: #333;
-        overflow: hidden;
+     
         padding: 10px 20px;
         display: flex;
         align-items: center;
@@ -87,7 +88,7 @@
 
         .mint .topbar {
             background-color: #8cb79f;
-            overflow: hidden;
+         
             padding: 10px 20px;
             display: flex;
             align-items: center;
@@ -167,7 +168,7 @@
                 width: 120px;
                 height: 120px;
                 position: relative;
-                overflow: hidden;
+             
                 transition: transform 0.3s ease-in-out;
                   border-radius:10px;
                   margin: 15px;
@@ -231,15 +232,13 @@
     background-color: #d52538;
         color: #574859;
         font-family: 'Be Vietnam Pro', sans-serif;
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
         border: none;
-        overflow: hidden;
+     
 }
 [data-theme='red']
     .navbar {
     background-color: #881723;
-    overflow: hidden;
+ 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -263,12 +262,12 @@
         -ms-overflow-style: none;
         scrollbar-width: none; 
         border: none;
-        overflow: hidden;
+     
 }
 [data-theme='catppuccinma']
     .navbar {
     background-color: #181925;
-    overflow: hidden;
+ 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -283,13 +282,21 @@
       font-size: 17px;
       z-index: 1;
   }
+  .text {
+    color: white;
+  }
+  [data-theme='catppuccinma'] {
+  .active {
+    color: #9194ab;
+  }
+}
 </style>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="./Ghost.png" type="image/png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
     <link rel="stylesheet" href="/assets/css/index.css" />
+    <link rel="stylesheet" href="./assets/css/themes.css" />
     <title>Ghost</title>
 
     <!-- Ultraviolet Scripts -->
@@ -304,185 +311,35 @@
 <body>
      <nav class="navbar">
     <div class="container">
-      <img onclick="window.location.href='/browser.html'" style="width:50px;" src="/school/ghost.png"></img>
+        <img onclick="window.location.href='/index.html'" style="width:50px;" src="/school/ghost.png"></img>
         <br>
-        <div class="desc left-margin" style="height: 50px;">
+        <div class="desc left-margin" style="height: 50px; width: 20%;">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
         </div>
         <div class="desc left-margin">
         </div>
-      <ul class="nav-links">
-              <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
-        <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
-        <li><a href="/settings.html"><i class="fa-solid fa-gear"></i></a></li>
-            <a class="active"></a>
-      </ul>
+        <ul class="nav-links">
+            <li><a href="/school/"><i class="fa-solid fa-gamepad active"></i> Games</a></li>
+            <li><a href="/algebra.html"><i class="fa-solid fa-phone active"></i> Apps</a></li>
+           <li><a href="/settings.html"><i class="fa-solid fa-gear active"></i> Settings</a></li>
+           <li><a href="/browser.html"><i class="fa-solid fa-search active"></i> Pro<x>xy</x></a></li>
+           <li><a href="/disc.html"><i class="fa-brands fa-discord active"></i> Dis<x>cord</x></a></li>
+           
+                 </ul>
     </div>
   </nav>
        <center>
        <br>
 <br>
-<h1>Apps</h1>
+<p class="ex2">Apps</p>
+<p>You can request Apps on the <span style="color: #5ffe43" onclick="window.location.href = ('https://dsc.gg/The-Ghost-Network')">Discord Server!</span></p>
     </center>
-<div class="center">
     <div class="game-columns" style="background-color: transparent;">
         <div class="gamecolumn">
-            <div class="game-icons">
-          <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://tiktok.com');">
-              <button>
-                  <img src="assets/img/apps/tiktok.jpg" alt="1v1.lol">
-              </button>
-              <p>TikTok</p>
-          </div>
- <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');">
-              <button>
-                  <img src="assets/img/apps/youtube.png" alt="youtube">
-              </button>
-              <p>Youtube</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://crazygames.com');">
-              <button>
-                  <img src="assets/img/apps/crazygames.png" alt="crazygames">
-              </button>
-              <p>Crazy Games</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.xbox.com/en-us/play');">
-              <button>
-                  <img src="assets/img/apps/xbox.png" alt="xbox">
-              </button>
-              <p>Xbox Cloud Gaming</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.spotify.com');">
-              <button>
-                  <img src="assets/img/apps/spotify2.png" alt="spotify">
-              </button>
-              <p>Spotify</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.nowgg.nl');">
-              <button>
-                  <img src="assets/img/apps/nowgg2.png" alt="nowgg">
-              </button>
-              <p>Now.gg</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://vscode.dev');">
-              <button>
-                  <img src="assets/img/apps/vscode2.png" alt="vscode">
-              </button>
-              <p>Visual Studio Code</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://coolmathgames.com');">
-              <button>
-                  <img src="assets/img/apps/cmg2.png" alt="vscode">
-              </button>
-              <p>Cool math games</p>
-          </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com/app');">
-              <button>
-                  <img src="assets/img/apps/discord.jpg" alt="vscode">
-              </button>
-              <p>Discord</p>
-            </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://c.ai');">
-              <button>
-                  <img src="assets/img/apps/cai.png" alt="cai">
-              </button>
-              <p>C.ai</p>
-          </div>
-<div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://play.geforcenow.com/');">
-              <button>
-                  <img src="assets/img/apps/geforce.png" alt="geforce">
-              </button>
-              <p>Ge Force Now</p>
-          </div>
- <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://jmwubg.com.au');">
-            <button>
-                <img src="assets/img/apps/jmw.png" alt="jmw">
-            </button>
-            <p>Jordans Math Work V5</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://chatgpt.com');">
-            <button>
-                <img src="assets/img/apps/chat.png" alt="chat">
-            </button>
-            <p>ChatGPT</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://amazon.com');">
-            <button>
-                <img src="assets/img/apps/amazon.png" alt="rainforest frfr">
-            </button>
-            <p>Amazon</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://mail.google.com');">
-            <button>
-                <img src="assets/img/apps/gmail.png" alt="rainforest frfr">
-            </button>
-            <p>Gmail</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://github.com');">
-            <button>
-                <img src="assets/img/apps/github.png" alt="rainforest frfr">
-            </button>
-            <p>Github</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gemini.google.com/');">
-            <button>
-                <img src="assets/img/apps/gem.png" alt="rainforest frfr">
-            </button>
-            <p>Gemini</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://scratch.mit.edu/');">
-            <button>
-                <img src="assets/img/apps/scratch.png" alt="rainforest frfr">
-            </button>
-            <p>Scratch</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://x.com');">
-            <button>
-                <img src="assets/img/apps/x.png" alt="rainforest frfr">
-            </button>
-            <p>X</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://twitch.tv');">
-            <button>
-                <img src="assets/img/apps/twitch.png" alt="rainforest frfr">
-            </button>
-            <p>Twitch</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://music.youtube.com');">
-            <button>
-                <img src="assets/img/apps/youtubem.png" alt="rainforest frfr">
-            </button>
-            <p>Youtube Music</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://replit.com');">
-            <button>
-                <img src="assets/img/apps/replit.png" alt="rainforest frfr">
-            </button>
-            <p>Replit</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://pinterest.com');">
-            <button>
-                <img src="assets/img/apps/pintrest.png" alt="rainforest frfr">
-            </button>
-            <p>Pintrest</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://duckduckgo.com');">
-            <button>
-                <img src="assets/img/apps/ddg.png" alt="rainforest frfr">
-            </button>
-            <p>DuckDuckGo</p>
-        </div>
-        <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://bing.com');">
-            <button>
-                <img src="assets/img/apps/bing.png" alt="rainforest frfr">
-            </button>
-            <p>Bing</p>
-        </div>
-        
-        
-        
-        </div>
+            <center>
+            <div class="game-icons" id="game-icons">
+            </center>
         </div>
     </div>
 </div>
@@ -505,31 +362,34 @@
                 document.getElementById("settingsiframe").style.zIndex = "1";
             }
         </script>
-               <!--THEME SCRIPTS OMG :3-->
-    <script>
-        // nobodycares is a skiddy kid af LOL
-    
-    function initTheme() {
-        const savedTheme = localStorage.getItem('themeSwitch');
-        if (savedTheme) {
-            document.body.setAttribute('data-theme', savedTheme);
-            console.log(`Themes Loaded! :3 from nobodycares`)
-        }
-    }
-    
-    initTheme(); 
+               <script> 
 
-    setInterval(function() {
-            initTheme(); 
-  console.log("Refreshed Themes!");
-}, 2000);
-        </script>
-
-        <!-- Gotta get that copyright in-->
-        <p align="center">© Copyright Ghost Network 2024</p>
-
+                addEventListener("DOMContentLoaded", async (event) => {
+                      const responce = await fetch('./school/apps.json');
+                      const gameData = await responce.json();
+                       gameData.forEach(game => {
+                        const gameicons = document.getElementById('game-icons')
+            
+                        const games = document.createElement('div')
+                        games.classList.add('game-icon')
+                        games.setAttribute('onclick', "location.href = ('" +  game.href + "')")
+            
+                        const gameimg = document.createElement('button')
+                        const gameimage = document.createElement('img')
+                        gameimage.src = game.img
+            
+                        const gamename = document.createElement('p')
+                        gamename.innerText = game.name;
+            
+                        gameimg.appendChild(gameimage);
+                        games.appendChild(gameimg);
+                        games.appendChild(gamename);
+                        gameicons.appendChild(games);
+                    })
+                });
+                    </script>
         <script src="./assets/script.js" defer></script>
-<script async src="https://arc.io/widget.min.js#vJLocr6G"></script>
+
 </body>
 
 </html>

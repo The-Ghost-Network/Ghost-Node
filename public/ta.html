@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
+    <script src="index.js" defer></script>
+<meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+<script src="./assets/js/onload.js"></script>
+<!--Nobodycares is a skiddy kid af-->
+<!--This is what we like to call nobodycares's shit css :3-->
+<style>
+
+body {
+    background-color: #171717;
+    color: grey;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    border: none;
+}
+
+body -webkit-scrollbar {
+  display: none;
+}
+
+/* I LOVE CATPUCCIN :DDDDDDD :3*/
+[data-theme='catppuccinma'] {
+     
+    background-color: #1e1e2e;
+        color: #9194ab;
+        font-family: 'Be Vietnam Pro', sans-serif;
+}
+
+.material-symbols-outlined {
+    width: 0px;
+    height: 0px;
+    padding: 0px 0px 0px 0px;
+}
+
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Ghost" />
+    <meta name="theme-color" content="#ae2b2c">
+    <meta name="description" content="Ghost?? or is it." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="twitter:image" content="https://cdn.discordapp.com/attachments/1233227314511216823/1244554748632240188/Ghost.png?ex=6655896e&is=665437ee&hm=0a4aecb35ba485bc1656329d8c661a35b0e6f26dfce6642db69d1ea72914570b&">
+    <link id="favicon" rel="icon"
+          href="./assets/img/Ghost.png"
+          type="image/png">
+    <script src="./assets/js/pointblank.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <script src="./assets/js/clickoff.js"></script>
+    <script src="./assets/js/onload.js"></script>
+    <script src="./assets/js/pointblank.js"></script>
+    <title>Ghost</title>
+
+    <!-- Ultraviolet Scripts -->
+    <script src="./uv/uv.bundle.js"></script>
+    <script src="./uv/uv.config.js"></script>
+
+</head>
+<html lang="en">
+<body> 
+
+</div>
+<!--This is the tab container it contains tabs :3-->
+<div class="tabs" id="tabs">
+
+            </div>
+            </div>
+            </div>
+                <!--now if you couldnt tell these are tab buttons-->
+    <!-- i mean i think you know what those do dont you?-->
+    <!--why are you peaking into the code anyway? dont you have better things to do???-->
+    <!--They add tabs and delete them-->
+    <!--BUT IM JUST A NOTE WHAT WOULD I KNOW-->
+            <div class="tbttn">
+                <span class="material-symbols-outlined" style="font:bold;" onclick="e()">
+                    code
+                    </span>
+                    <span class="material-symbols-outlined" style="font:bold; padding-right: 15px;" onclick="newtab()">
+                        Add
+                        </span>
+            <span class="material-symbols-outlined" style="font:bold; padding-right: 15px;" onclick="forward(); ">
+                arrow_forward
+                </span>
+                <span class="material-symbols-outlined" style=" font:bold; padding-right: 15px; " onclick="refresh()">
+                    refresh
+                </span>
+                <span class="material-symbols-outlined" style=" font:bold; padding-right: 20px;" onclick="back()">
+                    arrow_back
+                    </span>
+                    <span class="material-symbols-outlined" style=" font:bold; padding-right: 20px;" onclick="closetab()">
+                        Close
+                        </span>
+                   </div>
+              </div>
+        </div>
+     </div>
+</div>
+    <!-- Adding the refresh buttons and shit lol-->
+
+    </div>
+    <!--These are the tab scripts-->
+    <!--How they work is very simple-->
+    <!--To make a tab we just simply set clonenode to true when the button is clicked to remove a tab we delete the div thats currently active and to set an active tab we change the class of the tab and iframe-->
+    <script>
+    var i = 0;
+  var tab = document.getElementById('tab')
+  let tabCounter = 1; 
+
+// new tab
+  function newtab() {
+// Remove the old tabcontaineractive before continuing
+    const tabContainers = document.querySelectorAll('.tabcontaineractive');
+    const tabs = document.getElementsByClassName('tabs').children
+    tabContainers.forEach((container) => {
+        container.classList.remove('tabcontaineractive');
+        tabs.classList.add('tabcontainerunactive');
+    });
+// set the tab contianer
+            const tabsContainer = document.querySelector('.tabs');
+// Create the new tab
+            const tbttn = document.querySelectorAll("tbttn")
+            const newTabContainer = document.createElement('div');
+            newTabContainer.classList.add('tabcontaineractive');
+            newTabContainer.id = `tab${++tabCounter}`;
+            newTabContainer.innerHTML = `
+                <iframe style="display: block; position: absolute; right: 0%; top: 100px;" id="uv-frame" title="ghost-frame" class="uv-frame" src="/browser.html"></iframe>
+                <div class="tab" onclick="switchtab()">New Tab</div>
+            `;
+            tabsContainer.appendChild(newTabContainer);
+            resizeTabs();
+            console.log('Made A New Tab! :3')
+  }
+//close tab
+function closetab() {
+    //remove the tab
+    const tabContainers = document.querySelectorAll('.tabcontaineractive');
+    const targetDiv = document.querySelector('.tabcontaineractive');
+    const previousDiv = targetDiv?.previousElementSibling;
+    if (previousDiv) {
+    tabContainers.forEach((container) => {
+        previousDiv.classList.add('tabcontaineractive');
+        container.remove('tabcontaineractive');
+        resizeTabs();
+    });
+} else {
+    console.log(`idfk`)
+}
+
+    if (parent.id === 'tab') {
+        console.log('Hey you cant delete the first tab!');
+    } else {
+        console.log('Hey you cant delete the first tab!');
+}
+  }
+
+// switch the tabs
+function switchtab(event) {
+    // remove tabcontaineractive from all the other tabs
+    const tabContainers = document.querySelectorAll('.tabcontaineractive');
+    const tabs = document.getElementsByClassName('tabs').children
+    tabContainers.forEach((container) => {
+        container.classList.remove('tabcontaineractive');
+    });
+
+    tabs.classList.add('tabcontainerunactive');
+    
+    // add tabcontaineractive to the tab
+    const parent = event.target.parentNode;
+    parent.classList.remove('tabcontainerunactive')
+    parent.classList.add('tabcontaineractive'); 
+}
+
+function refresh() {
+    document.getElementsByClassName('.tabcontaineractive').src = document.getElementsByClassName('.tabcontaineractive').src
+}
+
+function resizeTabs() {
+    //define thatabs
+            const tabsContainer = document.getElementById('tabs');
+            const tabs = tabsContainer.getElementsByClassName('tab');
+            const containerWidth = tabsContainer.clientWidth;
+            const tabCount = tabs.length;
+            const tabWidth = containerWidth / tabCount;
+            //resize them according to the size of the shit
+            for (let i = 0; i < tabCount; i++) {
+                tabs[i].style.width = `${tabWidth}px`;
+            }
+        }
+
+        function updatetitle() {
+        }
+//Activate eruda :3
+
+function e() {
+    eruda.init();
+}
+
+//back and forward button
+
+function back() {
+    var iframe = document.getElementsByClassName('.tabcontaineractive');
+    iframe.contentWindow.history.back();
+}
+
+function forward() {
+    var iframe = document.getElementsByClassName('.tabcontaineractive')
+    iframe.history.forward()
+}
+
+//remove the tabs because there annoying
+//yes i thought of this
+
+function notab() {
+    const currenttab = document.getElementsByClassName("tabcontaineractive")
+    currenttab.style.width = "100%"
+    currenttab.style.height = "100%"
+}
+
+    </script>
+            <!--disable tabs-->
+            <script>
+                const tabslocal = localStorage.getItem('tabs')
+    
+                if (tabslocal === 'off') {
+                    console.log(`Tabs Disbled!`)
+                    console.log(`Redirecting...`)
+                    top.location.replace("/browser.html")
+                }
+                else {
+                    console.log(`Tabs Enabled!`) 
+                    console.log(`No further Action Needed.`)
+                }
+
+                newtab()
+            </script>
+
+            <!---uwu-->
+            <script>
+        setInterval(function() {
+        resizeTabs()
+        updatetitle()
+         }, 2000);
+            </script>
+<button onclick="parent.open('https://billing.billigerhost.com', '_blank');" style="font-family: 'Poppins', sans-serif; position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: rgba(153, 153, 153, 0.35); color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; font-family: 'Poppins', sans-serif; font-weight: 700; z-index: 99999999999;">
+<i class="fa-solid fa-server" style="margin-right: 5px;"></i>
+Powered by <span style="color: #ad271f;">Billiger</span>Host
+</button>
+</body>
+
+</html>

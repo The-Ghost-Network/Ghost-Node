@@ -1,81 +1,3 @@
-function toggleTheme() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'catppuccinma' ? 'light' : 'catppuccinma';
-
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('themeSwitch', newTheme);
-}
-
-const themeToggle = document.getElementById('themeToggle');
-themeToggle.addEventListener('click', toggleTheme);
-
-initTheme();
-
-
-function toggleThemeGhost() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'ghost' ? 'ghost' : 'ghost';
-
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('themeSwitch', newTheme);
-}
-
-const themeToggleGhost = document.getElementById('themeToggle');
-themeToggleGhost.addEventListener('click', toggleTheme);
-
-initTheme();
-
-function toggleThemeGreen() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'green' ? 'green' : 'green';
-
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('themeSwitch', newTheme);
-}
-
-const themeToggleGreen = document.getElementById('themeToggle');
-themeToggleGhost.addEventListener('click', toggleTheme);
-
-initTheme();
-
-function toggleThemeRed() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'red' ? 'red' : 'red';
-
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('themeSwitch', newTheme);
-}
-
-const toggleorange = document.getElementById('themeToggle');
-themeToggleGhost.addEventListener('click', toggleTheme);
-
-initTheme();
-
-function toggleThemeBlue() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'blue' ? 'blue' : 'blue';
-
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('themeSwitch', newTheme);
-}
-
-const toggleblue = document.getElementById('themeToggle');
-themeToggleGhost.addEventListener('click', toggleTheme);
-
-initTheme();
-
-function toggleThemeLight() {
-    const currentTheme = document.body.getAttribute('data-theme');
-    const newTheme = currentTheme === 'white' ? 'white' : 'white';
-
-    document.body.setAttribute('data-theme', newTheme);
-    localStorage.setItem('themeSwitch', newTheme);
-}
-
-const togglelight = document.getElementById('themeToggle');
-themeToggleGhost.addEventListener('click', toggleTheme);
-
-initTheme();
 
 function updatetitle() {
     let titleform = document.getElementById("titleform");
@@ -84,98 +6,100 @@ function updatetitle() {
      localStorage.setItem("title", title)
    }
 
+   function drop() {
+    document.getElementById("Dropdown").classList.toggle("show");
+}
+
+
    function clickoff() {
     const local = localStorage.getItem("clickoff")
-
-    if (local == on) {
-        localStorage.setItem("clickoff", "off")
+    switch (local) {
+        case 'off':
+            localStorage.setItem("clickoff", "on");
+            break;
+            case 'on':
+            localStorage.setItem("clickoff", "off");
+            break;
     }
-    if (local == off) {
-        localStorage.setItem("clickoff", "on")
-    }
+        location.href = "/"
    }
-
-   $(document).ready(function() {
-    $('.switch input[type="checkbox"]').prop('checked', true);
-  });
-
 
    function tabs() {
     const tabslocal = localStorage.getItem('tabs')
-
-    if (tabslocal === 'on'){
-        localStorage.setItem('tabs', 'off')
+    switch (tabslocal) {
+        case 'off':
+            localStorage.setItem("tabs", "on");
+            break;
+            case 'on':
+            localStorage.setItem("tabs", "off");
+            break;
     }
-    else {
-        localStorage.setItem('tabs', 'on')
-    }
+    location.href = "/"
    }
 
    function clickoff() {
     const clickofff = localStorage.getItem('clickoff')
 
-    if (clickofff === 'true') {
-        localStorage.setItem('clickoff', 'false')
-        console.log("Clickoff Cloaking Off!")
-    }
-    else {
-        localStorage.setItem('clickoff' , 'true')
-        console.log("Clickoff Cloaking On!")
+    switch (clickofff) {
+        case 'off':
+            localStorage.setItem("clickoff", "on");
+            location.href = "/"
+            break;
+            case 'on':
+            localStorage.setItem("clickoff", "off");
+            location.href = "/"
+            break;
     }
    }
 
    function noleave() {
     const leave = localStorage.getItem('leave')
 
-    if (leave === 'on') {
-        localStorage.setItem('leave', 'off')
-    }
-
-    else {
-        localStorage.setItem('leave', 'on')
-    }
-   }
-   
-   function abt() {
-    var blanky = localStorage.getItem('blanker')
-
-    if (blanky === 'on') {
-        localStorage.setItem('blanker', 'off')
-    }
-    else {
-        localStorage.setItem('blanker', 'on')
-        console.log(`BLANKYY :OOOOOOOO`)
+    switch (leave) {
+        case 'off':
+            localStorage.setItem("leave", "on");
+            location.href = '/'
+            break;
+            case 'on':
+            localStorage.setItem("leave", "off");
+            location.href = '/'
+            break;
     }
    }
 
    function icondocs() {
     const favicon = document.getElementById("favicon"); 
-    favicon.setAttribute("href", "/assets/img/docs.png");
+    favicon.href = '/assets/img/docs.png'
     localStorage.setItem('icon', 'docs')
+    document.title = "Google Docs";
    }
 
    function icondrive() {
     const favicon = document.getElementById("favicon"); 
-    favicon.setAttribute("href", "/assets/img/drive.png");
+      favicon.href = '/assets/img/drive.png'
     localStorage.setItem('icon', 'drive')
+    document.title = "Google Drive";
    }
 
    function icondesmos() {
     const favicon = document.getElementById("favicon"); 
-    favicon.setAttribute("href", "/assets/img/desmos.png");
+      favicon.href = '/assets/img/desmos.png'
     localStorage.setItem('icon', 'desmos')
+    document.title = "Desmos";
    }
 
    function iconcanvas() {
     const favicon = document.getElementById("favicon"); 
-    favicon.setAttribute("href", "/assets/img/canvas.png");
+      favicon.href = '/assets/img/canvas.png'
     localStorage.setItem('icon', 'canvas')
+    document.title = "Canvas";
    }
 
    function iconclass() {
     const favicon = document.getElementById("favicon"); 
-    favicon.setAttribute("href", "/assets/img/classroom.png");
+      favicon.href = '/assets/img/classroom.png'
     localStorage.setItem('icon', 'classroom')
+    document.title = "Google Classroom";
    }
 
    function recordkey() {
@@ -186,3 +110,51 @@ function updatetitle() {
     }
     document.addEventListener('keydown', handleKeyDown);
   }
+
+  document.addEventListener("DOMContentLoaded", async () => {
+    const engine = document.getElementById('engineSWITCHER')
+    const currentengine = localStorage.getItem('engine')
+    engine.value = currentengine;
+    
+    engine.addEventListener('change', (event) => {
+        const selectedValue = event.target.value;
+        localStorage.setItem('engine', selectedValue);
+    });
+    
+    });
+
+function theme1() {
+  localStorage.setItem('theme', 'catppuccinma')
+  document.body.setAttribute('data-theme', 'catppuccinma')
+}
+function theme2() {
+  localStorage.setItem('theme', 'ghost')
+  document.body.setAttribute('data-theme', 'ghost')
+}
+function theme4() {
+  localStorage.setItem('theme', 'red')
+  document.body.setAttribute('data-theme', 'red')
+}
+function theme5() {
+  localStorage.setItem('theme', 'blue')
+  document.body.setAttribute('data-theme', 'blue')
+}
+function theme6() {
+  localStorage.setItem('theme', 'green')
+  document.body.setAttribute('data-theme', 'green')
+}
+
+      function tabs() {
+        console.log(`Debug`)
+      }
+
+      function abt() {
+        const abt = localStorage.getItem('abt')
+        if (abt === 'off') {
+        localStorage.setItem('abt', 'on')
+          location.href = '/'
+        }else {
+          localStorage.setItem('abt', 'off')
+          location.href = '/'
+        }
+      }

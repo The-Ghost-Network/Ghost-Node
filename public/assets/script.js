@@ -30,9 +30,15 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       return false;
     }
-  
+
+
     function formatSearch(query) {
       // This function turns the inputted value into a Google search if it's not a normal URL
+      const engine = localStorage.getItem('engine')
+      if (engine === null){
+        localStorage.setItem('engine', 'https://www.google.com/search?=')
+      }
+
       try {
         return new URL(query).toString()
       } catch (e) { }
@@ -42,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (url.hostname.includes('.')) return url.toString()
       } catch (e) { }
   
-      return new URL(`https://google.com/search?q=${query}`).toString()
+      return new URL(engine + `${query}`).toString()
     }
   
     const blocked = [

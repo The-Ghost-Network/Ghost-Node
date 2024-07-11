@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <link rel="stylesheet" href="school.css" />
-<link rel="stylesheet" href="/public/assets/css/index.css" />
+<link rel="stylesheet" href="/assets/css/index.css"/>
+<link rel="stylesheet" href="/assets/css/themes.css"/>
 <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
-<link rel="shortcut icon" href="Ghost.png" type="image/png">
-<meta name="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" content="2a1c3d0cca0a4915d751538953dc3ddc3259ecea" />
+<link rel="shortcut icon" id="favicon" href="Ghost.png" type="image/png">
 <title>Ghost</title>
 <!--Nobodycares is a skiddy kid af-->
 <style>
@@ -15,7 +15,7 @@
                 width: 120px;
                 height: 120px;
                 position: relative;
-                overflow: hidden;
+             
                 transition: transform 0.3s ease-in-out;
                      border-radius:10px;
                       margin: 15px;
@@ -125,12 +125,12 @@
         -ms-overflow-style: none;
         scrollbar-width: none; 
         border: none;
-        overflow: hidden;
+     
 }
 [data-theme='catppuccinma']
     .navbar {
     background-color: #181925;
-    overflow: hidden;
+ 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -152,12 +152,12 @@
         -ms-overflow-style: none;
         scrollbar-width: none; 
         border: none;
-        overflow: hidden;
+     
 }
 [data-theme='red']
     .navbar {
     background-color: #881723;
-    overflow: hidden;
+ 
     padding: 10px 20px;
     display: flex;
     align-items: center;
@@ -172,347 +172,54 @@
       font-size: 17px;
       z-index: 1;
   }
+
+  .ex2 {
+    color: white;
+  }
+
+  [data-theme='catppuccinma'] {
+  .active {
+    color: #9194ab;
+  }
+}
+
+[data-theme='green'] {
+
+body {
+    background-color: #49d533;
+        color: white;
+  }
+}
 </style>
 <body>
      <nav class="navbar">
     <div class="container">
-      <img style="width:50px;" onclick="window.location.href='/browser.html'" src="/school/ghost.png"></img>
+        <img onclick="window.location.href='/index.html'" style="width:50px;" src="/school/ghost.png"></img>
         <div class="desc left-margin" style="height: 50px;">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>
         </div>
         <div class="desc left-margin">
         </div>
-      <ul class="nav-links">
-        <li><a href="/school/"><i class="fa-solid fa-gamepad"></i> Games</a></li>
-        <li><a href="/algebra.html"><i class="fa-solid fa-phone"></i> Apps</a></li>
-        <li><a href="/settings.html"><i class="fa-solid fa-gear"></i></a></li>
-            <a class="active"></a>
-      </ul>
+        <ul class="nav-links">
+            <li><a href="/school/"><i class="fa-solid fa-gamepad active"></i> Games</a></li>
+            <li><a href="/algebra.html"><i class="fa-solid fa-phone active"></i> Apps</a></li>
+           <li><a href="/settings.html"><i class="fa-solid fa-gear active"></i> Settings</a></li>
+           <li><a href="/browser.html"><i class="fa-solid fa-search active"></i> Pro<x>xy</x></a></li>
+           <li><a href="/disc.html"><i class="fa-brands fa-discord active"></i> Dis<x>cord</x></a></li>
+                 </ul>
     </div>
   </nav>
     <center>
        <br>
 <br>
-<h1>Games</h1>
+<p class="ex2">Games</p>
+<p>You can request games on the <span style="color: #5ffe43" onclick="window.location.href = ('https://dsc.gg/The-Ghost-Network')">Discord Server!</span></p>
     </center>
     <div>
-        <div class="center">
-            <div class="game-icons">
-                <center>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://1v1.lol');">
-                    <button>
-                        <img src="./assets/1v1.png" alt="av">
-                    </button>
-                    <p>1v1.LOL</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basketball-stars.me/g/41');">
-                    <button>
-                        <img src="./assets/1on1.png" alt="1 On 1 Basketball">
-                    </button>
-                    <p>1 On 1 BasketBall</p> 
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/src/1-on-1-football/index.html'">
-                    <button>
-                        <img src="./assets/1o1football.png" alt="1 On 1 Football">
-                    </button>
-                    <p>1 On 1 Football</p> 
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basket-bros.github.io/a7/basket-bros');">
-                    <button>
-                        <img src="./assets/basketbros.png" alt="basketbros">
-                    </button>
-                    <p>Basket Bros</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://slope.lol/games/slope/index.html');">
-                    <button>
-                        <img src="./assets/slope.png" alt="slope">
-                    </button>
-                    <p>Slope</p> 
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://healthstudies.commwebworks.com/game/baldi/index.html');">
-                    <button>
-                        <img src="./assets/baldi.png" alt="slope">
-                    </button>
-                    <p>Baldi's Basics</p> 
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://healthstudies.commwebworks.com/game/vex6/index.html');">
-                    <button>
-                        <img src="./assets/vex6.png" alt="slope">
-                    </button>
-                    <p>Vex 6</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basketball-stars.me/g/41');">
-                    <button>
-                        <img src="./assets/basketball-stars.png" alt="bbstars">
-                    </button>
-                    <p>BasketBall Stars</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/2048/index.html'">
-                    <button>
-                        <img src="./assets/2048.png" alt="2048">
-                    </button>
-                    <p>2048</p> 
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://mountain658.github.io/zawesometanks.html');">
-                    <button>
-                        <img src="./assets/atank.png" alt="tank">
-                    </button>
-                    <p>Awesome Tanks</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://supermario64online.github.io/file/');">
-                    <button>
-                        <img src="./assets/sm64.png" alt="sm64"> 
-                    </button>
-                    <p>Super Mario 64</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/achivementunlocked/index.html'">
-                    <button>
-                        <img src="./assets/achievementunlocked.png" alt="unlocked">
-                    </button>
-                    <p>Achivement Unlocked</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Farcane.xml&container=ig');">
-                    <button>
-                        <img src="./assets/arcane.png" alt="arcane">
-                    </button>
-                    <p>Arcane</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://websitesball.com');">
-                    <button>
-                        <img src="https://cdn.now.gg/apps-content/com.roblox.client/icon/roblox.png" alt="sm64">
-                    </button>
-                    <p>Roblox</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/among-us/index.html'">
-                    <button>
-                        <img src="./assets/amongus.png" alt="amongus">
-                    </button>
-                    <p>Among Us</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://8ballpoolonline.github.io/file/');">
-                    <button>
-                        <img src="./assets/8ball.png" alt="8ball">
-                    </button>
-                    <p>8 Ball Pool</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://ovoclassic.github.io/file/');">
-                    <button>
-                        <img src="./assets/OvO.png" alt="OvO"> 
-                    </button>
-                    <p>OvO</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://ovo2.pro/g/41');">
-                    <button>
-                        <img src="./assets/OvO2.png" alt="OvO2">
-                    </button>
-                    <p>OvO 2</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://jrh94vc33vp28pi1s5tpvk6sru5j6nvg-a-sites-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%252F60-second-burger-run.xml&container=enterprise&view=default&lang=en&country=AL');">
-                    <button>
-                        <img src="./assets/burger.png" alt="60secburgerrun">
-                    </button>
-                    <p>60 Second Burger Run</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.gameflare.com/embed/60-seconds-santa-run/');">
-                    <button>
-                        <img src="./assets/santa.png" alt="60secsantarun"> 
-                    </button>
-                    <p>60 Second Santa Run</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gnhustgames.github.io/timeshooter2/');">
-                    <button>
-                        <img src="./assets/shoot.png" alt="timeshooter"> 
-                    </button>
-                    <p>TimeShooter</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/drift-boss/index.html'">
-                    <button>
-                        <img src="./assets/driftboss.png" alt="driftboss">
-                    </button>
-                    <p>Drift Boss</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/vex5/index.html'">
-                    <button>
-                        <img src="./assets/vex5.png" alt="vex5">
-                    </button>
-                    <p>Vex 5</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/stickman-hook/index.html'">
-                    <button>
-                        <img src="./assets/stickmanhook.png" alt="stickmanhook">
-                    </button>
-                    <p>Stickman Hook</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/retro-bowl/index.html'">
-                    <button>
-                        <img src="./assets/retrobowl.png" alt="retrobowl">
-                    </button>
-                    <p>Retrobowl</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/bitlife/index.html'">
-                    <button>
-                        <img src="./assets/bitlife.png" alt="bitlife">
-                    </button>
-                    <p>Bitlife</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/geodash/index.html'">
-                    <button>
-                        <img src="./assets/geodash.png" alt="geomatry dash">
-                    </button>
-                    <p>Geomatry Dash</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://bloons-tower-defense.github.io/file/');">
-                    <button>
-                        <img src="./assets/btd.png" alt="btd">
-                    </button>
-                    <p>Balloons Tower Defence </p> 
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/fridaynightfunkin/index.html'">
-                    <button>
-                        <img src="./assets/fnf.png" alt="fnf">
-                    </button>
-                    <p>Friday Night Funkin </p> 
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://smartcart1.github.io/s88/angry-birds/');">
-                    <button>
-                        <img src="./assets/angrybirds.png" alt="angrybids">
-                    </button>
-                    <p>Angry Birds </p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://games.crazygames.com/en_US/portal-2d/index.html');">
-                    <button>
-                        <img src="./assets/portal.png" alt="portal"> 
-                    </button>
-                    <p>Portal </p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fbob-the-builder.xml&container=ig');">
-                    <button>
-                        <img src="./assets/bob.png" alt="bob">
-                    </button>
-                    <p>Bob the Builder</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/bloxors/index.html'">
-                    <button>
-                        <img src="./assets/bloxorz.png" alt="bloxorz">
-                    </button>
-                    <p>Blockorz</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.gameflare.com/embed/achievement-unlocked-2/');">
-                    <button>
-                        <img src="./assets/acunlocked2.png" alt="acu2">
-                    </button>
-                    <p>Achivement Unlocked 2</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/minecraft-15/index.html'">
-                    <button>
-                        <img src="./assets/minecraft.png" alt="minecraft">
-                    </button>
-                    <p>Minecraft 1.5</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/minecraft-18/index.html'">
-                    <button>
-                        <img src="./assets/minecraft.png" alt="minecraft">
-                    </button>
-                    <p>Minecraft 1.8</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/happywheels/index.html'">
-                    <button>
-                        <img src="./assets/happywheels.png" alt="happywheels">
-                    </button>
-                    <p>Happy Wheels</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.twoplayergames.org/embed/basket-random');">
-                    <button>
-                        <img src="./assets/basketrandom.png" alt="basketrandom"> 
-                    </button> 
-                    <p>Basket Random</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/webretro/index.html'">
-                    <button>
-                        <img src="./assets/retroarch.png" alt="retroarch">
-                    </button>
-                    <p>Webretro</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://static.arcadespot.com/retroemulator.php?system=gbc&game=2016/07/pokemon-gold.zip');">
-                    <button>
-                        <img src="./assets/pokemongold.png" alt="retroarch">
-                    </button>
-                    <p>Pokemon Gold</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://static.arcadespot.com/retroemulator.php?system=gbc&game=2016/07/pokemon-crystal.zip');">
-                    <button>
-                        <img src="./assets/pokemonecrystal.png" alt="retroarch">
-                    </button>
-                    <p>Pokemon Crystal</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://829627-952743.preview.editmysite.com/uploads/9/9/0/8/139890129/custom_themes/920586287177613906/files/smr.xml&container=ig');">
-                    <button>
-                        <img src="./assets/smrun.png" alt="retroarch">
-                    </button>
-                    <p>Super Mario Run</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://than1089.github.io/adventure-capitalist/');">
-                    <button>
-                        <img src="./assets/adventure.png" alt="av">
-                    </button>
-                    <p>Adventure Capitalist</p>
-                </div>
- <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://funnyshooter.github.io');">
-                    <button>
-                        <img src="./assets/funnyshooter.png" alt="av">
-                    </button>
-                    <p>Funny Shooter</p>
-                </div>
-                <div class="game-icon" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://jmw-v5.pages.dev/english/src/hole-io/');">
-                    <button>
-                        <img src="./assets/holeio.png" alt="holeio">
-                    </button> 
-                    <p>Hole.io</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/ctr/index.html'">
-                    <button>
-                        <img src="./assets/cuttherope.png" alt="cuttherope">
-                    </button>
-                    <p>Cut The Rope</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/dumbwaystodie/index.html'">
-                    <button>
-                        <img src="./assets/dwtd.png" alt="cuttherope">
-                    </button>
-                    <p>Dumb Ways to Die</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/ducklife1/index.html'">
-                    <button>
-                        <img src="./assets/ducklife.png" alt="cuttherope">
-                    </button>
-                    <p>DuckLife 1</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/doodle-jump/index.html'">
-                    <button>
-                        <img src="./assets/doodle.png" alt="cuttherope">
-                    </button>
-                    <p>Doodle Jump</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/phisibox/index.html'">
-                    <button>
-                        <img src="./assets/physibox.png" alt="cuttherope">
-                    </button>
-                    <p>PhisiBox</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/cookie-clicker/index.html'">
-                    <button>
-                        <img src="./assets/cookie1.jpeg" alt="cuttherope">
-                    </button>
-                    <p>CookieClicker</p>
-                </div>
-                <div class="game-icon" onclick="window.location.href='/school/gam/vex7/index.html'">
-                    <button>
-                        <img src="./assets/vex7.png" alt="cuttherope">
-                    </button>
-                    <p>Vex 7</p>
-                </div>
-            </div>
+      <center>
+            <div class="game-icons" id="game-icons">
+              </div>
         </center>
  <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
@@ -526,28 +233,33 @@
 
             gtag('config', 'G-WFWKKRRXLT');
         </script>
+        <script> 
 
-                <!--THEME SCRIPTS OMG :3-->
-    <script>
-        // nobodycares is a skiddy kid af LOL
-    
-    function initTheme() {
-        const savedTheme = localStorage.getItem('themeSwitch');
-        if (savedTheme) {
-            document.body.setAttribute('data-theme', savedTheme);
-            console.log(`Themes Loaded! :3 from nobodycares`)
-        }
-    }
-    
-    initTheme(); 
+    addEventListener("DOMContentLoaded", async (event) => {
+          const responce = await fetch('./games.json');
+          const gameData = await responce.json();
+           gameData.forEach(game => {
+            const gameicons = document.getElementById('game-icons')
 
-    setInterval(function() {
-            initTheme(); 
-  console.log("Refreshed Themes!");
-}, 2000);
+            const games = document.createElement('div')
+            games.classList.add('game-icon')
+            games.setAttribute('onclick', "location.href = ('" +  game.href + "')")
+
+            const gameimg = document.createElement('button')
+            const gameimage = document.createElement('img')
+            gameimage.src = game.img
+
+            const gamename = document.createElement('p')
+            gamename.innerText = game.name;
+
+            gameimg.appendChild(gameimage);
+            games.appendChild(gameimg);
+            games.appendChild(gamename);
+            gameicons.appendChild(games);
+        })
+    });
         </script>
-        
 </body>
     <script src="/uv/uv.bundle.js"></script>
     <script src="/uv/uv.config.js"></script>
-    <script src="/./assets/register-sw.js"></script>
+    <script src="/assets/js/onload.js"></script>

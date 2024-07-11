@@ -1,103 +1,112 @@
-
+const stockSW = "/uv/sw.js";
+const swAllowedHostnames = ["localhost", "127.0.0.1"];
+const close = localStorage.getItem('leave')
+const key = localStorage.getItem('key')
+const icon = localStorage.getItem('icon')
+const favicon = document.getElementById('favicon')
+const clickoff1 = localStorage.getItem('clickoff')
+const theme = localStorage.getItem('theme');
 //set the title
-addEventListener("DOMContentLoaded", (event) => {
-    document.addEventListener("visibilitychange", (event) => {
-        if (document.visibilityState == "visible") {
-const title = localStorage.getItem('title');
-document.title = title;
+addEventListener("DOMContentLoaded", async (event) => {
+    await registerSW();
+    initTheme();
+
+    if(theme === null) {
+    localStorage.setItem('theme', 'ghost')
+    } 
+
+    switch(icon){
+        case 'docs':
+        favicon.href = '/assets/img/docs.png'
+        document.title = "Google Docs";
+        break;
+        case 'drive':
+        favicon.href = '/assets/img/drive.png' 
+        document.title = "Google Drive";
+        break;
+        case 'desmos':
+        favicon.href = '/assets/img/desmos.png'
+        document.title = "Desmos";
+        break;
+        case 'canvas':
+        favicon.href = '/assets/img/canvas.png'
+        document.title = "Canvas";
+        break;
+        case 'classroom':
+        favicon.href = '/assets/img/classroom.png'
+        document.title = "Google Classroom";
+        break;
+    }
+
+    if(clickoff1 === 'true') {
+        document.addEventListener('visibilitychange', e=>{
+            if (document.visibilityState === 'visible') {
+                document.title = title
+                favicon.href = '/assets/img/ghost.png'
+           } else {
+                document.title = 'Google Docs'
+                favicon.href = '/assets/img/docs.png'
+           }  
+       })
+    }
+    if (close === 'on' ) {
+        window.onbeforeunload = function() {
+            return true;
         }
-    else {
+    } else {
+            console.log(`Anti Close Disabled!`)
+        }
+    if (key === null) {
+        localStorage.setItem('key', '`')
+    }
+    document.addEventListener('keydown', function(event) {
+        if (event.key === key) {
+            top.location.replace("https://www.google.com")
+            console.log(`Key PRESSED RUN URN RUN`)
+        }
+      })
+            });
 
-    }
-});
-function changeicon(){
-    const icon = localStorage.getItem('icon')
-
-    if (icon === 'docs') {
-        const favicon = document.getElementById("favicon"); 
-        favicon.setAttribute("href", "/assets/img/docs.png");
-    }
-
-    if (icon === 'drive') {
-        const favicon = document.getElementById("favicon"); 
-        favicon.setAttribute("href", "/assets/img/drive.png");
-    }
-
-    if (icon === 'desmos') {
-        const favicon = document.getElementById("favicon"); 
-        favicon.setAttribute("href", "/assets/img/desmos.png");
-    }
-
-    if (icon === 'canvas') {
-        const favicon = document.getElementById("favicon"); 
-        favicon.setAttribute("href", "/assets/img/canvas.png");
-    }
-
-    if (icon === 'classroom') {
-        const favicon = document.getElementById("favicon"); 
-        favicon.setAttribute("href", "/assets/img/classroom.png");
-    }
-
-    else {
-    }
-}
-setInterval(function() {
-        if (document.visibilityState == "visible") {
-
-    let title = localStorage.getItem('title')
-    if (title === null) {
-        document.title = 'Ghost';
-        localStorage.setItem('title', 'Ghost')
-    }
-    else {
-        document.title = title;
-    }
-    changeicon()
-} 
-else {
-    console.log(`no`)
-}
- }, 2000); });
-//themes
-            // nobodycares is a skiddy kid af LOL
-            function initTheme() {
-                const savedTheme = localStorage.getItem('themeSwitch');
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
                 if (savedTheme) {
                     document.body.setAttribute('data-theme', savedTheme);
-                }
-            }
-            initTheme()
-            
-            setInterval(function() {
-                initTheme()
-         }, 2000);
+                  }
+                  if(savedTheme === 'green') {
+                    document.body.style.backgroundColor =  '#49d533;';
+                    document.body.setAttribute('data-theme', savedTheme);
+                  }
+                 }
 
-            //anti close
-            addEventListener("DOMContentLoaded", (event) => {
-            const close = localStorage.getItem('leave')
-
-            if (close === 'on' ) {
-                console.log(`Anti Close Enabled`)
-                window.onbeforeunload = function() {
-                    return true;
+            async function registerSW() {
+                if (!navigator.serviceWorker) {
+                if (
+                  location.protocol !== "https:" &&
+                  !swAllowedHostnames.includes(location.hostname)
+                )
+                  throw new Error("Service workers cannot be registered without https.");
+                
+                throw new Error("Your browser doesn't support service workers.");
                 }
-            }
-                else {
-                    console.log(`Anti Close Disabled!`)
-                    console.log(`No Further Action Needed`)
+                
+                await navigator.serviceWorker.register(stockSW);
                 }
-            });
 
-            addEventListener("DOMContentLoaded", (event) => {
-                const key = localStorage.getItem('key')
-
-                if (key === null) {
-                    localStorage.setItem('key', '`')
+                function blank() {
+                    var win = window.open()
+                    var url = "/"
+                    var iframe = win.document.createElement('iframe')
+                    top.location.replace("https://www.google.com/search?q=how+to+find+ghosts")
+                    iframe.style.position = "fixed";
+                    iframe.style.top = 0;
+                    iframe.style.bottom = 0;
+                    iframe.style.left = 0;
+                    iframe.style.right = 0;
+                    iframe.style.border  = "none"
+                    iframe.style.outline = "none";
+                    iframe.style.width = "100%"
+                    iframe.style.height = "100%";
+                    iframe.src = url
+                
+                    win.document.body.appendChild(iframe)
                 }
-                document.addEventListener('keydown', function(event) {
-                    if (event.key === key) {
-                        top.location.replace("https://www.google.com")
-                        console.log(`Key PRESSED RUN URN RUN`)
-                    }
-                  });
-            });
