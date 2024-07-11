@@ -1,4 +1,3 @@
-//nobodyacres is a skiddy kid af
 
 const clickoff1 = localStorage.getItem('clickoff')
 const favicon = document.getElementById("favicon"); 

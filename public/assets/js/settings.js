@@ -145,7 +145,6 @@ function theme6() {
 }
 
       function tabs() {
-        console.log(`Debug`)
       }
 
       function abt() {
