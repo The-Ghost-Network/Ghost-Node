@@ -2,14 +2,12 @@
 import { createBareServer } from '@tomphttp/bare-server-node';
 import express from 'express';
 import http from 'node:http';
-import decodeUrl from '@titaniumnetwork-dev/ultraviolet'
 // i think were imporing shit here
-
 
 const app = express();
 const bare = createBareServer("/bare/");
 const server = http.createServer();
-const PORT = 8080;
+const PORT = 5505;
 
 
 app.use(express.static("./public"));
@@ -34,6 +32,7 @@ server.on("upgrade", (req, socket, head) => {
         socket.end();
     }
 });
+
 
 
 ///idrk what port were listinging on

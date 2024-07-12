@@ -148,12 +148,70 @@ function theme6() {
       }
 
       function abt() {
-        const abt = localStorage.getItem('abt')
-        if (abt === 'off') {
+        const abtt = localStorage.getItem('abt')
+        if (abtt === 'off') {
         localStorage.setItem('abt', 'on')
+        alert('Please Allow Popups And Redirects When the Page Loads :D')
           location.href = '/'
         }else {
           localStorage.setItem('abt', 'off')
           location.href = '/'
         }
       }
+      
+      function eruda1() {
+        const e = localStorage.getItem('eurda')
+        switch(e) {
+          case "off":
+          localStorage.setItem('eurda', 'on')
+          location.href = '/'
+          break;
+          case "on":
+          localStorage.setItem('eurda', 'off')
+          location.href = '/'
+          break;
+        }
+      }
+
+      addEventListener("DOMContentLoaded", (event) => {
+        const switch1 = document.getElementById('eruda')
+        const switch2 = document.getElementById('clickoff')
+        const switch3 = document.getElementById('abt')
+        const switch4 = document.getElementById('close')
+        const er = localStorage.getItem('eurda')
+        const cli = localStorage.getItem('clickoff')
+        const a = localStorage.getItem('abt')
+        const cla = localStorage.getItem('leave')
+
+        switch(er){
+          case "on":
+          switch1.checked = 'true'
+          break;
+          case "off":
+          break;
+        }
+
+        switch(cli) {
+          case "on":
+          switch2.checked = "true"
+          break;
+          case "off":
+          break;
+        }
+
+        switch(a) {
+          case "on":
+          switch3.checked = "true"
+          break;
+          case "off":
+          break;
+        }
+
+        switch(cla) {
+          case "on":
+          switch4.checked = 'true'
+          break;
+          case "off":
+          break;
+        }
+      });

@@ -19,5 +19,8 @@
     "express": "^4.19.2",
     "http": "^0.0.1-security",
     "node": "^18.20.3"
+  },
+  "devDependencies": {
+    "eruda": "^3.1.0"
   }
 }

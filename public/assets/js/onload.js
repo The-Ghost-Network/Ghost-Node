@@ -6,10 +6,34 @@ const icon = localStorage.getItem('icon')
 const favicon = document.getElementById('favicon')
 const clickoff1 = localStorage.getItem('clickoff')
 const theme = localStorage.getItem('theme');
+const leave = localStorage.getItem('leave')
+const er = localStorage.getItem('eurda')
+const blanke = localStorage.getItem('abt')
 //set the title
 addEventListener("DOMContentLoaded", async (event) => {
     await registerSW();
     initTheme();
+
+    switch(blanke) {
+        case "on":
+        blank();
+        break;
+        case "off":
+        console.log(``)
+        break;
+    }
+
+    switch(er) {
+        case "on":
+        eruda.init();
+        break;
+        case "off":
+        break;
+        case null:
+        localStorage.setItem('eruda', 'off')
+        break;
+    }
+
 
     if(theme === null) {
     localStorage.setItem('theme', 'ghost')
@@ -38,10 +62,20 @@ addEventListener("DOMContentLoaded", async (event) => {
         break;
     }
 
-    if(clickoff1 === 'true') {
+    switch(leave){
+        case "on":
+        window.onbeforeunload = function() {
+        return true;
+        };
+        break;
+        case "off":
+        break;
+    }
+
+    if(clickoff1 === 'on') {
         document.addEventListener('visibilitychange', e=>{
             if (document.visibilityState === 'visible') {
-                document.title = title
+                document.title = 'Ghost'
                 favicon.href = '/assets/img/ghost.png'
            } else {
                 document.title = 'Google Docs'
@@ -110,3 +144,15 @@ addEventListener("DOMContentLoaded", async (event) => {
                 
                     win.document.body.appendChild(iframe)
                 }
+                if(blanke === null) {
+                    localStorage.setItem('abt', 'off')
+                }
+
+                if (clickoff1 === null) {
+                    localStorage.setItem('clickoff', 'off')
+                }
+
+                if (close === null) {
+                    localStorage.setItem('leave', 'off')
+                }
+                
