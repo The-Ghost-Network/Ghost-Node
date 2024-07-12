@@ -58,7 +58,6 @@ document.addEventListener('DOMContentLoaded', () => {
       "hentai",
       "pornhub.com",
       "xxx.com",
-      "4chan.org",
-      "test"  //unblock this one later please
+      "4chan.org"
     ]
   })
