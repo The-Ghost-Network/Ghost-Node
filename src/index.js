@@ -7,7 +7,7 @@ import http from 'node:http';
 const app = express();
 const bare = createBareServer("/bare/");
 const server = http.createServer();
-const PORT = 5505;
+const PORT = 8080;
 
 
 app.use(express.static("./public"));
