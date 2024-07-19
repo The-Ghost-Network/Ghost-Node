@@ -50,7 +50,7 @@ function formatSearch(query) {
   return new URL(engine + `${query}`).toString()
 }
 
-  const blocked = [
+  const blocked = [ 
     "porn",
     "sex",
     "xxx",

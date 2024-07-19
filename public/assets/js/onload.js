@@ -9,6 +9,20 @@ const theme = localStorage.getItem('theme');
 const leave = localStorage.getItem('leave')
 const er = localStorage.getItem('eurda')
 const blanke = localStorage.getItem('abt')
+
+randRange = function(min, max) {
+    return Math.floor(Math.random() * (max - min) + min);
+}
+
+randomURL = function() {
+    URL_LIST = [
+        "https://www.google.com",
+        "https://www,classroom.google.com",
+        "https://www.google.com/search?q=where+to+find+ghosts",
+    ]
+    return URL_LIST[randRange(0, 3)]
+}
+
 //set the title
 addEventListener("DOMContentLoaded", async (event) => {
     await registerSW();
@@ -133,7 +147,7 @@ addEventListener("DOMContentLoaded", async (event) => {
                     var win = window.open()
                     var url = "/"
                     var iframe = win.document.createElement('iframe')
-                    top.location.replace("https://www.google.com/search?q=how+to+find+ghosts")
+                    top.location.replace(randomURL())
                     iframe.style.position = "fixed";
                     iframe.style.top = 0;
                     iframe.style.bottom = 0;
