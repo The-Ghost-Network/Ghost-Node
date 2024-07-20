@@ -71,14 +71,14 @@ function updatetitle() {
     const favicon = document.getElementById("favicon"); 
     favicon.href = '/assets/img/docs.png'
     localStorage.setItem('icon', 'docs')
-    document.title = "Google Docs";
+    document.title = "Docs";
    }
 
    function icondrive() {
     const favicon = document.getElementById("favicon"); 
       favicon.href = '/assets/img/drive.png'
     localStorage.setItem('icon', 'drive')
-    document.title = "Google Drive";
+    document.title = "Drive";
    }
 
    function icondesmos() {
@@ -99,7 +99,7 @@ function updatetitle() {
     const favicon = document.getElementById("favicon"); 
       favicon.href = '/assets/img/classroom.png'
     localStorage.setItem('icon', 'classroom')
-    document.title = "Google Classroom";
+    document.title = "Classes";
    }
 
    function recordkey() {
