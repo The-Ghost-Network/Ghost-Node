@@ -173,3 +173,7 @@ addEventListener("DOMContentLoaded", async (event) => {
                 if (close === null) {
                     localStorage.setItem('leave', 'off')
                 }
+//if (localStorage.getItem("BARE_URL") === 'def') {
+  //  __uv$config.bare = "/bare/"    
+//}
+//__uv$config.bare = localStorage.getItem("BARE_URL") 
