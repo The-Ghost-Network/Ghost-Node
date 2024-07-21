@@ -10,3 +10,7 @@ self.__uv$config = {
     config: '/uv/uv.config.js',
     sw: '/uv/uv.sw.js',
 };
+
+if (localStorage.getItem("BARE_URL") != null) {
+    self.__uv$config.bare = localStorage.getItem("BARE_URL")
+}
