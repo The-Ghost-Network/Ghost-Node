@@ -24,8 +24,10 @@ randomURL = function() {
 }
 
 //set the title
-addEventListener("DOMContentLoaded", async (event) => {
+window.addEventListener("chemicalLoaded", function(e) {
     new Ultraviolet.BareClient();
+});
+addEventListener("DOMContentLoaded", async (event) => {
     await registerSW();
     initTheme();
 
