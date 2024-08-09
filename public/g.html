@@ -55,12 +55,14 @@
 </body>
 <script>
     addEventListener("DOMContentLoaded", (event) => {
-        new Ultraviolet.BareClient();
         const frame = document.getElementById('frame')
         const url = localStorage.getItem('url')
 
         //read the url
         frame.src = url
     });
+window.addEventListener("chemicalLoaded", function(e) {
+    new Ultraviolet.BareClient();
+});
 </script>
 </html>
