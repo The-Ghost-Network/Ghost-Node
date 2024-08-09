@@ -17,8 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
       // Run the formatSearch function on the current value of the input
       const query = formatSearch(input.value)
 
-      // Redirect to [uv prefix] + [encoded search query]
-      window.location.href = __uv$config.prefix + __uv$config.encodeUrl(query)
+      //Set the URL In LocalStorage
+      localStorage.setItem('url', __uv$config.prefix + __uv$config.encodeUrl(query))
+
+      // Redirect to g.html
+      window.location.href = '/g.html'
     }
   }
 
@@ -35,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function formatSearch(query) {
   const engine = localStorage.getItem('engine')
   if (engine === null){
-    localStorage.setItem('engine', 'https://www.google.com/search?=')
+    localStorage.setItem('engine', 'https://www.google.com/search?q=')
   }
 
   try {

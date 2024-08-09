@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="school.css" />
+<head>
 <link rel="stylesheet" href="/assets/css/index.css"/>
 <link rel="stylesheet" href="/assets/css/themes.css"/>
-<script src="/chemical.js"></script>
-
+<script data-transport="libcurl" src="/chemical.js"></script>
 <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
 <link rel="shortcut icon" id="favicon" href="Ghost.png" type="image/png">
 <title>Ghost</title>
@@ -194,6 +193,7 @@ body {
   }
 }
 </style>
+</head>
 <body>
      <nav class="navbar">
     <div class="container">
@@ -246,7 +246,7 @@ body {
 
             const games = document.createElement('div')
             games.classList.add('game-icon')
-            games.setAttribute('onclick', "location.href = ('" +  game.href + "')")
+            games.setAttribute('onclick', "localStorage.setItem('url', '" + game.href + "'); window.location.href = '/g.html'")
 
             const gameimg = document.createElement('button')
             const gameimage = document.createElement('img')

@@ -1,14 +1,21 @@
 import { ChemicalServer } from "chemicaljs";
-// import { createBareServer } from '@tomphttp/bare-server-node';
-import express from 'express'   ;
-import http from 'node:http';
-// i think were imporing shit here
+import express from 'express';
 
-const app = new ChemicalServer();
-const PORT = 8080;
+const PORT = 8080
+const server = new ChemicalServer({
+    default: "uv",
+    uv: true,
+    scramjet: false,
+    rammerhead: false
+});
 
+server.use(express.static("public", {
+}));
 
+server.error((req, res) => {
+    res.status(404);
+    res.send("404 Not Found");
+});
 
-// The sigma shutdown
-app.listen(PORT);
-app.use(express.static("public"))
+server.listen(PORT);
+
