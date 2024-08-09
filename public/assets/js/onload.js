@@ -25,6 +25,7 @@ randomURL = function() {
 
 //set the title
 addEventListener("DOMContentLoaded", async (event) => {
+    new Ultraviolet.BareClient();
     await registerSW();
     initTheme();
 
