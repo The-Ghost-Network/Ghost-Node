@@ -11,7 +11,7 @@
   "author": "The Ghost Network Team",
   "license": "ISC",
   "dependencies": {
-    "@titaniumnetwork-dev/ultraviolet": "^3.1.2",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.7",
     "@tomphttp/bare-client": "^2.2.0-alpha",
     "express": "^4.19.2",
     "http": "^0.0.1-security",
