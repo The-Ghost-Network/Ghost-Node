@@ -278,7 +278,7 @@
                 <span style="animation: owo .5s; animation-delay: 2s; color: #5ffe43;"> :D</span>
                 </p>
                 </div>
-                <button class="button2" onclick="blank()">Open in about:blank</button>
+                <button class="button2" onclick="bl()">Open in about:blank</button>
             <div class="trendingtop">
                 <center>
                     <h1>Trending Ga<x>me</x>s</h1>
@@ -408,6 +408,31 @@
             </button>
             <a onclick="parent.open('https://github.com/The-Ghost-Network/Ghost-Node', '_blank');"><i style="font-size:40px; position: fixed; left: 10px; bottom: 10px; cursor: pointer;" class="fa-brands fa-github active"></i></a>
             <a onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"><i style="font-size:40px; position: fixed; left: 70px; bottom: 10px; cursor: pointer;" class="fa-brands fa-discord active"></i></a>
+            <script>
+            function bl() {
+                    var currentUrl = top.location.href;
+                    if (currentUrl === "about:blank") {
+                      console.log(currentUrl);
+                    } else {
+                    var win = window.open()
+                    var url = "/"
+                    var iframe = win.document.createElement('iframe')
+                    top.location.replace(randomURL())
+                    iframe.style.position = "fixed";
+                    iframe.style.top = 0;
+                    iframe.style.bottom = 0;
+                    iframe.style.left = 0;
+                    iframe.style.right = 0;
+                    iframe.style.border  = "none"
+                    iframe.style.outline = "none";
+                    iframe.style.width = "100%"
+                    iframe.style.height = "100%";
+                    iframe.src = url
+                  
+                    win.document.body.appendChild(iframe)
+                    }
+                  }
+                </script>
 </body>
 
 </html>
