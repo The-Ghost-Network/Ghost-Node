@@ -35,6 +35,7 @@
     </script>
     <title>Google Classroom</title>
     <script src="/bearux/index.js"></script>
+    <script src="/bearux/worker.js"></script>
     <script src="/epox/index.js"></script>
     <script src="/search/uv.bundle.js"></script>
     <script src="/search/uv.config.js"></script>
@@ -281,6 +282,10 @@ input[type='text'] {
       const replacedurlV3 = url.replace("/u/query/", "/search/");
         localStorage.setItem("url", replacedurlV3);
         frame.src = replacedurlV3;
+        new Ultraviolet.BareClient();
+        await connection.setTransport("/epox/index.mjs", [
+            { wisp: wispUrl },
+          ]);
     }
     });
 
