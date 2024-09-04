@@ -1,68 +1,500 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" id="favicon" href="/assets/img/classroom.png" type="image/png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
-    <link rel="stylesheet" href="/assets/css/index.css" />
-    <link rel="stylesheet" href="./assets/css/themes.css" />
+  <head>
+    <script
+      src="https://kit.fontawesome.com/fcaf79e23b.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      id="favicon"
+      href="/assets/img/classroom.png"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <script data-transport="libcurl" src="/chemical.js"></script>
- <!-- Google tag (gtag.js) -->
-     <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
-     <script>
-         window.dataLayer = window.dataLayer || [];
-
-         function gtag() {
-             dataLayer.push(arguments);
-         }
-         gtag('js', new Date());
-
-         gtag('config', 'G-WFWKKRRXLT');
-     </script>
-    <title>Google Classroom</title>
-
-    <style>
-        body {
-            background-color: linear-gradient(135deg, #1e1e2e, #534158);
-            color:white;
-            margin: none;
-            overflow: hidden;
-        }
-
-        .mainiframe {
-            border: none;
-            outline: none;
-            position: fixed;
-            border-radius: 10px;
-            height: 100vh;
-            width: 100vw;
-            z-index: 999;
-        }
-    </style>
-</head>
-<body>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"
+    ></script>
     <script>
-    function LoadFrame() {
-        const frame = document.getElementById('frame')
-        localStorage.setItem('url', frame.src)
-    }
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-WFWKKRRXLT");
     </script>
-<iframe class="mainiframe" id="frame" onload="setTimeout(function() { LoadFrame(); }, 3000);"></iframe>
+    <title>Google Classroom</title>
+    <script src="/bearux/index.js"></script>
+    <script src="/epox/index.js"></script>
+    <script src="/search/uv.bundle.js"></script>
+    <script src="/search/uv.config.js"></script>
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+    * {
+      font-family: "Be Vietnam Pro";
+    }
+    body {
+      background: linear-gradient(135deg, #1e1e2e, #534158) !important;
+      overflow: hidden;
+      margin: 0;
+    }
 
-</body>
-<script>
-    addEventListener("DOMContentLoaded", (event) => {
-        const frame = document.getElementById('frame')
-        const url = localStorage.getItem('url')
+    .mainiframe {
+      border: none;
+      outline: none;
+      position: fixed;
+      height: calc(100vh - 50px) !important;
+      width: 100% !important;
+      padding: none;
+      right: 0;
+      left: 0;
+      bottom: 0px;
+      z-index: -1;
+    }
 
-        //read the url
-        frame.src = url
+    .topbar {
+      width: 100vw;
+      height: 50px;
+      background-color: #07090d;
+      overflow: hidden;
+      border: none;
+      transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
+      font-weight: 300;
+      top: 0px;
+      position: absolute;
+      display: inline;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .topbar-content {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start; 
+      width: 100%;
+      padding-left: 10px; 
+}
+
+
+    .topbtn {
+      color: white;
+      background-color: transparent;
+      border: 1px transparent;
+      transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
+      margin-top: 5px;
+      margin-right: 10px;
+    }
+
+    .topbtn:hover {
+      background-color: #3e47575d;
+      border: 1px #3e47575d;
+      transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
+      border-radius: 5px;
+
+    }
+
+    .topbtn:active {
+      background-color: #30374425;
+    }
+
+    @keyframes growOut {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+@keyframes growin {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0);
+  }
+}
+
+.hiddenuvpanel {
+  display: none;
+  animation: growin .25s;
+}
+
+.uvpanel {
+      animation: growOut .25s;
+      top: 50px;
+      border-radius: 10px;
+      background-color: #0e121b;
+      width: 200px;
+      height: 100px;
+      position: absolute;
+}
+
+.uvbutton {
+  background-color:rgb(20, 23, 43);
+  border: none;
+  width: 180px;
+  height: 30px;
+  color: white;
+  margin-left: 11px;
+  margin-top: 10px;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 400;
+}
+
+.uvbutton:hover {
+  background-color: #3e47575d;
+  transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
+  border-radius: 5px;
+}
+
+.uvbutton:active {
+  background-color: #30374425;
+}
+
+input[type='text'] {
+  width: 85%;
+  height: 15px;
+  background-color: #0e121b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  margin-top: 3px !important;
+  font-family: "Be Vietnam Pro", sans-serif;
+  display: inline;
+}
+  </style>
+  <body style="background: linear-gradient(135deg, #1e1e2e, #534158)">
+    <div class="topbar" id="topbar">
+      <div class="topbar-content">
+        <button class="topbtn" id="panelbttn" onclick="openswitchpanel()">
+          <span class="material-symbols-outlined"> page_info </span>
+        </button>
+        
+      <button class="topbtn" id="fwdbttn" onclick="forward()" style="left: 10px;">
+        <span class="material-symbols-outlined"> arrow_forward </span>
+      </button>
+      <button class="topbtn" id="rfshbttn" onclick="refresh()" style="left: 30px;">
+        <span class="material-symbols-outlined"> refresh </span>
+      </button>
+      <button class="topbtn" id="bckbttn" onclick="back()" style="left: 30px;">
+        <span class="material-symbols-outlined"> arrow_back </span>
+      </button>
+      <input type="text" class="input" id="forminput">
+    </div>
+    </div>
+    <div class="hiddenuvpanel" id="uvpanel">
+      <button class="uvbutton" onclick="switchUV3()">
+        <a>
+        Ultraviolet v3.2.7
+      </a>
+      </button>
+      <button class="uvbutton" onclick="switchUV2()">
+      <a>
+        Ultraviolet v2.0.0
+      </a>
+      </button>
+    </div>
+    <script>
+      function setformurl() {
+        if(document.activeElement === document.getElementById('forminput')) {
+        }else {
+        const frame = document.getElementById("frame");
+    const form = document.getElementById('forminput')
+    form.value = ""
+    const geturl = frame.contentWindow.location.href
+    const urlnohttp = geturl.replace("https://", "");
+    const urlnopath = urlnohttp.replace(location.hostname, "")
+    const decodedurl = urlnopath.replace("/u/query/", "")
+    console.log(decodedurl)
+    form.value = __uv$config.decodeUrl(decodedurl);
+    localStorage.setItem("url", frame.src);
+        }
+  }
+
+  function setformurlv3() {
+    if(document.activeElement === document.getElementById('forminput')) {
+    }else {
+    const frame = document.getElementById("frame");
+    const form = document.getElementById('forminput')
+    form.value = ""
+    const geturl = frame.contentWindow.location.href
+    const urlnohttp = geturl.replace("https://", "");
+    const urlnopath = urlnohttp.replace(location.hostname, "")
+    const decodedurl = urlnopath.replace("/search/", "")
+    console.log(decodedurl)
+    form.value = __uv$config.decodeUrl(decodedurl);
+    localStorage.setItem("url", frame.src);
+    }
+  }
+        const UVver = localStorage.getItem('UVver')
+    function loadURL() {
+    switch(UVver) {
+      case "3":
+      setformurlv3();
+      console.log('url loaded')
+      break;
+      case "2": 
+      setformurl();
+      console.log('url loaded')
+      break;
+      case null:
+      setformurlv3();
+      console.log('url loaded')
+      break;
+    }
+  }
+  </script>
+    <iframe class="mainiframe" id="frame" onLoad="loadURL()"></iframe>
+  </body>
+  <script type="module">
+    addEventListener("DOMContentLoaded", async (event) => {
+      loadUV();
+      const frame = document.getElementById("frame");
+      const url = localStorage.getItem("url");
+      //read the url
+      frame.src = url;
+      const form = document.getElementById('forminput')
+      setInterval(function() { loadURL() }, 3000);
+
+      //failsafe to prevent invalid urls
+      if(UVver === '2') {
+      if(url.includes('/search/')) {
+        const replacedurlV2 = url.replace("/search/", "/u/query/");
+        localStorage.setItem("url", replacedurlV2);
+        frame.src = replacedurlV2;
+      }else {
+      }
+    }else {
+      const replacedurlV3 = url.replace("/u/query/", "/search/");
+        localStorage.setItem("url", replacedurlV3);
+        frame.src = replacedurlV3;
+    }
     });
-window.addEventListener("chemicalLoaded", function(e) {
-    new Ultraviolet.BareClient();
+
+    async function loadUV() {
+      const version = localStorage.getItem("UVver");
+      //get the version of Ultraviolet the user selected
+      switch (version) {
+        case "2":
+          var bundle1 = document.createElement("script");
+          bundle1.src = "/u/uv.bundle.js";
+          var config1 = document.createElement("script");
+          config1.src = "/u/uv.config.js";
+          document.head.appendChild(config1);
+          document.head.appendChild(bundle1);
+          await registerSWv2();
+          console.log("Loaded Ultraviolet");
+          break;
+        case "3":
+          var bundle2 = document.createElement("script");
+          bundle2.src = "/search/uv.bundle.js";
+          var config2 = document.createElement("script");
+          config2.src = "/search/uv.config.js";
+          document.head.appendChild(bundle2);
+          document.head.appendChild(config2);
+          await registerSW();
+          await connection.setTransport("/epox/index.mjs", [
+            { wisp: wispUrl },
+          ]);
+          console.log("Loaded Ultraviolet");
+          break;
+        case null:
+          console.log("ultraviolet version not selected using v3");
+          var bundle = document.createElement("script");
+          bundle.src = "/search/uv.bundle.js";
+          var config = document.createElement("script");
+          config.src = "/search/uv.config.js";
+          document.head.appendChild(bundle);
+          document.head.appendChild(config);
+          await registerSW();
+          await connection.setTransport("/epox/index.mjs", [
+            { wisp: wispUrl },
+          ]);
+          localStorage.setItem("UVver", "3");
+      }
+    }
+  </script>
+  <script>
+    let wispUrl =
+      (location.protocol === "https:" ? "wss" : "ws") +
+      "://" +
+      location.host +
+      "/wisp/";
+    const connection = new BareMux.BareMuxConnection("/bearux/worker.js");
+    const swAllowedHostnames = ["localhost", "127.0.0.1"];
+    const stockSW = "/search/sw.js";
+    localStorage.setItem("nav", "0");
+    const iframe = document.getElementById("frame");
+    const nav = document.getElementById("topbar");
+    const navbttn = document.getElementById("navbttn1");
+    const uvurl = localStorage.getItem("url");
+    const spanel = document.getElementById('spanel');
+    const panelbttn = document.getElementById("panelbttn");
+    const uvpanel = document.getElementById('uvpanel');
+    const panel2bttn = document.getElementById('pnlbttn');
+    //all iframe functions
+
+    function refresh() {
+      iframe.src = frame.src;
+    }
+
+    function back() {
+      iframe.contentWindow.history.back();
+    }
+
+    function forward() {
+      iframe.contentWindow.history.forward();
+    }
+
+    async function switchUV2() {
+      alert('This will refresh the page. Ultraviolet V2.0.0 uses bare which sends data unencrypted to the server.')
+      localStorage.setItem("UVver", "2");
+      const replacedurlV2 = uvurl.replace("/search/", "/u/query/");
+      localStorage.setItem("url", replacedurlV2);
+      localStorage.setItem("swregistered", "");
+      //unregister the other ultraviolet service worker
+      await unregisterSW();
+      await location.reload();
+    }
+
+    async function switchUV3() {
+      alert('This will refresh the page. Ultraviolet V3.2.3 uses wisp which sends data encrypted to the server.')
+      localStorage.setItem("UVver", "3");
+      const replacedurlV3 = uvurl.replace("/u/query/", "/search/");
+      localStorage.setItem("url", replacedurlV3);
+      localStorage.setItem("swregistered", "");
+      //unregister the other ultraviolet service worker
+      await unregisterSW();
+      await location.reload();
+    }
+
+    function openswitchpanel() {
+      uvpanel.classList.remove('hiddenuvpanel')
+      uvpanel.classList.add('uvpanel')
+      panelbttn.setAttribute("onclick", "closeswitchpanel()");
+    }
+
+    function closeswitchpanel() {
+      uvpanel.classList.remove('uvpanel')
+      uvpanel.classList.add('hiddenuvpanel')
+      panelbttn.setAttribute("onclick", "openswitchpanel()");
+    }
+
+    function unregisterSW() {
+      navigator.serviceWorker.getRegistrations().then((registrations) => {
+        for (const registration of registrations) {
+          registration.unregister();
+        }
+      });
+    }
+
+    async function registerSW() {
+      if (!navigator.serviceWorker) {
+        if (
+          location.protocol !== "https:" &&
+          !swAllowedHostnames.includes(location.hostname)
+        )
+          throw new Error(
+            "Service workers cannot be registered without https.",
+          );
+
+        throw new Error("Your browser doesn't support service workers.");
+      }
+
+      await navigator.serviceWorker.register(stockSW);
+      if (localStorage.getItem("swregistered") === "true") {
+      } else {
+        localStorage.setItem("swregistered", "true");
+        location.reload();
+      }
+    }
+    const stockSWv2 = "/u/sw.js";
+    async function registerSWv2() {
+      if (!navigator.serviceWorker) {
+        if (
+          location.protocol !== "https:" &&
+          !swAllowedHostnames.includes(location.hostname)
+        )
+          throw new Error(
+            "Service workers cannot be registered without https.",
+          );
+
+        throw new Error("Your browser doesn't support service workers.");
+      }
+      await navigator.serviceWorker.register(stockSWv2);
+      if (localStorage.getItem("swregistered") === "true") {
+      } else {
+        localStorage.setItem("swregistered", "true");
+        location.reload();
+      }
+    }
+
+
+    document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector(".input");
+  input.addEventListener("keydown", handleInput);
+  const uvver = localStorage.getItem("UVver");
+  function handleInput(e) {
+    if (e.key !== "Enter") return;
+    if (containsBlockedKeyword(input.value, blocked)) {
+      window.location.replace("/blocked.html");
+    } else {
+      const query = formatSearch(input.value);
+
+      if (uvver === "2") {
+        frame.src = "/u/query/" +  __uv$config.encodeUrl(query);
+        setformurl();
+      } else {
+        frame.src = "/search/" +  __uv$config.encodeUrl(query);
+        setformurlv3();
+      }
+    }
+  }
+  function containsBlockedKeyword(input, blockedList) {
+    for (let i = 0; i < blockedList.length; i++) {
+      if (input.includes(blockedList[i])) {
+        return true;
+      }
+    }
+    return false;
+  }
+  function formatSearch(query) {
+    const engine = localStorage.getItem("engine");
+    if (engine === null) {
+      localStorage.setItem("engine", "https://www.google.com/search?q=");
+    }
+    try {
+      return new URL(query).toString();
+    } catch (e) {}
+    try {
+      const url = new URL(`https://${query}`);
+      if (url.hostname.includes(".")) return url.toString();
+    } catch (e) {}
+    return new URL(engine + `${query}`).toString();
+  }
+  const blocked = [
+    "porn",
+    "sex",
+    "xxx",
+    "hentai",
+    "pornhub.com",
+    "xxx.com",
+    "4chan.org",
+  ];
 });
-</script>
+
+  </script>
 </html>

@@ -1,9 +1,13 @@
 {
-  "name": "ghost-node-wrapper",
-  "version": "1.0.0",
+  "name": "ghost-node",
+  "version": "2.0.0",
   "description": "**Join The Discord Server!**\r https://dsc.gg/The-Ghost-Network\r # Ghost (But its Node!)",
-  "main": "src/index.js",
+  "main": "index.js",
   "dependencies": {
+    "@mercuryworkshop/bare-mux": "^2.0.4",
+    "@mercuryworkshop/epoxy-transport": "^2.1.8",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.3",
+    "@tomphttp/bare-server-node": "^2.0.3",
     "accepts": "^1.3.8",
     "array-flatten": "^1.1.1",
     "async-exit-hook": "^2.0.1",
@@ -12,7 +16,6 @@
     "bytes": "^3.1.2",
     "call-bind": "^1.0.7",
     "chalk": "^5.3.0",
-    "chemicaljs": "^1.6.5",
     "commander": "^10.0.1",
     "content-disposition": "^0.5.4",
     "content-type": "^1.0.5",
@@ -85,10 +88,10 @@
     "ws": "^8.17.0"
   },
   "scripts": {
-    "start": "node src/index.js"
+    "start": "node index.js"
   },
   "type": "module",
   "keywords": [],
-  "author": "The Ghost Team",
+  "author": "The Ghost Network Team",
   "license": "ISC"
 }

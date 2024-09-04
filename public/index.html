@@ -1,413 +1,273 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
-<script src="/chemical.js"></script>
-<style>
-
-    body {
-        color: grey;
-        font-family: 'Be Vietnam Pro', sans-serif;
-        background-color: #171717;
-    }
-
-    .search-container {
-        display: flex;
-        align-items: center;
-        position: relative;
-        margin-right: auto;
-        margin-left: 10px;
-        z-index: 1;
-    }
-
-    .search {
-        padding: 15px 18px;
-        border: none;
-        width: 1000px;
-        border-radius: 5px;
-        background-color: floralwhite;
-        color: var(--main-text-color);
-        outline: none;
-        margin-right: 10px;
-        z-index: 1;
-    }
-
-        .search:focus::placeholder {
-            color: floralwhite;
-            padding: 20px 15px;
-            z-index: 1;
-        }
-
-
-    p.ex2 {
-        font-size: 50px;
-        color: white;
-        padding-top: 10px;
-    }
-
-    p {
-        color: white;
-        padding: 20px 15px;
-    }
-
-    xn {
-        font-size: 30;
-    }
-
-.nav-links li a:hover {
-  color: #ff6666 ;
-}
-
-/* I LOVE CATPUCCIN :DDDDDDD :3*/
-[data-theme='catppuccinma'] { 
-    background-color: #1e1e2e;
-        color: #574859;
-        font-family: 'Be Vietnam Pro', sans-serif;
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
-        border: none;
-     
-}
-[data-theme='catppuccinma']
-    .navbar {
-    background-color: #181925;
- 
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-  }
-  [data-theme='catppuccinma']{
-    .navbar a {
-      color: white;
-      text-align: center;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 17px;
-      z-index: 1;
-  }
-  .active {
-    color: #9194ab;
-  }
-}
-  [data-theme='red'] { 
-    background-color: #d52538;
-        color: #574859;
-        font-family: 'Be Vietnam Pro', sans-serif;
-        -ms-overflow-style: none;
-        scrollbar-width: none; 
-        border: none;
-     
-}
-[data-theme='red']
-    .navbar {
-    background-color: #881723;
- 
-    padding: 10px 20px;
-    display: flex;
-    align-items: center;
-    z-index: 1;
-  }
-  [data-theme='red']
-    .navbar a {
-      color: white;
-      text-align: center;
-      padding: 10px;
-      text-decoration: none;
-      font-size: 17px;
-      z-index: 1;
-  }
-
-.fa-solid fa-gear:hover {
-    transform: rotate(360deg);
-}
-
-.trendingtop {
-    width: 98%;
-    background-color: #333333;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 10%;
-    color: white;
-    border-bottom: 3px solid white;
-}
-
-.trendingbottom {
-    width: 98%;
-    background-color: #333333;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    height: 20%;
-    color: white;
-}
-
-.active {
-    color: #ff6666;
-}
-
-.game-icon {
-                text-align: center;
-                width: 120px;
-                height: 120px;
-                position: relative;
-             
-                transition: transform 0.3s ease-in-out;
-                     border-radius:10px;
-                      margin: 15px;
-                      display: inline-block;
-                    flex-wrap: wrap;
-            }
-
-            .game-icon button {
-                border: none;
-                background: none;
-                padding: 0;
-                cursor: pointer;
-                display: block;
-                width: 100%;
-                height: 100%; 
-                border-radius:10px;
-            }
-
-            .game-icon img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                display: block;
-                margin: 0 auto;
-                transition: transform 0.3s ease-in-out;
-                border-radius:10px;
-            }
-
-            .game-icon p {
-                margin-top: 10px;
-                color: #fff;
-                position: absolute;
-                bottom: -20px;
-                left: 50%;
-                transform: translateX(-50%);
-                font-family: 'Be Vietnam Pro', sans-serif;
-                opacity: 0;
-                transition: bottom 0.3s ease-in-out, opacity 0.3s ease-in-out;
-                text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
-                 border-radius:10px;
-            }
-
-            .game-icon:hover {
-                    transform: scale(1.1);
-            }
-
-            .game-icon:hover img {
-                transform: scale(1.1);
-                border-radius: 15px;
-            }
-
-            .game-icon:hover p {
-                bottom: 0;
-                opacity: 1;
-            }
-
-            @keyframes fadeIn {
-                0% {opacity: 0;}
-                100% {opacity: 1;}
-                    0% {
-                        transform: translateY(20px);
-                    }
-                    100% {
-                        transform: translateY(0px);
-                    }
-            }
-
-            @keyframes owo {
-                0% {opacity: 0;}
-                100% {opacity: 1;}
-            }
-
-            [data-theme='blue'] {
-                .px2 {
-                    color: white;
-                }
-                .te {
-                    color: white
-                }
-            }
-
-</style>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" id="favicon" href="/assets/img/ghost.png" type="image/png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
+  <style></style>
+  <head>
+    <title>Home</title>
+    <script src="/assets/js/nav.js"></script>
+    <script
+      src="https://kit.fontawesome.com/fcaf79e23b.js"
+      crossorigin="anonymous"
+    ></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      id="favicon"
+      href="/assets/img/ghost.png"
+      type="image/png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0"
+    />
     <link rel="stylesheet" href="/assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/themes.css" />
+    <script src="/assets/js/onload.js" type="module"></script>
     <script src="//cdn.jsdelivr.net/npm/eruda"></script>
-    <title>Home</title>
-    <!--Chemical.js-->
-    <script data-transport="libcurl" src="/chemical.js"></script>
-</head>
+    <script src="/bearux/index.js" defer></script>
+    <script src="/epox/index.js" defer></script>
+    <script src="/search/uv.bundle.js" defer></script>
+    <script src="/search/uv.config.js" defer></script>
+    <meta name="title" content="Ghost" />
+    <meta name="theme-color" content="#ae2b2c" />
+    <meta name="description" content="Ghost?? or is it." />
+  </head>
 
-<body>
-<!--femboys-->
-<!--What do you hope to accomplish-->
-       <nav class="navbar">
-    <div class="container">
-        <img onclick="window.location.href='/index.html'" style="width:50px;" src="/school/ghost.png" alt="ghost"></img>
-        <br>
-        <div class="desc left-margin" style="height: 50px;">
-            <p id="uv-error"></p>
-            <pre id="uv-error-code"></pre>
-        </div>
-      <ul class="nav-links" style="animation: owo 2s;">
- <li><a href="/school/"><i class="fa-solid fa-gamepad active"></i> Games</a></li>
- <li><a href="/algebra.html"><i class="fa-solid fa-phone active"></i> Apps</a></li>
-<li><a href="/settings.html"><i class="fa-solid fa-gear active"></i> Settings</a></li>
-<li><a href="/browser.html"><i class="fa-solid fa-search active"></i> Pro<x>xy</x></a></li>
-<li><a href="/disc.html"><i class="fa-brands fa-discord active"></i> Dis<x>cord</x></a></li>
-
-      </ul>
-    </div>
-  </nav>
+  <body>
+    <!--femboys-->
+    <!--What do you hope to accomplish-->
+    <nav class="navbar" id="nav"></nav>
+    <center>
+      <!--Title shit lol-->
+      <br />
+      <br />
+      <p class="ex2" style="animation: fadeIn 2s">Ghost</p>
+      <div
+        style="margin: 0; padding-top: 0; padding: 0; display: inline"
+        class="te"
+      >
+        <p style="margin: 0; padding-top: 0" style="animation: fadeIn 2s">
+          <span style="animation: owo 0.5s">A </span>
+          <span style="animation: owo 0.5s; animation-delay: 0.5s">cool</span>
+          <span style="animation: owo 0.5s; animation-delay: 1s"> Games</span>
+          <span style="animation: owo 0.5s; animation-delay: 1.5s">
+            Website</span
+          >
+          <span
+            style="animation: owo 0.5s; animation-delay: 2s; color: #5ffe43"
+          >
+            :D</span
+          >
+        </p>
+      </div>
+      <button class="button2" onclick="blank()">Open in about:blank</button>
+      <div class="trendingtop">
         <center>
-<!--Title shit lol-->
-            <p class="ex2" style="animation: fadeIn 2s;">Ghost</p>
-            <div style="margin: 0; padding-top:0; padding : 0; display: inline;" class="te">
-            <p style="margin: 0; padding-top:0;" style="animation: fadeIn 2s;">
-                <span style="animation: owo .5s;">A </span>
-                <span style="animation: owo .5s; animation-delay: .5s;">cool</span>
-                <span style="animation: owo .5s; animation-delay: 1s;"> Games</span>
-                <span style="animation: owo .5s; animation-delay: 1.5s;"> Website</span>
-                <span style="animation: owo .5s; animation-delay: 2s; color: #5ffe43;"> :D</span>
-                </p>
-                </div>
-                <button class="button2" onclick="blank()">Open in about:blank</button>
-            <div class="trendingtop">
-                <center>
-                    <h1>Trending Ga<x>me</x>s</h1>
-                </center>
-            </div>
-            <div class="trendingbottom">
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://slope.lol/games/slope/index.html');">
-                    <button>
-                        <img src="./school/assets/slope.png" alt="slope">
-                    </button>
-                    <p>Slope</p> 
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://ovoclassic.github.io/file/');">
-                    <button>
-                        <img src="./school/assets/OvO.png" alt="OvO"> 
-                    </button>
-                    <p>OvO</p>
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gnhustgames.github.io/timeshooter2/');">
-                    <button>
-                        <img src="./school/assets/shoot.png" alt="timeshooter"> 
-                    </button>
-                    <p>TimeShooter</p>
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/uv/service/ghost/hvtrs8%2F-wuw%2Chmofaoavh%2Ccmm-mmbklg%2Feaoeq%2Ffrkfv-%60oqs-gcmg.jtol%3Dnmcjeakmrkelt%3F1'">
-                    <button>
-                        <img src="./school/assets/driftboss.png" alt="driftboss">
-                    </button>
-                    <p>Drift Boss</p>
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/phisibox/index.html'">
-                    <button>
-                        <img src="./school/assets/physibox.png" alt="cuttherope">
-                    </button>
-                    <p>PhisiBox</p>
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basket-bros.github.io/a7/basket-bros');">
-                    <button>
-                        <img src="./school/assets/basketbros.png" alt="basketbros">
-                    </button>
-                    <p>Basket Bros</p>
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://healthstudies.commwebworks.com/game/baldi/index.html');">
-                    <button>
-                        <img src="./school/assets/baldi.png" alt="slope">
-                    </button>
-                    <p>Baldi's Basics</p> 
-                </div>
-                <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://basketball-stars.me/g/41');">
-                    <button>
-                        <img src="./school/assets/basketball-stars.png" alt="bbstars">
-                    </button>
-                    <p>BasketBall Stars</p>
-                </div>
-                </div>
-                <div class="trendingtop">
-                    <center>
-                    <h1>Trending Ap<x>ps</x></h1>
-                </center>
-                </div>
-                <div class="trendingbottom">
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://youtube.com');">
-                        <button>
-                            <img src="assets/img/apps/youtube.png" alt="youtube">
-                        </button>
-                        <p>Youtube</p>
-                    </div>
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://www.xbox.com/en-us/play');">
-                        <button>
-                            <img src="assets/img/apps/xbox.png" alt="xbox">
-                        </button>
-                        <p>Xbox Cloud Gaming</p>
-                    </div>
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://discord.com/app');">
-                        <button>
-                            <img src="assets/img/apps/discord.jpg" alt="vscode">
-                        </button>
-                        <p>Discord</p>
-                      </div>
-                      <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://chatgpt.com');">
-                        <button>
-                            <img src="assets/img/apps/chat.png" alt="chat">
-                        </button>
-                        <p>ChatGPT</p>
-                    </div>
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://play.geforcenow.com/');">
-                        <button>
-                            <img src="assets/img/apps/geforce.png" alt="geforce">
-                        </button>
-                        <p>Ge Force Now</p>
-                    </div>
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://crazygames.com');">
-                        <button>
-                            <img src="assets/img/apps/crazygames.png" alt="crazygames">
-                        </button>
-                        <p>Crazy Games</p>
-                    </div>
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://coolmathgames.com');">
-                        <button>
-                            <img src="assets/img/apps/cmg2.png" alt="vscode">
-                        </button>
-                        <p>Cool math games</p>
-                    </div>
-                    <div class="game-icon" style="animation: fadeIn 2s;" onclick="location.href = __uv$config.prefix + __uv$config.encodeUrl('https://gemini.google.com/');">
-                        <button>
-                            <img src="assets/img/apps/gem.png" alt="rainforest frfr">
-                        </button>
-                        <p>Gemini</p>
-                    </div>
-                </div>
+          <h1>Trending Ga<x>me</x>s</h1>
         </center>
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
+      </div>
+      <div class="trendingbottom" id="trendingg">
+        <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/phisibox/index.html'">
+          <button>
+              <img src="./school/assets/physibox.png" alt="cuttherope">
+          </button>
+          <p>PhisiBox</p>
+      </div>
+      <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/bitlife/index.html'">
+        <button>
+            <img src="/school/assets/bitlife.png" alt="cuttherope">
+        </button>
+        <p>Bitlife</p>
+    </div>
+    <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/stickman-hook/index.html'">
+      <button>
+          <img src="/school/assets/stickmanhook.png" alt="cuttherope">
+      </button>
+      <p>Stickman-hook</p>
+  </div>
+      </div>
+      <div class="trendingtop">
+        <center>
+          <h1>Trending Ap<x>ps</x></h1>
+        </center>
+      </div>
+      <div
+        class="trendingbottom"
+        id="trendinga"
+        style="margin-bottom: 10px"
+      ></div>
+    </center>
+    <br />
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-WFWKKRRXLT"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
 
-            function gtag() {
-                dataLayer.push(arguments);
-            }
-            gtag('js', new Date());
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-            gtag('config', 'G-WFWKKRRXLT');
-        </script>
-        <button onclick="parent.open('https://billing.billigerhost.com', '_blank');" style="font-family: 'Poppins', sans-serif; position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: rgba(153, 153, 153, 0.35); color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; font-family: 'Poppins', sans-serif; font-weight: 700; z-index: 1;">
-            <i class="fa-solid fa-server" style="margin-right: 5px;"></i>
-            Powered by <span style="color: #ad271f;">Billiger</span>Host
-            </button>
-            <a onclick="parent.open('https://github.com/The-Ghost-Network/Ghost-Node', '_blank');"><i style="font-size:40px; position: fixed; left: 10px; bottom: 10px; cursor: pointer;" class="fa-brands fa-github active"></i></a>
-            <a onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"><i style="font-size:40px; position: fixed; left: 70px; bottom: 10px; cursor: pointer;" class="fa-brands fa-discord active"></i></a>
-</body>
+      gtag("config", "G-WFWKKRRXLT");
+      createnav();
+    </script>
+    <script>
+      const uvvers = localStorage.getItem('UVver')
+      //load g and a
+      addEventListener("DOMContentLoaded", async (event) => {
+        const responce = await fetch("/assets/json/w.json");
+        const gData = await responce.json();
+        gData.forEach((game) => {
+          const i = document.getElementById("trendingg");
 
+          const g = document.createElement("div");
+          g.classList.add("game-icon");
+          if(uvvers === '2') {
+          g.setAttribute(
+            "onclick",
+            "localStorage.setItem('url', '" +
+              '/u/query/' + game.href +
+              "'); window.location.href = '/q/'",
+          );
+          }else {
+            g.setAttribute(
+            "onclick",
+            "localStorage.setItem('url', '" +
+              '/search/' + game.href +
+              "'); window.location.href = '/q/'",
+          );
+          }
+
+          const img = document.createElement("button");
+          const image = document.createElement("img");
+          image.src = game.img;
+
+          const gname = document.createElement("p");
+          gname.innerText = game.name;
+
+          img.appendChild(image);
+          g.appendChild(img);
+          g.appendChild(gname);
+          i.appendChild(g);
+        });
+      });
+      //load g and a
+      addEventListener("DOMContentLoaded", async (event) => {
+        const responce = await fetch("/assets/json/tr.json");
+        const gData = await responce.json();
+        gData.forEach((game) => {
+          const i = document.getElementById("trendinga");
+
+          const g = document.createElement("div");
+          g.classList.add("game-icon");
+          if(uvvers === '2') {
+          g.setAttribute(
+            "onclick",
+            "localStorage.setItem('url', '" +
+              '/u/query/' + game.href +
+              "'); window.location.href = '/q/'",
+          );
+          }else {
+            g.setAttribute(
+            "onclick",
+            "localStorage.setItem('url', '" +
+              '/search/' + game.href +
+              "'); window.location.href = '/q/'",
+          );
+          }
+
+          const img = document.createElement("button");
+          const image = document.createElement("img");
+          image.src = game.img;
+
+          const gname = document.createElement("p");
+          gname.innerText = game.name;
+
+          img.appendChild(image);
+          g.appendChild(img);
+          g.appendChild(gname);
+          i.appendChild(g);
+        });
+      });
+
+      function blank() {
+        //abt cloaking
+
+        var currentUrl = top.location.href;
+        if (currentUrl === "about:blank") {
+          console.log(currentUrl);
+        } else {
+          var win = window.open();
+          var url = "/";
+          var iframe = win.document.createElement("iframe");
+          top.location.replace("https://google.com");
+          iframe.style.position = "fixed";
+          iframe.style.top = 0;
+          iframe.style.bottom = 0;
+          iframe.style.left = 0;
+          iframe.style.right = 0;
+          iframe.style.border = "none";
+          iframe.style.outline = "none";
+          iframe.style.width = "100%";
+          iframe.style.height = "100%";
+          iframe.src = url;
+
+          win.document.body.appendChild(iframe);
+        }
+      }
+
+      //redo css
+      //make the links page
+      //get ultraviolet to work
+    </script>
+    <button
+      onclick="parent.open('https://billing.billigerhost.com', '_blank');"
+      style="
+        font-family: sans-serif;
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        padding: 10px 20px;
+        background-color: rgba(153, 153, 153, 0.35);
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        font-weight: 700;
+        z-index: 1;
+      "
+    >
+      <i class="fa-solid fa-server" style="margin-right: 5px"></i>
+      Powered by <span style="color: #ad271f">Billiger</span>Host
+    </button>
+    <a
+      onclick="parent.open('https://github.com/The-Ghost-Network/Ghost-Node', '_blank');"
+      ><i
+        style="
+          font-size: 40px;
+          position: fixed;
+          left: 10px;
+          bottom: 10px;
+          cursor: pointer;
+        "
+        class="fa-brands fa-github active"
+      ></i
+    ></a>
+    <a onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"
+      ><i
+        style="
+          font-size: 40px;
+          position: fixed;
+          left: 70px;
+          bottom: 10px;
+          cursor: pointer;
+        "
+        class="fa-brands fa-discord active"
+      ></i
+    ></a>
+  </body>
 </html>

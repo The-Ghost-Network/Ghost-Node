@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Discord",
+    "img": "assets/img/apps/discord.jpg",
+    "href": "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcHA="
+  },
+  {
+    "name": "c.ai",
+    "img": "assets/img/apps/cai.png",
+    "href": "aHR0cHM6Ly9jLmFp"
+  },
+  {
+    "name": "Geforce Now",
+    "img": "assets/img/apps/geforce.png",
+    "href": "aHR0cHM6Ly9wbGF5LmdlZm9yY2Vub3cuY29vbQ==hvtrs8%2F-pna%7B.eedopcgnmw%2Ccmm-"
+  },
+  {
+    "name": "Amazon",
+    "img": "assets/img/apps/amazon.png",
+    "href": "aHR0cHM6Ly9hbWF6b24uY29t"
+  },
+  {
+    "name": "Github",
+    "img": "assets/img/apps/github.png",
+    "href": "aHR0cHM6Ly9naXRodWIuY29t"
+  },
+  {
+    "name": "Gamini",
+    "img": "assets/img/apps/gem.png",
+    "href": "aHR0cHM6Ly9nZW1pbmkuZ29vZ2xlLmNvbQ=="
+  },
+  {
+    "name": "Twitch",
+    "img": "assets/img/apps/twitch.png",
+    "href": "aHR0cHM6Ly90d2l0Y2gudHY="
+  },
+  {
+    "name": "Youtube Music",
+    "img": "assets/img/apps/youtubem.png",
+    "href": "aHR0cHM6Ly9tdXNpYy55b3V0dWJlLmNvbQ=="
+  }
+]

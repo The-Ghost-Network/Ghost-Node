@@ -1,0 +1,27 @@
+[
+  {
+    "name": "Retrobowl",
+    "img": "/school/assets/retrobowl.png",
+    "href": "aHR0cHM6Ly9yZXRyb2Jvd2wubWU="
+  },
+  {
+    "name": "60 Second Burger Run",
+    "img": "/school/assets/burger.png",
+    "href": "aHR0cHM6Ly9qcmg5NHZjMzN2cDI4cGkxczV0cHZrNnNydTVqNm52Zy1hLXNpdGVzLW9wZW5zb2NpYWwuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2dhZGdldHMvaWZyP3VybD1odHRwczovL3MzLmFtYXpvbmF3cy5jb20vcHJvZHVjdGlvbi1hc3NldHNidWNrZXQtOGxqdnlyMXhjem1iLzFlZTIwNjIxLTYxYmMtNGVjOC1hOGVjLTVlODM5YzJlNmVkYyUyNTJGNjAtc2Vjb25kLWJ1cmdlci1ydW4ueG1sJmNvbnRhaW5lcj1lbnRlcnByaXNlJnZpZXc9ZGVmYXVsdCZsYW5nPWVuJmNvdW50cnk9QUw="
+  },
+  {
+    "name": "OvO",
+    "img": "/school/assets/OvO.png",
+    "href": "aHR0cHM6Ly9vdm9jbGFzc2ljLmdpdGh1Yi5pby9maWxlLw=="
+  },
+  {
+    "name": "Slope",
+    "img": "/school/assets/slope.png",
+    "href": "aHR0cHM6Ly9zbG9wZS5sb2wvZ2FtZXMvc2xvcGUvaW5kZXguaHRtbA=="
+  },
+  {
+    "name": "Cookie Clicker",
+    "img": "/school/assets/cookie1.jpeg",
+    "href": "aHR0cHM6Ly93d3cuY29va2llY2xpY2tlci5jb20v"
+  }
+]
