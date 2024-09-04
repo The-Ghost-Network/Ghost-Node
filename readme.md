@@ -1,3 +1,3 @@
-# FOR DEVELOPERS ONLY
+# i fricked with the readme :sob:
 
-Please push all your updates here NOT THE MAIN REPO
+uh idk ill fix it later remind me on discord
