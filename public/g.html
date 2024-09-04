@@ -262,6 +262,9 @@ input[type='text'] {
   </body>
   <script type="module">
     addEventListener("DOMContentLoaded", async (event) => {
+      await connection.setTransport("/epox/index.mjs", [
+            { wisp: wispUrl },
+          ]);
       loadUV();
       const frame = document.getElementById("frame");
       const url = localStorage.getItem("url");
@@ -283,9 +286,6 @@ input[type='text'] {
         localStorage.setItem("url", replacedurlV3);
         frame.src = replacedurlV3;
         new Ultraviolet.BareClient();
-        await connection.setTransport("/epox/index.mjs", [
-            { wisp: wispUrl },
-          ]);
     }
     });
 
