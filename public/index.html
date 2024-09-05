@@ -167,14 +167,14 @@
           g.setAttribute(
             "onclick",
             "localStorage.setItem('url', '" +
-              '/u/query/' + game.href +
+              '/u/query/' + __uv$config.encodeUrl(game.href) +
               "'); window.location.href = '/q/'",
           );
           }else {
             g.setAttribute(
             "onclick",
             "localStorage.setItem('url', '" +
-              '/search/' + game.href +
+              '/search/' + __uv$config.encodeUrl(game.href) +
               "'); window.location.href = '/q/'",
           );
           }
