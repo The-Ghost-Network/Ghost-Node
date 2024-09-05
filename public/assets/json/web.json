@@ -15,6 +15,11 @@
     "href": "https://frivez.com/flashgame?load=1-on-1-soccer"
   },
   {
+    "name": "Shell Shockers",
+    "img": "/school/assets/shock.png",
+    "href": "https://shellshock.io/"
+  },
+  {
     "name": "BasketBros",
     "img": "/school/assets/basketbros.png",
     "href": "https://basket-bros.github.io/a7/basket-bros"
