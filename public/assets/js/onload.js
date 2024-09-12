@@ -8,8 +8,8 @@ const favicon = document.getElementById("favicon");
 const clickoff1 = localStorage.getItem("clickoff");
 const theme = localStorage.getItem("theme");
 const leave = localStorage.getItem("leave");
-const er = localStorage.getItem("eurda");
 const blanke = localStorage.getItem("abt");
+const firstLoad = localStorage.getItem('firstLoad')
 
 addEventListener("DOMContentLoaded", async (event) => {
   //switches
@@ -22,16 +22,17 @@ addEventListener("DOMContentLoaded", async (event) => {
       break;
   }
 
-  switch (er) {
-    case "on":
-      eruda.init();
-      break;
-    case "off":
-      break;
-    case null:
-      localStorage.setItem("eruda", "off");
-      break;
-  }
+  if(firstLoad === null) {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+      localStorage.setItem("swregistered", "");
+    }
+  });
+  localStorage.setItem('UVver', '2')
+}else {
+}
+localStorage.setItem('firstLoad', 'false')
 
   switch (icon) {
     case "docs":
@@ -125,7 +126,6 @@ function blank() {
   if (currentUrl === "about:blank") {
     console.log(currentUrl);
   } else {
-    var win = window.open();
     var url = "/";
     var iframe = win.document.createElement("iframe");
     top.location.replace("https://google.com");
@@ -141,5 +141,8 @@ function blank() {
     iframe.src = url;
 
     win.document.body.appendChild(iframe);
+    win.onbeforeunload = function () {
+      return true;
+    };
   }
 }

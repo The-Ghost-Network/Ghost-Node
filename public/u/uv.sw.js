@@ -270,10 +270,8 @@
   function E(n, t) {
     let i = new URL(n),
       e = `remoteHostname.textContent = ${JSON.stringify(i.hostname)};bareServer.href = ${JSON.stringify(t)};uvHostname.textContent = ${JSON.stringify(location.hostname)};reload.addEventListener("click", () => location.reload());uvVersion.textContent = ${JSON.stringify("2.0.0")};`;
-    return `<!DOCTYPE html><html><head><meta charset='utf-8' /><title>Error</title>        
-    <style>
-        * { background-color: #171717; color: white; font-family: "Be Vietnam Pro", sans-serif; }
-        </style></head><body style="color: white; background-color: #171717; "><h1>This site can\u2019t be reached</h1><hr /><p><b id="remoteHostname"></b>\u2019s server IP address could not be found.</p><p>Try:</p><ul><li>Verifying you entered the correct address</li><li>Clearing the site data</li><li>Contacting <b id="uvHostname"></b>'s administrator</li><li>Verifying the <a id='bareServer' title='Bare server'>Bare server</a> isn't censored</li></ul><button id="reload">Reload</button><hr /><p><i>Ultraviolet v<span id="uvVersion"></span></i></p><script src="${"data:application/javascript," + encodeURIComponent(e)}"><\/script></body></html>`;
+    return `<!DOCTYPE html><html><head><style>  * { background-color: #171717; color: white; font-family: "Be Vietnam Pro", sans-serif; }</style>
+        <title>Error</title>        </head><body style="color: white; background-color: #171717; "><h1>This site can\u2019t be reached</h1><hr /><p><b id="remoteHostname"></b>\u2019s server IP address could not be found.</p><p>Try:</p><ul><li>Verifying you entered the correct address</li><li>Clearing the site data</li><li>Contacting <b id="uvHostname"></b>'s administrator</li><li>Verifying the <a id='bareServer' title='Bare server'>Bare server</a> isn't censored</li></ul><button id="reload">Reload</button><hr /><p><i>Ultraviolet v<span id="uvVersion"></span></i></p><script src="${"data:application/javascript," + encodeURIComponent(e)}"><\/script></body></html>`;
   }
   function O(n, t, i, e, a, r, c) {
     if (e === "The specified host could not be resolved.") return E(r, c);
@@ -284,7 +282,7 @@
     return (
       `<!DOCTYPE html><html><head><meta charset='utf-8' /><title>Error</title></head><body><h1 id='errorTitle'></h1><hr /><p>Failed to load <b id="fetchedURL"></b></p><p id="errorMessage"></p><table><tbody><tr><td>Code:</td><td id="errorCode"></td></tr>` +
       (i ? '<tr><td>ID:</td><td id="errorId"></td></tr>' : "") +
-      `</tbody></table><textarea id="errorTrace" cols="40" rows="10" readonly></textarea><p>Try:</p><ul><li>Checking your internet connection</li><li>Verifying you entered the correct address</li><li>Clearing the site data</li><li>Contacting <b id="uvHostname"></b>'s administrator</li><li>Verify the <a id='bareServer' href="https://lightgo.app/bare/" title='Bare server'>Bare server</a> isn't censored</li></ul><p>If you're the administrator of <b id="uvHostname"></b>, try:</p><ul><li>Restarting your Bare server</li><li>Updating Ultraviolet</li><li>Troubleshooting the error on the <a href="https://github.com/The-Ghost-Network/Ghost-Node" target="_blank">GitHub repository</a></li></ul><button id="reload">Reload</button><hr /><p><i>Ultraviolet v<span id="uvVersion"></span> || Ghost v2.3.1</i></p><script src="${"data:application/javascript," + encodeURIComponent(d)}"><\/script></body></html>`
+      `</tbody></table><textarea id="errorTrace" cols="40" rows="10" readonly></textarea><p>Try:</p><ul><li>Checking your internet connection</li><li>Verifying you entered the correct address</li><li>Clearing the site data</li><li>Contacting <b id="uvHostname"></b>'s administrator</li><li>Verify the <a id='bareServer' href="https://lightgo.app/bare/" title='Bare server'>Bare server</a> isn't censored</li></ul><p>If you're the administrator of <b id="uvHostname"></b>, try:</p><ul><li>Restarting your Bare server</li><li>Updating Ultraviolet</li><li>Troubleshooting the error on the <a href="https://github.com/The-Ghost-Network/Ghost-Node" target="_blank">GitHub repository</a></li></ul><button id="reload">Reload</button><hr /><p><i>Ultraviolet v<span id="uvVersion"></span> || Ghost v2.3.4</i></p><script src="${"data:application/javascript," + encodeURIComponent(d)}"><\/script></body></html>`
     );
   }
   function R(n) {

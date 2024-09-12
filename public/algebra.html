@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/themes.css" />
     <script src="/assets/js/onload.js"></script>
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script src="node_modules/eruda/eruda.js"></script>
     <script src="/bearux/index.js" defer></script>
     <script src="/epox/index.js" defer></script>
     <script src="/search/uv.bundle.js" defer></script>
@@ -63,7 +63,7 @@
             }
         </script>
                <script> 
-
+//no inline js does not mean i used chatgpt, akane.
                 addEventListener("DOMContentLoaded", async (event) => {
                       const responce = await fetch('/assets/json/search.json');
                       const gameData = await responce.json();

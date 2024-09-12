@@ -23,20 +23,37 @@
     <link rel="stylesheet" href="/assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/themes.css" />
     <script src="/assets/js/onload.js" type="module"></script>
-    <script src="//cdn.jsdelivr.net/npm/eruda"></script>
+    <script src="node_modules/eruda/eruda.js"></script>
     <script src="/bearux/index.js" defer></script>
     <script src="/epox/index.js" defer></script>
     <script src="/search/uv.bundle.js" defer></script>
     <script src="/search/uv.config.js" defer></script>
+    <script src="/assets/components/shadowroot.js"></script>
+    <script src="/assets/script.js"></script>
     <meta name="title" content="Ghost" />
     <meta name="theme-color" content="#ae2b2c" />
-    <meta name="description" content="Ghost?? or is it." />
+    <meta name="description" content="A Pretty Cool Site :D" />
+    <style>
+      .input {
+        border-radius: 5px;
+  background-color: #171717;
+  border: .25px solid white;
+  width: 400px;
+  height: 50px;
+  color: white;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+      }
+    </style>
   </head>
 
   <body>
-    <!--femboys-->
-    <!--What do you hope to accomplish-->
     <nav class="navbar" id="nav"></nav>
+    <input type="form" id="searchBar" class="input" style="z-index: 20;" placeholder=" Search Or Enter A URL">
     <center>
       <!--Title shit lol-->
       <br />
@@ -49,46 +66,30 @@
         <p style="margin: 0; padding-top: 0" style="animation: fadeIn 2s">
           <span style="animation: owo 0.5s">A </span>
           <span style="animation: owo 0.5s; animation-delay: 0.5s">cool</span>
-          <span style="animation: owo 0.5s; animation-delay: 1s"> Games</span>
+          <span style="animation: owo 0.5s; animation-delay: 1s"> Ga<x>m</x>es</span>
           <span style="animation: owo 0.5s; animation-delay: 1.5s">
             Website</span
           >
-          <span
+            <span
             style="animation: owo 0.5s; animation-delay: 2s; color: #5ffe43"
           >
             :D</span
           >
         </p>
       </div>
-      <button class="button2" onclick="blank()">Open in about:blank</button>
+      <!--Shadow root my ass--> <!--Hey it works (atleast for me) lmao-->
+      <button class="button2" onclick="blank()"><shadow-element txt="Open in about:blank"><shadow-element></button>
+      <button class="button2" onclick="search()">Search Something!</button>
       <div class="trendingtop">
         <center>
-          <h1>Trending Ga<x>me</x>s</h1>
+          <shadow-element txt="<h1>Trendin<x>g g</x>ames<h1>"></shadow-element>
         </center>
       </div>
       <div class="trendingbottom" id="trendingg">
-        <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/phisibox/index.html'">
-          <button>
-              <img src="./school/assets/physibox.png" alt="cuttherope">
-          </button>
-          <p>PhisiBox</p>
-      </div>
-      <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/bitlife/index.html'">
-        <button>
-            <img src="/school/assets/bitlife.png" alt="cuttherope">
-        </button>
-        <p>Bitlife</p>
-    </div>
-    <div class="game-icon" style="animation: fadeIn 2s;" onclick="window.location.href='/school/gam/stickman-hook/index.html'">
-      <button>
-          <img src="/school/assets/stickmanhook.png" alt="cuttherope">
-      </button>
-      <p>Stickman-hook</p>
-  </div>
       </div>
       <div class="trendingtop">
         <center>
-          <h1>Trending Ap<x>ps</x></h1>
+          <sh><shadow-element txt="<h1>Trending Ap<x>ps</x></h1>"></shadow-element>
         </center>
       </div>
       <div
@@ -122,21 +123,20 @@
         const gData = await responce.json();
         gData.forEach((game) => {
           const i = document.getElementById("trendingg");
-
           const g = document.createElement("div");
           g.classList.add("game-icon");
           if(uvvers === '2') {
           g.setAttribute(
             "onclick",
             "localStorage.setItem('url', '" +
-              '/u/query/' + game.href +
+              '/u/query/' + __uv$config.encodeUrl(game.href) +
               "'); window.location.href = '/q/'",
           );
           }else {
             g.setAttribute(
             "onclick",
             "localStorage.setItem('url', '" +
-              '/search/' + game.href +
+              '/search/' + __uv$config.encodeUrl(game.href) +
               "'); window.location.href = '/q/'",
           );
           }
@@ -216,12 +216,25 @@
           iframe.src = url;
 
           win.document.body.appendChild(iframe);
+          win.onbeforeunload = function () {
+      return true;
+    };
         }
       }
 
-      //redo css
-      //make the links page
-      //get ultraviolet to work
+     function search() {
+      const searchBar = document.getElementById('searchBar')
+      searchBar.style.display = 'block'
+      searchBar.addEventListener('blur', function(event) {
+        clickOff()
+      })
+      
+     }
+
+     function clickOff() {
+      const searchBar = document.getElementById('searchBar')
+            searchBar.style.display = 'none'
+     }
     </script>
     <button
       onclick="parent.open('https://billing.billigerhost.com', '_blank');"

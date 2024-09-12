@@ -152,26 +152,11 @@ function abt() {
   }
 }
 
-function eruda1() {
-  const e = localStorage.getItem("eurda");
-  switch (e) {
-    case "off":
-      localStorage.setItem("eurda", "on");
-      location.href = "/";
-      break;
-    case "on":
-      localStorage.setItem("eurda", "off");
-      location.href = "/";
-      break;
-  }
-}
-
 addEventListener("DOMContentLoaded", (event) => {
   const switch1 = document.getElementById("eruda");
   const switch2 = document.getElementById("clickoff");
   const switch3 = document.getElementById("abt");
   const switch4 = document.getElementById("close");
-  const er = localStorage.getItem("eurda");
   const cli = localStorage.getItem("clickoff");
   const a = localStorage.getItem("abt");
   const cla = localStorage.getItem("leave");
@@ -210,12 +195,4 @@ addEventListener("DOMContentLoaded", (event) => {
 });
 
 //Meow :3
-Meow: 3;
-Meow: 3;
-Meow: 3;
-Meow: 3;
-Meow: 3;
-Meow: 3;
-Meow: 3;
-Meow: 3;
-Meow: 3;
+

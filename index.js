@@ -83,7 +83,7 @@ app.on("listening", () => {
 });
 
 // SIGMA SHUTDOWN
-process.on("SIGTERM", () => {
+server.on("SIGTERM", () => {
   debug("SIGTERM signal received: closing HTTP server");
   server.close(() => {
     debug("HTTP server closed");

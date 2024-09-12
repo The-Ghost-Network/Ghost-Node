@@ -5,9 +5,9 @@
     "href": "https://discord.com"
   },
   {
-    "name": "c.ai",
-    "img": "assets/img/apps/cai.png",
-    "href": "https://c.ai"
+    "name": "Coolmathgames",
+    "img": "/assets//img/apps/cmg2.png",
+    "href": "https://coolmathgames.com"
   },
   {
     "name": "Geforce Now",
@@ -15,9 +15,9 @@
     "href": "https://play.geforcenow.com/mall"
   },
   {
-    "name": "Amazon",
-    "img": "assets/img/apps/amazon.png",
-    "href": "https://amazon.com"
+    "name": "Gmail",
+    "img": "/assets//img/apps/gmail.png",
+    "href": "https://gmail.com"
   },
   {
     "name": "Github",
@@ -25,9 +25,9 @@
     "href": "https://github.com"
   },
   {
-    "name": "Gamini",
-    "img": "assets/img/apps/gem.png",
-    "href": "https://gemini.google.com"
+    "name": "Pintrest",
+    "img": "/assets//img/apps/pintrest.png",
+    "href": "https://pinterest.com"
   },
   {
     "name": "Twitch",

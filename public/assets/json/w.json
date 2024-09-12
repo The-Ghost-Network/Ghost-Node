@@ -1,27 +1,42 @@
 [
   {
-    "name": "Retrobowl",
-    "img": "/school/assets/retrobowl.png",
-    "href": "aHR0cHM6Ly9yZXRyb2Jvd2wubWU="
+    "name": "Super Mario 64",
+    "img": "/school/assets/sm64.png",
+    "href": "https://supermario64online.github.io/file/"
   },
   {
-    "name": "60 Second Burger Run",
-    "img": "/school/assets/burger.png",
-    "href": "aHR0cHM6Ly9qcmg5NHZjMzN2cDI4cGkxczV0cHZrNnNydTVqNm52Zy1hLXNpdGVzLW9wZW5zb2NpYWwuZ29vZ2xldXNlcmNvbnRlbnQuY29tL2dhZGdldHMvaWZyP3VybD1odHRwczovL3MzLmFtYXpvbmF3cy5jb20vcHJvZHVjdGlvbi1hc3NldHNidWNrZXQtOGxqdnlyMXhjem1iLzFlZTIwNjIxLTYxYmMtNGVjOC1hOGVjLTVlODM5YzJlNmVkYyUyNTJGNjAtc2Vjb25kLWJ1cmdlci1ydW4ueG1sJmNvbnRhaW5lcj1lbnRlcnByaXNlJnZpZXc9ZGVmYXVsdCZsYW5nPWVuJmNvdW50cnk9QUw="
+    "name": "Angry Birds",
+    "img": "/school/assets/angrybirds.png",
+    "href": "https://smartcart1.github.io/s88/angry-birds/"
   },
   {
-    "name": "OvO",
-    "img": "/school/assets/OvO.png",
-    "href": "aHR0cHM6Ly9vdm9jbGFzc2ljLmdpdGh1Yi5pby9maWxlLw=="
+    "name": "Drift Boss",
+    "img": "/school/assets/driftboss.png",
+    "href": "https://www.hoodamath.com/mobile/games/drift-boss/game.html?nocheckorient=1"
   },
   {
-    "name": "Slope",
-    "img": "/school/assets/slope.png",
-    "href": "aHR0cHM6Ly9zbG9wZS5sb2wvZ2FtZXMvc2xvcGUvaW5kZXguaHRtbA=="
+    "name": "Adventure Capitalist",
+    "img": "/school/assets/adventure.png",
+    "href": "https://than1089.github.io/adventure-capitalist/"
   },
   {
-    "name": "Cookie Clicker",
-    "img": "/school/assets/cookie1.jpeg",
-    "href": "aHR0cHM6Ly93d3cuY29va2llY2xpY2tlci5jb20v"
+    "name": "Minecraft 1.8",
+    "img": "/school/assets/minecraft.png",
+    "href": "https://eaglercraft.com/mc/1.8.8/"
+  },
+  {
+    "name": "Portal",
+    "img": "/school/assets/portal.png",
+    "href": "https://games.crazygames.com/en_US/portal-2d/index.html"
+  },
+  {
+    "name": "Vex 5",
+    "img": "/school/assets/vex5.png",
+    "href": "https://html5.gamedistribution.com/f120262ab72743039fbce88c1f370df8/"
+  },
+  {
+    "name": "Arcane",
+    "img": "/school/assets/arcane.png",
+    "href": "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Farcane.xml&container=ig"
   }
 ]
