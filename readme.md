@@ -17,6 +17,7 @@ Join Our Discord server https://discord.gg/dbyDXfs5dN
 
  ```
  git clone https://github.com/The-Ghost-Network/Ghost-Node.git
+ cd /Ghost-Node
  npm i
  npm start
  ```
