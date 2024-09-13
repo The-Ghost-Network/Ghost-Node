@@ -1,6 +1,4 @@
 //Define it
-const stockSW = "/search/sw.js";
-const swAllowedHostnames = ["localhost", "127.0.0.1"];
 const close = localStorage.getItem("leave");
 const key = localStorage.getItem("key");
 const icon = localStorage.getItem("icon");
@@ -110,7 +108,6 @@ localStorage.setItem('firstLoad', 'false')
   }
 
   initTheme();
-  registerSW();
 });
 
 //functions
