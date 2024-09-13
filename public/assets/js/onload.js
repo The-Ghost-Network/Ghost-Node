@@ -127,6 +127,7 @@ function blank() {
     console.log(currentUrl);
   } else {
     var url = "/";
+    var win = window.open();
     var iframe = win.document.createElement("iframe");
     top.location.replace("https://google.com");
     iframe.style.position = "fixed";
@@ -141,8 +142,5 @@ function blank() {
     iframe.src = url;
 
     win.document.body.appendChild(iframe);
-    win.onbeforeunload = function () {
-      return true;
-    };
   }
 }
