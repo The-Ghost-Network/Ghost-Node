@@ -34,6 +34,7 @@ server.on("upgrade", (req, socket, head) => {
       wisp.routeRequest(req, socket, head);
   }
 });
+
 app.use(express.static(__dirname + "/public"));
 
 
@@ -78,7 +79,7 @@ app.get('*', function(req, res){
 
 server.listen(PORT);
 
-app.on("listening", () => {
+server.on("listening", () => {
   console.log("Ghost Is On http://localhost:8080");
 });
 

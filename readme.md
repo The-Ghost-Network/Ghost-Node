@@ -21,3 +21,7 @@ Join Our Discord server https://discord.gg/dbyDXfs5dN
  npm i
  npm start
  ```
+
+# Credits 
+Credit to [Titanium Network](https://github.com/titaniumnetwork-dev)
+Credit to [3kho](https://github.com/3kh0) for the games

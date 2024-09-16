@@ -10,9 +10,19 @@
     "href": "https://basketball-stars.me/g/41"
   },
   {
+    "name": "Space Wars",
+    "img": "/school/assets/spacewars.png",
+    "href": "https://games.crazygames.com/en_US/space-wars-battleground/index.html?v=1.301"
+  },
+  {
     "name": "1 On 1 Soccer",
     "img": "/school/assets/1o1football.png",
     "href": "https://frivez.com/flashgame?load=1-on-1-soccer"
+  },
+  {
+    "name": "Rainbow Tower",
+    "img": "/school/assets/rainbowtower.png",
+    "href": "https://www.mathplayground.com/mobile_rainbow_tower/index.html"
   },
   {
     "name": "Shell Shockers",
@@ -70,6 +80,11 @@
     "href": "https://8ballpoolonline.github.io/file/"
   },
   {
+    "name": "Elastic Man",
+    "img": "/school/assets/eman.png",
+    "href": "https://d21u3ic0kp9e91.cloudfront.net/elasticman/0/index.html"
+  },
+  {
     "name": "OvO",
     "img": "/school/assets/OvO.png",
     "href": "https://ovoclassic.github.io/file/"
@@ -125,14 +140,44 @@
     "href": "https://google-opensocial.googleusercontent.com/gadgets/ifr?url=https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/1ee20621-61bc-4ec8-a8ec-5e839c2e6edc%2Fbob-the-builder.xml&container=ig"
   },
   {
-    "name": "Minecraft 1.5",
-    "img": "/school/assets/minecraft.png",
-    "href": "https://eaglercraft.com/mc/1.5.2/"
+    "name": "Subway Surfers",
+    "img": "/school/assets/subwaysurfers.png",
+    "href": "https://szhong.4399.com/4399swf//upload_swf/ftp35/liuxinyu/20210324/jj01/index.html"
   },
   {
-    "name": "Minecraft 1.8",
-    "img": "/school/assets/minecraft.png",
-    "href": "https://eaglercraft.com/mc/1.8.8/"
+    "name": "CSGO clicker",
+    "img": "/school/assets/csgo.png",
+    "href": "https://mtsl.dk/csgo/"
+  },
+  {
+    "name": "Tag",
+    "img": "/school/assets/tag.png",
+    "href": "https://abinbins.github.io/a3/tag"
+  },
+  {
+    "name": "Temple Run",
+    "img": "/school/assets/trun.png",
+    "href": "https://burgerbounty.github.io/s8/temple-run-2"
+  },
+  { 
+    "name": "Jelly Truck",
+    "img": "/school/assets/jellytruck.png",
+    "href": "https://webglmath.github.io/jelly-truck/"
+  },
+  { 
+    "name": "Stickman Golf",
+    "img": "/school/assets/stickmangolf.png",
+    "href": "https://www.silvergames.com/en/stickman-golf/gameframe"
+  },
+  { 
+    "name": "There is No Game",
+    "img": "/school/assets/thereisnogame.png",
+    "href": "https://game258367.konggames.com/gamez/0025/8367/live/index.html"
+  },
+  {
+    "name": "Helix Jump",
+    "img": "/school/assets/helixjump.png",
+    "href": "https://html5.gamedistribution.com/630d7b91a96145949f86128ce8f1c4eb/?gd_sdk_referrer_url=https://helixjump2.com/helix-jump.embed"
   },
   {
     "name": "Basket Random",
@@ -143,6 +188,11 @@
     "name": "Pokemon Gold",
     "img": "/school/assets/pokemongold.png",
     "href": "https://static.arcadespot.com/retroemulator.php?system=gbc&game=2016/07/pokemon-gold.zip"
+  }, 
+  {
+    "name": "The Impossible Quiz",
+    "img": "/school/assets/impossiblequiz.png",
+    "href": "https://23azostore.github.io/s8/the-impossible-quiz"
   },
   {
     "name": "Pokemon Crystal",
@@ -277,6 +327,11 @@
   {
     "name": "Hobo 6",
     "img": "/school/assets/hobo6.png",
-    "href": "https://games.crazygames.com/en_US/hobo-6/index.html?v=1.301" 
+    "href": "https://games.crazygames.com/en_US/hobo-6/index.html?v=1.301"
+  },
+  {
+    "name": "Hobo 7",
+    "img": "/school/assets/hobo7.png",
+    "href": "https://games.crazygames.com/en_US/hobo-7/index.html?v=1.301" 
   }
 ]

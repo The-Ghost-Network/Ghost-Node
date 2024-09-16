@@ -43,7 +43,7 @@
     <script src="/bearux/index.js"></script>
     <script src="/bearux/worker.js"></script>
     <script src="/epox/index.js"></script>
-    <script src="node_modules/eruda/eruda.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script src="/assets/js/gd.js" type="module"></script>
     <script src="/assets/js/onload.js"></script>
   </head>
@@ -98,6 +98,23 @@ display: none;
   z-index: -1;
 }
 
+.copybttn {
+  width: 180px;
+  height: 30px;
+  color: white;
+  margin-left: 11px;
+  margin-top: 10px;
+  border-radius: 5px;
+  background-color: rgb(20, 23, 43);
+  border: none;
+
+}
+
+.copybttn:hover {
+  background-color: #3e47575d;
+  transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
+}
+
     /* Moved css to css file () */
   </style>
   <body>
@@ -127,6 +144,7 @@ display: none;
     </div>
     </div>
     <div class="hiddenuvpanel" id="uvpanel">
+      <button class="copybttn" id="copybttn" onclick="copyurl()">Copy URL</button>
       <button class="uvbutton" onclick="switchUV3()">
         <a>
         Ultraviolet v3.2.7
@@ -136,6 +154,9 @@ display: none;
       <a>
         Ultraviolet v2.0.0
       </a>
+      </button>
+      <button class="topbtn" id="opbttn" onclick="op()" style="left: 30px; margin-top: 10px;">
+        <span class="material-symbols-outlined"> open_in_new </span>
       </button>
     </div>
     <iframe class="mainiframe" id="frame"></iframe>
@@ -167,6 +188,13 @@ display: none;
       iframe.classList.add('mainframe')
     topbar.classList.remove('hiddenbar')
     topbar.classList.add('topbar')
+    }
+
+    function copyurl() {
+      const copybttn = document.getElementById('copybttn')
+      navigator.clipboard.writeText(frame.src);
+      copybttn.textContent = 'Copied!'
+      setTimeout("copybttn.textContent = 'Copy URL'", 3000);
     }
 
     function refresh() {
@@ -223,6 +251,24 @@ display: none;
   });
   localStorage.setItem("swregistered", "");
 }
+
+function op() {
+    var win = window.open();
+    var url = "/q/";
+    var iframe = win.document.createElement("iframe");
+    iframe.style.position = "fixed";
+    iframe.style.top = 0;
+    iframe.style.bottom = 0;
+    iframe.style.left = 0;
+    iframe.style.right = 0;
+    iframe.style.border = "none";
+    iframe.style.outline = "none";
+    iframe.style.width = "100%";
+    iframe.style.height = "100%";
+    iframe.src = url;
+
+    win.document.body.appendChild(iframe);
+  }
 
 async function registerSW() {
   if (!navigator.serviceWorker) {

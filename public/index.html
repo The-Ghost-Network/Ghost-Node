@@ -4,28 +4,15 @@
   <head>
     <title>Home</title>
     <script src="/assets/js/nav.js"></script>
-    <script
-      src="https://kit.fontawesome.com/fcaf79e23b.js"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://kit.fontawesome.com/fcaf79e23b.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="shortcut icon"
-      id="favicon"
-      href="/assets/img/ghost.png"
-      type="image/png"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0"
-    />
+    <link rel="shortcut icon" id="favicon" href="/assets/img/ghost.png" type="image/png"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0"/>
     <link rel="stylesheet" href="/assets/css/index.css" />
     <link rel="stylesheet" href="./assets/css/themes.css" />
     <script src="/assets/js/onload.js" type="module"></script>
-    <script src="node_modules/eruda/eruda.js"></script>
-    <script src="/bearux/index.js" defer></script>
-    <script src="/epox/index.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script src="/search/uv.bundle.js" defer></script>
     <script src="/search/uv.config.js" defer></script>
     <script src="/assets/components/shadowroot.js"></script>
@@ -35,17 +22,17 @@
     <meta name="description" content="A Pretty Cool Site :D" />
     <style>
       .input {
-        border-radius: 5px;
-  background-color: #171717;
-  border: .25px solid white;
-  width: 400px;
-  height: 50px;
-  color: white;
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+      border-radius: 5px;
+      background-color: #171717;
+      border: .25px solid white;
+      width: 400px;
+      height: 50px;
+      color: white;
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
 
       }
     </style>
@@ -77,19 +64,18 @@
           >
         </p>
       </div>
-      <!--Shadow root my ass--> <!--Hey it works (atleast for me) lmao-->
       <button class="button2" onclick="blank()"><shadow-element txt="Open in about:blank"><shadow-element></button>
       <button class="button2" onclick="search()">Search Something!</button>
       <div class="trendingtop">
         <center>
-          <shadow-element txt="<h1>Trendin<x>g g</x>ames<h1>"></shadow-element>
+          <shadow-element txt="<h1>Recom<x>mended g</x>ames<h1>"></shadow-element>
         </center>
       </div>
       <div class="trendingbottom" id="trendingg">
       </div>
       <div class="trendingtop">
         <center>
-          <sh><shadow-element txt="<h1>Trending Ap<x>ps</x></h1>"></shadow-element>
+          <sh><shadow-element txt="<h1>Recommended Ap<x>ps</x></h1>"></shadow-element>
         </center>
       </div>
       <div
@@ -113,7 +99,6 @@
       gtag("js", new Date());
 
       gtag("config", "G-WFWKKRRXLT");
-      createnav();
     </script>
     <script>
       const uvvers = localStorage.getItem('UVver')
@@ -194,8 +179,6 @@
       });
 
       function blank() {
-        //abt cloaking
-
         var currentUrl = top.location.href;
         if (currentUrl === "about:blank") {
           console.log(currentUrl);
@@ -216,9 +199,6 @@
           iframe.src = url;
 
           win.document.body.appendChild(iframe);
-          win.onbeforeunload = function () {
-      return true;
-    };
         }
       }
 
@@ -236,7 +216,7 @@
             searchBar.style.display = 'none'
      }
     </script>
-    <button
+    <button id="bil"
       onclick="parent.open('https://billing.billigerhost.com', '_blank');"
       style="
         font-family: sans-serif;
@@ -257,7 +237,7 @@
       <i class="fa-solid fa-server" style="margin-right: 5px"></i>
       Powered by <span style="color: #ad271f">Billiger</span>Host
     </button>
-    <a
+    <a id="git"
       onclick="parent.open('https://github.com/The-Ghost-Network/Ghost-Node', '_blank');"
       ><i
         style="
@@ -270,7 +250,7 @@
         class="fa-brands fa-github active"
       ></i
     ></a>
-    <a onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"
+    <a id="dsc" onclick="parent.open('https://dsc.gg/The-Ghost-Network', '_blank');"
       ><i
         style="
           font-size: 40px;

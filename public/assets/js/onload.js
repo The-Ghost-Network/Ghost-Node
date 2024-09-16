@@ -10,27 +10,29 @@ const blanke = localStorage.getItem("abt");
 const firstLoad = localStorage.getItem('firstLoad')
 
 addEventListener("DOMContentLoaded", async (event) => {
+  initTheme();
+  //deregister the current v3 sw if they used the website before and register the v2 sw for site support
+  if(firstLoad === null) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (const registration of registrations) {
+        registration.unregister();
+        localStorage.setItem("swregistered", "");
+      }
+    });
+    localStorage.setItem('UVver', '2')
+  }else {
+    }
+
+    localStorage.setItem('firstLoad', 'false')
+
   //switches
   switch (blanke) {
     case "on":
       blank();
       break;
     case "off":
-      console.log(``);
       break;
   }
-
-  if(firstLoad === null) {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    for (const registration of registrations) {
-      registration.unregister();
-      localStorage.setItem("swregistered", "");
-    }
-  });
-  localStorage.setItem('UVver', '2')
-}else {
-}
-localStorage.setItem('firstLoad', 'false')
 
   switch (icon) {
     case "docs":
@@ -54,8 +56,10 @@ localStorage.setItem('firstLoad', 'false')
       document.title = "Google Classroom";
       break;
   }
+
   localStorage.setItem("currenttitle", document.title);
   localStorage.setItem("currentfavicon", favicon.href);
+
   switch (leave) {
     case "on":
       window.onbeforeunload = function () {
@@ -68,6 +72,7 @@ localStorage.setItem('firstLoad', 'false')
 
   //ifs
   if (clickoff1 === "on") {
+
     document.addEventListener("visibilitychange", (e) => {
       if (document.visibilityState === "visible") {
         const currenttitle = localStorage.getItem("currenttitle");
@@ -81,6 +86,7 @@ localStorage.setItem('firstLoad', 'false')
       }
     });
   }
+
   if (close === "on") {
     window.onbeforeunload = function () {
       return true;
@@ -91,30 +97,31 @@ localStorage.setItem('firstLoad', 'false')
   if (key === null) {
     localStorage.setItem("key", "`");
   }
+
   document.addEventListener("keydown", function (event) {
     if (event.key === key) {
       top.location.replace("https://www.google.com");
-      console.log(`Key PRESSED RUN URN RUN`);
     }
   });
+
   if (blanke === null) {
     localStorage.setItem("abt", "off");
   }
+
   if (clickoff1 === null) {
     localStorage.setItem("clickoff", "off");
   }
+
   if (close === null) {
     localStorage.setItem("leave", "off");
   }
-
-  initTheme();
 });
 
 //functions
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
-    document.body.setAttribute("class", savedTheme);
+    cdoument.body.setAttribute("class", savedTheme);
   }
 }
 

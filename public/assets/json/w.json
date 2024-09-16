@@ -1,13 +1,13 @@
 [
   {
-    "name": "Super Mario 64",
-    "img": "/school/assets/sm64.png",
-    "href": "https://supermario64online.github.io/file/"
+    "name": "Space Wars",
+    "img": "/school/assets/spacewars.png",
+    "href": "https://games.crazygames.com/en_US/space-wars-battleground/index.html?v=1.301"
   },
   {
-    "name": "Angry Birds",
-    "img": "/school/assets/angrybirds.png",
-    "href": "https://smartcart1.github.io/s88/angry-birds/"
+    "name": "BasketBros",
+    "img": "/school/assets/basketbros.png",
+    "href": "https://basket-bros.github.io/a7/basket-bros"
   },
   {
     "name": "Drift Boss",
@@ -20,19 +20,19 @@
     "href": "https://than1089.github.io/adventure-capitalist/"
   },
   {
-    "name": "Minecraft 1.8",
-    "img": "/school/assets/minecraft.png",
-    "href": "https://eaglercraft.com/mc/1.8.8/"
+    "name": "Baldi's Basics",
+    "img": "/school/assets/baldi.png",
+    "href": "https://healthstudies.commwebworks.com/game/baldi/index.html"
   },
   {
-    "name": "Portal",
-    "img": "/school/assets/portal.png",
-    "href": "https://games.crazygames.com/en_US/portal-2d/index.html"
+    "name": "OvO",
+    "img": "/school/assets/OvO.png",
+    "href": "https://ovoclassic.github.io/file/"
   },
   {
-    "name": "Vex 5",
-    "img": "/school/assets/vex5.png",
-    "href": "https://html5.gamedistribution.com/f120262ab72743039fbce88c1f370df8/"
+    "name": "Basket Random",
+    "img": "/school/assets/basketrandom.png",
+    "href": "https://www.twoplayergames.org/embed/basket-random"
   },
   {
     "name": "Arcane",

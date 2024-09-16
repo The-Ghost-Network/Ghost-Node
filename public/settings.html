@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0">
 <link rel="stylesheet" href="/assets/css/index.css" />
 <script src="/assets/js/onload.js"></script>
-<script src="//cdn.jsdelivr.net/npm/eruda"></script>
+<script src="https://cdn.jsdelivr.net/npm/eruda"></script>
 <script src="/bearux/index.js" defer></script>
 <script src="/epox/index.js" defer></script>
 <script src="/search/uv.bundle.js" defer></script>
@@ -19,118 +19,6 @@
 <meta name="theme-color" content="#ae2b2c">
 <meta name="description" content="Ghost?? or is it." />
 <script src="node_modules/eruda/eruda.js"></script>
-<style>
-    /* im so cool i can do css */
-    /*wtf is be veitnam pro*/
-    body {
-        font-family: 'Be Vietnam Pro', sans-serif;
-        margin: 0;
-        color: white;
-    }
-
-/*insert settings panel css here lol :D*/
-.settingspanel {
-    background-color: var(--Secondary-Color);
-    border-radius: 10px;
-    width: 25vw;
-    height: fit-content;
-    box-shadow: 16px 8px 16px 8px rgba(0,0,0,0.2);
-    border: none;
-    padding: 17px;
-    margin: 3vw;
-    display: inline-block;
-    border: 1px solid transparent;
-    transition: cubic-bezier(1, 1.17, 1, 1.31) .25s;
-
-}
-
-.settingspanel:hover {
-  background:  linear-gradient(to top, var(--Secondary-Color) , var(--Secondary-Color)) padding-box,
-  linear-gradient(to top, var(--Primary-Color) , var(--Third-Color)) border-box;
-  transition: cubic-bezier(1, 1.82, 1, 1.31) .25s;
-  transform: translateY(-20px);
-}
-
-
-.settingsdisplay {
-  display: flex;
-  float: center;
-}
-
-.settingsdisplay2 {
-  display: flex;
-  float: center;
-}
-
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 60px;
-  height: 34px;
-}
-
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  -webkit-transition: .4s;
-  transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: var(--Primary-Color);
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px var(--Primary-Color);
-}
-
-input:checked + .slider:before {
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
-}
-
-.slider.round {
-  border-radius: 34px;
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
-
-
-  .engines {
-    min-width: 300px;
-    background-color: #171717;
-    color: white;
-    border-radius: 5px;
-    text-align: center;
-    font-size: 20px
-  }
-</style>
 </head>
 <body>
 <nav class="navbar" id="nav">
@@ -241,36 +129,6 @@ input:checked + .slider:before {
     console.log("loaded setting!")
     createnav();
   });
-        </script>
-        <script>
-const allowedKeys = {
-  70: 'f',
-  85: 'u',
-  83: 's',
-  83: 's',
-  89: 'y',
-};
-const fussyCode = ['f', 'u', 's', 's', 'y'];
-let fussyCodePosition = 0;
-
-document.addEventListener('keydown', function(e) {
-  const key = allowedKeys[e.keyCode];
-  const requiredKey = fussyCode[fussyCodePosition];
-  if (key === requiredKey) {
-    fussyCodePosition++;
-    if (fussyCodePosition === fussyCode.length) {
-      fussy();
-      fussyCodePosition = 0;
-    }
-  } else {
-    fussyCodePosition = 0;
-  }
-});
-
-function fussy() {
-  new Audio('/assets/js/never/hellomynameisfussybabycrust.ogg').play()
-}
-
         </script>
         <button onclick="parent.open('https://billing.billigerhost.com', '_blank');" style="font-family: 'Poppins', sans-serif; position: fixed; bottom: 10px; right: 10px; padding: 10px 20px; background-color: rgba(153, 153, 153, 0.35); color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s; font-family: 'Poppins', sans-serif; font-weight: 700; z-index: 1;">
           <i class="fa-solid fa-server" style="margin-right: 5px;"></i>
