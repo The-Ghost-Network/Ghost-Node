@@ -45,6 +45,8 @@ addEventListener("DOMContentLoaded", async (event) => {
         }
         break;
   }
+
+
 });
 
 
@@ -94,17 +96,23 @@ const blocked = [
 
 //set the url in the topbar
 function setformurl() {
+  frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
+    iframe.src = url
+  }
     if(document.activeElement === document.getElementById('forminput')) {
     }else {
 const geturl = frame.contentWindow.location.href
 const removedUrl = geturl.replace("https://" + location.hostname + "/u/query/", "")
 console.log(removedUrl)
 form.value = atob(removedUrl);
-localStorage.setItem("url", frame.src);
+localStorage.setItem("url", frame.src); 
     }
 }
 
 function setformurlv3() {
+  frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
+    iframe.src = url
+  }
 if(document.activeElement === document.getElementById('forminput')) {
 }else {
 const geturl = frame.contentWindow.location.href
