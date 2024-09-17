@@ -97,7 +97,7 @@ const blocked = [
 //set the url in the topbar
 function setformurl() {
   frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
-    iframe.src = url
+    iframe.src = __uv$config.encodeUrl(url)
   }
     if(document.activeElement === document.getElementById('forminput')) {
     }else {
@@ -111,7 +111,7 @@ localStorage.setItem("url", frame.src);
 
 function setformurlv3() {
   frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
-    iframe.src = url
+    iframe.src = __uv$config.encodeUrl(url)
   }
 if(document.activeElement === document.getElementById('forminput')) {
 }else {
