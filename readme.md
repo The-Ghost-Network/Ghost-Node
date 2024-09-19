@@ -23,5 +23,6 @@ Join Our Discord server https://discord.gg/dbyDXfs5dN
  ```
 
 # Credits 
-Credit to [Titanium Network](https://github.com/titaniumnetwork-dev)
+Credit to [Titanium Network](https://github.com/titaniumnetwork-dev) for Ultraviolet
+
 Credit to [3kho](https://github.com/3kh0) for the games
