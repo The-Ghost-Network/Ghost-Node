@@ -121,7 +121,7 @@ addEventListener("DOMContentLoaded", async (event) => {
 function initTheme() {
   const savedTheme = localStorage.getItem("theme");
   if (savedTheme) {
-    cdoument.body.setAttribute("class", savedTheme);
+    doument.body.setAttribute("class", savedTheme);
   }
 }
 
