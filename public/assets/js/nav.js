@@ -35,12 +35,6 @@ function createMobileNav() {
   nav.innerHTML = `
         <div class="container">
         <img onclick="window.location.href='/'" style="width:50px;" src="/school/ghost.png"></img>
-        <div class="desc left-margin" style="height: 50px;">
-            <p id="uv-error"></p>
-            <pre id="uv-error-code"></pre>
-        </div>
-        <div class="desc left-margin">
-        </div>
         <ul class="nav-links">
           <li><a href="/c/" id="school"><i class="fa-solid fa-gamepad active"></i></a></li>
           <li><a href="/a/" id="algebra"><i class="fa-solid fa-phone active"></i></a></li>
