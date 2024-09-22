@@ -103,7 +103,6 @@ function setformurl() {
     }else {
 const geturl = frame.contentWindow.location.href
 const removedUrl = geturl.replace("https://" + location.hostname + "/u/query/", "")
-console.log(removedUrl)
 form.value = atob(removedUrl);
 localStorage.setItem("url", frame.src); 
     }
@@ -117,7 +116,6 @@ if(document.activeElement === document.getElementById('forminput')) {
 }else {
 const geturl = frame.contentWindow.location.href
 const removedUrl = geturl.replace("https://" + location.hostname + "/search/", "")
-console.log(removedUrl)
 form.value = atob(removedUrl);
 localStorage.setItem("url", frame.src);
 }
@@ -128,15 +126,12 @@ function loadURL() {
     switch(UVver) {
       case "3":
       setformurlv3();
-      console.log('url loaded')
       break;
       case "2": 
       setformurl();
-      console.log('url loaded')
       break;
       case null:
       setformurlv3();
-      console.log('url loaded')
       break;
     }
     }
