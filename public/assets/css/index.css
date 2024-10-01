@@ -4,7 +4,7 @@
 :root {
   --Background-Color: #171717;
   --text-color: white;
-  --Primary-Color: #ff6666;
+  --Primary-Color: #e9a40e;
   --Secondary-Color: #333333;
   --Third-Color: #f84545;
 }
@@ -381,7 +381,7 @@ xn {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 10%;
-  color: var(--text-color);
+  color: #e9a40e;
   border-bottom: 3px solid white;
 }
 
@@ -391,7 +391,7 @@ xn {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 20%;
-  color: white;
+  color: #e9a40e;
 }
 
 .active {
