@@ -20,10 +20,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (uvver === "2") {
         localStorage.setItem("url", "/u/query/" + __uv$config.encodeUrl(query));
       } else {
-        localStorage.setItem("url", "search/" + __uv$config.encodeUrl(query));
+        localStorage.setItem("url", "/search/" + __uv$config.encodeUrl(query));
       }
       // Redirect to g.html
-      window.location.href = "/g.html";
+      window.location.href = "/q/";
     }
   }
 

@@ -377,21 +377,24 @@ xn {
 
 .trendingtop {
   width: 98%;
-  background-color: var(--Secondary-Color);
+  background: linear-gradient(to top, var(--Secondary-Color), var(--Secondary-Color)) padding-box, linear-gradient(to top, var(--Third-Color), var(--Third-Color)) border-box;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 10%;
   color: #e9a40e;
+  border: 1px solid transparent;
   border-bottom: 3px solid white;
 }
 
 .trendingbottom {
   width: 98%;
-  background-color: var(--Secondary-Color);
+  background:  linear-gradient(to top, var(--Secondary-Color) , var(--Secondary-Color)) padding-box, linear-gradient(to top, var(--Primary-Color) , var(--Third-Color)) border-box;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 20%;
   color: #e9a40e;
+  margin-bottom: 2%;
+  border: 1px solid transparent;
 }
 
 .active {

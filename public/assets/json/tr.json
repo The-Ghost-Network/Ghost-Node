@@ -5,38 +5,38 @@
     "href": "https://discord.com"
   },
   {
+    "name": "Tik Tok",
+    "img": "/assets//img/apps/tiktok.jpg",
+    "href": "https://tiktok.com"
+  },
+  {
+    "name": "Twitch",
+    "img": "/assets//img/apps/twitch.png",
+    "href": "https://twitch.tv"
+  },
+  {
+    "name": "Youtube Music",
+    "img": "/assets//img/apps/youtubem.png",
+    "href": "https://music.youtube.com"
+  },
+  {
+    "name": "X",
+    "img": "/assets//img/apps/x.png",
+    "href": "https://x.com"
+  },
+  {
     "name": "Crazygames",
     "img": "/assets//img/apps/crazygames.png",
     "href": "https://crazygames.com"
   },
   {
-    "name": "Geforce Now",
-    "img": "assets/img/apps/geforce.png",
-    "href": "https://play.geforcenow.com/mall"
+    "name": "Gamini",
+    "img": "/assets//img/apps/gem.png",
+    "href": "https://gemini.google.com"
   },
   {
-    "name": "c.ai",
-    "img": "/assets//img/apps/cai.png",
-    "href": "https://c.ai"
-  },
-  {
-    "name": "Amazon",
-    "img": "/assets//img/apps/amazon.png",
-    "href": "https://amazon.com"
-  },
-  {
-    "name": "Pintrest",
-    "img": "/assets//img/apps/pintrest.png",
-    "href": "https://pinterest.com"
-  },
-  {
-    "name": "Twitch",
-    "img": "assets/img/apps/twitch.png",
-    "href": "https://twitch.tv"
-  },
-  {
-    "name": "Youtube Music",
-    "img": "assets/img/apps/youtubem.png",
-    "href": "https://music.youtube.com/"
+    "name": "VS Code",
+    "img": "/assets//img/apps/vscode2.png",
+    "href": "https://vscode.dev"
   }
 ]

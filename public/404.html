@@ -1,7 +1,7 @@
 <DOCTYPE html>
   <html lang="en">
     <head>
-      <title>404 Not Found</title>
+      <title>404</title>
       <script
         src="https://kit.fontawesome.com/fcaf79e23b.js"
         crossorigin="anonymous"
@@ -9,6 +9,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" id="favicon" href="/assets/img/Ghost.png" type="image/x-icon">
+      <link rel="stylesheet" href="/assets/css/index.css" />
       <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,1,0"
@@ -19,15 +20,30 @@
       <meta name="title" content="404" />
       <meta name="theme-color" content="#ae2b2c" />
       <meta name="description" content="404 Not Found." />
+      <style>
+        @keyframes rise {
+            0% {
+        opacity: 0;
+      }
+           100% {
+        opacity: 1;
+      }
+            0% {
+        transform: translateY(20px);
+      }
+            100% {
+        transform: translateY(0px);
+      }
+}
+      </style>
     </head>
     <body>
       <center>
-        <h1 style="color: white">
-          ultraviolet is still reloading
+        <img src="/assets/img/Ghost.png" height="200px">
+        <h1 style="color: white; animation: rise 2s;" >
+          Whoops, the page your looking for doesn't exist
         </h1>
-        <p>
-          or you visited the wrong page
-        </p>
+        <button class="button1" style="background-color: #333333; opacity: 0; animation: rise 2s forwards; animation-delay: 1s;" onclick="window.location.href = '/' ">Go Back</button>
       </center>
     </body>
   </html>
