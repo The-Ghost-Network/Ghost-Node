@@ -126,8 +126,8 @@ function theme2() {
   document.body.setAttribute("class", "");
 }
 function theme4() {
-  localStorage.setItem("theme", "red");
-  document.body.setAttribute("class", "red");
+  localStorage.setItem("theme", "pink");
+  document.body.setAttribute("class", "pink");
 }
 function theme5() {
   localStorage.setItem("theme", "blue");
@@ -137,7 +137,22 @@ function theme6() {
   localStorage.setItem("theme", "green");
   document.body.setAttribute("class", "green");
 }
-
+function theme7() {
+  localStorage.setItem("theme", "greendark");
+  document.body.setAttribute("class", "greendark");
+}
+function theme8() {
+  localStorage.setItem("theme", "pinkdark");
+  document.body.setAttribute("class", "pinkdark");
+}
+function theme9() {
+  localStorage.setItem("theme", "bluedark");
+  document.body.setAttribute("class", "bluedark");
+}
+function theme10() {
+  localStorage.setItem("theme", "purple");
+  document.body.setAttribute("class", "purple");
+}
 function tabs() {}
 
 function abt() {

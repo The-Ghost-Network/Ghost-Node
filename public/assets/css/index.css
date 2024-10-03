@@ -10,37 +10,68 @@
 }
 
 .catp {
-  --Background-Color: #181925;
-  --text-color: white;
+  --Background-Color: #494d64;
+  --text-color: #cad3f5;
   --Primary-Color: #9194ab;
-  --Secondary-Color: #574859;
-  --Third-Color: #a7acd6;
+  --Secondary-Color: #5b6078;
+  --Third-Color: #a5adcb;
 }
 
 .blue {
-  --Background-Color: #13243c;
-  --text-color: white;
-  --Primary-Color: #0d416b;
-  --Secondary-Color: #1569ac;
+  --Background-Color: #7ea5cb;
+  --text-color: black;
+  --Primary-Color: #386589;
+  --Secondary-Color: #e1eaf3;
   --Third-Color: #1361a1;
 }
 
-.red {
-  --Background-Color: #881723;
-  --text-color: white;
-  --Primary-Color: #e92331;
-  --Secondary-Color: #9d1821;
-  --Third-Color: #ee525d;
+.pink {
+  --Background-Color: #d3c6cd;
+  --text-color: black;
+  --Primary-Color: #d3c6cd;
+  --Secondary-Color: #e1eaf3;
+  --Third-Color: #cbbec9;
 }
 
 .green {
-  --Background-Color: #49d533;
+  --Background-Color: #9ecaac;
   --text-color: white;
-  --Primary-Color: #25641a;
-  --Secondary-Color: #1c5514;
-  --Third-Color: #43b62f;
+  --Primary-Color: #a9d1ab;
+  --Secondary-Color: #84ab90;
+  --Third-Color: #a2ccb0;
 }
 
+.greendark {
+  --Background-Color: #287e3e;
+  --text-color: white;
+  --Primary-Color: #1c7633;
+  --Secondary-Color: #17642b;
+  --Third-Color: #2e7f39;
+}
+
+.pinkdark {
+  --Background-Color: #7c3a4e;
+  --text-color: white;
+  --Primary-Color: #732e45;
+  --Secondary-Color: #79344e;
+  --Third-Color: #5b2536;
+}
+
+.bluedark {
+  --Background-Color: #2a7399;
+  --text-color: white;
+  --Primary-Color: #1f6c95;
+  --Secondary-Color: #1c719a;
+  --Third-Color: #175473;
+}
+
+.purple {
+  --Background-Color: #7a76a7;
+  --text-color: white;
+  --Primary-Color: #5f5b8f;
+  --Secondary-Color: #7f7ca5;
+  --Third-Color: #8e8ab4;
+}
 body {
   font-family: "Be Vietnam Pro", sans-serif;
   margin: 0;
@@ -381,7 +412,7 @@ xn {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   height: 10%;
-  color: #e9a40e;
+  color: var(--Primary-Color);
   border: 1px solid transparent;
   border-bottom: 3px solid white;
 }
@@ -392,7 +423,7 @@ xn {
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
   height: 20%;
-  color: #e9a40e;
+  color: var(--Primary-Color);
   margin-bottom: 2%;
   border: 1px solid transparent;
 }
@@ -506,7 +537,7 @@ xn {
 .topbar {
   width: 100vw;
   height: 50px;
-  background-color: #07090d;
+  background-color: var(--Background-Color);
   overflow: hidden;
   border: none;
   transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
@@ -575,14 +606,14 @@ animation: growin .25s;
   animation: growOut .25s;
   top: 50px;
   border-radius: 10px;
-  background-color: #0e121b;
+  background-color: var(--Background-Color);
   width: 200px;
   height: 200px;
   position: absolute;
 }
 
 .uvbutton {
-background-color:rgb(20, 23, 43);
+background-color: var(--Primary-Color);
 border: none;
 width: 180px;
 height: 30px;
@@ -595,18 +626,18 @@ border-radius: 5px;
 }
 
 .uvbutton:hover {
-background-color: #3e47575d;
+background-color: var(--Secondary-Color);
 transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
 }
 
 .uvbutton:active {
-background-color: #30374425;
+background-color: var(--Third-Color);
 }
 
 .search {
 width: 50%;
 height: 15px;
-background-color: #0e121b;
+background-color: var(--Secondary-Color);
 color: white;
 border: none;
 border-radius: 5px;
@@ -658,7 +689,7 @@ transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
   display: inline-block;
   border: 1px solid transparent;
   transition: cubic-bezier(1, 1.17, 1, 1.31) .25s;
-  color: white;
+  color: var(--text-color);
 }
 
 .settingspanel:hover {

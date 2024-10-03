@@ -34,6 +34,9 @@
       gtag("config", "G-WFWKKRRXLT");
     </script>
     <title>Google Classroom</title>
+    <meta name="title" content="Ghost" />
+    <meta name="theme-color" content="#e9a40e" />
+    <meta name="description" content="A Pretty Spooky Site >:D" />
     <!--Load baremux and epoxy by default to prevent bugging-->
     <!--Names are changed for cloaking reasons (or to not conflict with the other ones idk)-->
     <script src="/bearux/index.js"></script>
@@ -57,7 +60,7 @@
     .showbutton {
   transform: translateY(-30px);
   color: white;
-  background-color: #07090d;
+  background-color: var(--Background-Color);
   border: 1px transparent;
   transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
   width: 60px;
@@ -66,8 +69,8 @@
 }
 
 .showbutton:hover {
-  background-color: #3e47575d;
-  border: 1px #3e47575d;
+  background-color: var(--Primary-Color);
+  border: 1px var(--Background-Color);
   transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
   border-radius: 5px;
   transform: translateY(0px);
@@ -101,13 +104,13 @@ display: none;
   margin-left: 11px;
   margin-top: 10px;
   border-radius: 5px;
-  background-color: rgb(20, 23, 43);
+  background-color: var(--Primary-Color);
   border: none;
 
 }
 
 .copybttn:hover {
-  background-color: #3e47575d;
+  background-color: var(--Secondary-Color);
   transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
 }
 
@@ -117,24 +120,24 @@ display: none;
 
     <button class="barbutton" id="barButton" onclick="openTopbar()"><span class="material-symbols-outlined">arrow_downward</span></button>
     <!--Topbar container-->
-    <div class="topbar" id="topbar" style="color: #ff882d;">
+    <div class="topbar" id="topbar" style="color: black;">
       <div class="topbar-content">
         <button class="topbtn" id="topbttn" onclick="closeTopbar()">
-          <span class="material-symbols-outlined" style="color: #ff882d;"> arrow_upward </span>
+          <span class="material-symbols-outlined" style="color: black;"> arrow_upward </span>
         </button>
         
         <button class="topbtn" id="panelbttn" onclick="openswitchpanel()">
-          <span class="material-symbols-outlined" style="color: #ff882d;"> page_info </span>
+          <span class="material-symbols-outlined" style="color: black;"> page_info </span>
         </button>
         
       <button class="topbtn" id="fwdbttn" onclick="forward()" style="left: 10px;">
-        <span class="material-symbols-outlined" style="color: #ff882d;"> arrow_forward </span>
+        <span class="material-symbols-outlined" style="color: black;"> arrow_forward </span>
       </button>
       <button class="topbtn" id="rfshbttn" onclick="refresh()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: #ff882d;"> refresh </span>
+        <span class="material-symbols-outlined" style="color: black;"> refresh </span>
       </button>
       <button class="topbtn" id="bckbttn" onclick="back()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: #ff882d;"> arrow_back </span>
+        <span class="material-symbols-outlined" style="color: black;"> arrow_back </span>
       </button>
       <input type="text" class="search" id="forminput" placeholder="Search Or Enter A URL..">
     </div>
