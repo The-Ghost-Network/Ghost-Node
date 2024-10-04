@@ -72,17 +72,6 @@ app.get("/q/", (req, res) => {
   res.sendFile("/public/g.html", { root: __dirname });
 });
 
-//404 Proxo not found
-app.get('*', function(req, res){
-  res.sendFile("/public/404.html", { root: __dirname });
-});
-
-server.listen(PORT);
-
-server.on("listening", () => {
-  console.log("Ghost Is On http://localhost:8080");
-});
-
 
 // all ghost apis
 
@@ -97,6 +86,19 @@ app.get("/api/links/v1/", (req, res) => {
       ]
     `)
 });
+
+
+//404 Proxo not found
+app.get('*', function(req, res){
+  res.sendFile("/public/404.html", { root: __dirname });
+});
+
+server.listen(PORT);
+
+server.on("listening", () => {
+  console.log("Ghost Is On http://localhost:8080");
+});
+
 
 
 // SIGMA SHUTDOWN
