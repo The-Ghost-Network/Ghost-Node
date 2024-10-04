@@ -8,6 +8,7 @@ const theme = localStorage.getItem("theme");
 const leave = localStorage.getItem("leave");
 const blanke = localStorage.getItem("abt");
 const firstLoad = localStorage.getItem('firstLoad')
+const themeload = localStorage.getItem('themeload')
 
 addEventListener("DOMContentLoaded", async (event) => {
   initTheme();
@@ -24,6 +25,15 @@ addEventListener("DOMContentLoaded", async (event) => {
     }
 
     localStorage.setItem('firstLoad', 'false')
+
+    switch(themeload) {
+      case "on":
+      //Don't do anything if its already set
+      break;
+      case null:
+      selectRandomTheme();
+      break;
+    }
 
   //switches
   switch (blanke) {
@@ -147,4 +157,25 @@ function blank() {
 
     win.document.body.appendChild(iframe);
   }
+}
+
+function selectRandomTheme() {
+  var themes = [
+    "Ghost",
+    "catp",
+    "blue",
+    "pink",
+    "green",
+    "greendark",
+    "bluedark",
+    "pinkdark",
+    "purple"
+  ]
+  
+  var hmthemes = themes.length;
+  var random = Math.floor(Math.random() * hmthemes);
+
+  localStorage.setItem('theme', themes[random])
+  document.body.setAttribute("class", themes[random]);   
+  localStorage.setItem('themeload', 'on')
 }
