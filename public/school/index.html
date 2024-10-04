@@ -46,7 +46,7 @@
         </script>
         <script> 
     addEventListener("DOMContentLoaded", async (event) => {
-          const responce = await fetch('/assets/json/web.json');
+          const responce = await fetch('/api/g/v1/');
           const gameData = await responce.json();
            gameData.forEach(game => {
             const gameicons = document.getElementById('game-icons')

@@ -1,0 +1,1 @@
+let linkAPI = "/api/links/v1/"

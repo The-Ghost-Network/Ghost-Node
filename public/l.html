@@ -11,6 +11,24 @@
     <script src="/assets/js/nav.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
     <script src="https://kit.fontawesome.com/890006173e.js" crossorigin="anonymous"></script>
+    <script src="/config.js"></script>
+    <script>
+    async function loadlinks() {
+      let links = await fetch(linkAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
+      links.forEach(link => {
+        let indv = document.createElement("a")
+        indv.style = "animation: fadeIn1 2s forwards; color: transparent"
+        indv.href = link
+        indv.innerText = link
+        document.getElementById("lboxbottom").appendChild(indv)
+        document.getElementById("lboxbottom").appendChild(document.createElement("br"))
+        document.getElementById("lboxbottom").appendChild(document.createElement("br")) 
+      });
+      }
+      document.addEventListener("DOMContentLoaded", async (event) => {
+      await loadlinks()
+    });
+    </script>
     <title>Ghost || Links</title>
     <meta name="title" content="Ghost" />
     <meta name="theme-color" content="#e9a40e" />
@@ -37,11 +55,11 @@
         }
         0% {
           transform: translateY(-20px);
-          color: #f3812a;
+          color: var(--text-color);
         }
         100% {
           transform: translateY(0px);
-          color: #f3812a;
+          color: var(--text-color);
         }
       }
     </style>
@@ -58,42 +76,7 @@
       <h1 style="color: white">Weekly Li<x>nk</x>s</h1>
       <p>Refreshes every week.</p>
     </div>
-    <div class="lboxbottom" style="text-align: center">
-      <a
-        style="animation: fadeIn1 2s forwards; color: transparent"
-        href="https://mathiscool.global.ssl.fastly.net/"
-        >https://mathiscool.global.ssl.fastly.net/</a
-      >
-      <br />
-      <br />
-      <a
-        style="animation: fadeIn1 2s forwards; color: transparent"
-        href="https://meow.newpowergroup.com/"
-        >https://meow.newpowergroup.com/</a
-      >
-      <br />
-      <br />
-      <a
-        style="animation: fadeIn1 2s forwards; color: transparent"
-        href="https://iswearitsnotghost.glitchnetwork.xyz/"
-        >https://iswearitsnotghost.glitchnetwork.xyz/</a
-      >
-      <br />
-      <br />
-      <a
-        style="animation: fadeIn1 2s forwards; color: transparent"
-        href="https://free.fontovacorredora.cl/"
-        >https://free.fontovacorredora.cl/</a
-      >
-      <br />
-      <br />
-      <a
-        style="animation: fadeIn1 2s forwards; color: transparent"
-        href="https://htmlcoding.cachingtech.com/"
-        >https://htmlcoding.cachingtech.com/</a
-      >
-      <br />
-      <br />
+    <div class="lboxbottom" id="lboxbottom" style="text-align: center">
     </div>
   </body>
 </html>
