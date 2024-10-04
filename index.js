@@ -83,6 +83,22 @@ server.on("listening", () => {
   console.log("Ghost Is On http://localhost:8080");
 });
 
+
+// all ghost apis
+
+app.get("/api/links/v1/", (req, res) => {
+  res.send(`
+      let links = [
+      https://mathiscool.global.ssl.fastly.net,
+      https://meow.newpowergroup.com/,
+      https://iswearitsnotghost.glitchnetwork.xyz/,
+      https://free.fontovacorredora.cl,
+      https://htmlcoding.cachingtech.com/,
+      ]
+    `)
+});
+
+
 // SIGMA SHUTDOWN
 server.on("SIGTERM", () => {
   debug("SIGTERM signal received: closing HTTP server");
