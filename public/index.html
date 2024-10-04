@@ -175,7 +175,20 @@
           i.appendChild(g);
         });
       });
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+      }
 
+      function getRandomLink() {
+        let csites = [
+          "https://google.com",
+          "https://classroom.google.com",
+          "https://docs.google.com",
+        ] 
+        return csites[getRandomInt(0, csites.length)]
+      }
       function blank() {
         var currentUrl = top.location.href;
         if (currentUrl === "about:blank") {
@@ -184,7 +197,7 @@
           var win = window.open();
           var url = "/";
           var iframe = win.document.createElement("iframe");
-          top.location.replace("https://google.com");
+          top.location.replace(getRandomLink());
           iframe.style.position = "fixed";
           iframe.style.top = 0;
           iframe.style.bottom = 0;
