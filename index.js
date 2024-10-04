@@ -96,7 +96,7 @@ app.get('*', function(req, res){
 server.listen(PORT);
 
 server.on("listening", () => {
-  console.log("Ghost Is On http://localhost:8080");
+  console.log("Ghost Is On http://localhost:" + PORT);
 });
 
 
