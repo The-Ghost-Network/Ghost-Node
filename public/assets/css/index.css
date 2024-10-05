@@ -364,7 +364,7 @@ xn {
 }
 
 .input {
-  background: #333333;
+  background: (--Secondary-Color);
   font-family: "Be Vietnam Pro", sans-serif;
   padding: 0px 17px;
   border: none;
