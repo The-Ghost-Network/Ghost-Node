@@ -4,7 +4,7 @@
   <head>
     <title>Ghost || Home</title>
     <script src="/assets/js/nav.js"></script>
-    <script src="https://kit.fontawesome.com/890006173e.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/kit.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" id="favicon" href="/assets/img/Ghost.png" type="image/x-icon">
@@ -19,6 +19,7 @@
     <meta name="title" content="Ghost" />
     <meta name="theme-color" content="#e9a40e" />
     <meta name="description" content="A Pretty Spooky Site >:D" />
+    <script src="/config.js"></script>
     <style>
       .input {
       border-radius: 5px;
@@ -102,8 +103,7 @@
       const uvvers = localStorage.getItem('UVver')
       //load g and a
       addEventListener("DOMContentLoaded", async (event) => {
-        const responce = await fetch("/assets/json/w.json");
-        const gData = await responce.json();
+        const gData = await fetch(rgAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
         gData.forEach((game) => {
           const i = document.getElementById("trendingg");
           const g = document.createElement("div");
@@ -139,8 +139,7 @@
       });
       //load g and a
       addEventListener("DOMContentLoaded", async (event) => {
-        const responce = await fetch("/assets/json/tr.json");
-        const gData = await responce.json();
+        const gData = await fetch(raAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
         gData.forEach((game) => {
           const i = document.getElementById("trendinga");
 

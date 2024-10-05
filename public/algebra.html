@@ -4,7 +4,7 @@
         <title>Ghost || Apps</title>
         <script src="/assets/js/nav.js"></script>
         <script src="/assets/components/shadowroot.js"></script>
-        <script src="https://kit.fontawesome.com/890006173e.js" crossorigin="anonymous"></script>
+        <script src="/assets/js/kit.js" crossorigin="anonymous"></script>
         <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" id="favicon" href="/assets/img/Ghost.png" type="image/x-icon">
@@ -58,11 +58,10 @@
             }
         </script>
                <script> 
-//no inline js does not mean i used chatgpt, akane.
                 addEventListener("DOMContentLoaded", async (event) => {
-                      const responce = await fetch('/assets/json/search.json');
-                      const gameData = await responce.json();
-                       gameData.forEach(game => {
+                    let aAPI = "/api/a/v1/"
+                    const gData = await fetch(aAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
+                       gData.forEach(game => {
                         const gameicons = document.getElementById('game-icons')
             
                         const games = document.createElement('div')

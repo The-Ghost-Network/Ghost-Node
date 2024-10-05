@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <script src="https://kit.fontawesome.com/890006173e.js" crossorigin="anonymous"></script>
+    <script src="/assets/js/kit.js" crossorigin="anonymous"></script>
 <title>Ghost || Gamz</title>
 <script src="/assets/js/nav.js"></script>
 <meta charset="UTF-8">
@@ -17,6 +17,7 @@
 <meta name="title" content="Ghost" />
 <meta name="theme-color" content="#e9a40e" />
 <meta name="description" content="A Pretty Spooky Site >:D" />
+<script src="/config.js"></script>
 </head>
 <body>
      <nav class="navbar" id="nav">
@@ -46,9 +47,8 @@
         </script>
         <script> 
     addEventListener("DOMContentLoaded", async (event) => {
-          const responce = await fetch('/api/g/v1/');
-          const gameData = await responce.json();
-           gameData.forEach(game => {
+        const gData = await fetch(gAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
+        gData.forEach(game => {
             const gameicons = document.getElementById('game-icons')
 
             const games = document.createElement('div')
