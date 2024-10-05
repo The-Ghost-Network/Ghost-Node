@@ -334,10 +334,20 @@ const g = [
     "href": "https://g.immortal2willlose.xyz/ghost/jetpack-joyride/"
   },
   {
+    "name": "Doom 1",
+    "img": "/school/assets/doom.png",
+    "href": "https://bestdosgames.com/games/doom/play"
+  },
+  {
+    "name": "Doom 2",
+    "img": "/school/assets/doom2.png",
+    "href": "https://bestdosgames.com/games/doom-ii/play"
+  },
+  { 
     "name": "Lofi radio",
     "img": "/school/assets/lofi.png",
     "href": "https://g.immortal2willlose.xyz/ghost/chill-radio/"
-  },
+  }, 
   {
     "name": "Dino",
     "img": "/school/assets/dino.png",
@@ -477,6 +487,11 @@ const g = [
     "name": "Angry Birds",
     "img": "/school/assets/angrybirds.png",
     "href": "https://smartcart1.github.io/s88/angry-birds/"
+  },
+  {
+    "name": "Stumble Guys",
+    "img": "/school/assets/stumble.png",
+    "href": "https://www.stumbleguys.com/play" 
   },
   {
     "name": "Portal",
