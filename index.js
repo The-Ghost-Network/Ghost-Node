@@ -78,12 +78,7 @@ app.get("/q/", (req, res) => {
 
 app.get("/api/links/v1/", (req, res) => {
   res.json([
-
-        "https://mathiscool.global.ssl.fastly.net",
-        "https://meow.newpowergroup.com/",
-        "https://iswearitsnotghost.glitchnetwork.xyz",
-        "https://free.fontovacorredora.cl",
-        "https://htmlcoding.cachingtech.com",
+        "api-depricated",
      ]   
   )
 }
