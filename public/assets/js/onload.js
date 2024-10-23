@@ -7,33 +7,25 @@ const clickoff1 = localStorage.getItem("clickoff");
 const theme = localStorage.getItem("theme");
 const leave = localStorage.getItem("leave");
 const blanke = localStorage.getItem("abt");
-const firstLoad = localStorage.getItem('firstLoad')
 const themeload = localStorage.getItem('themeload')
+const swAllowedHostnames = ["localhost", "127.0.0.1"];
+const stockSW = "/u/query/sw.js";
+const FirstLoad = localStorage.getItem('FirstLoad')
+
+if(FirstLoad === null) {
+  console.log(FirstLoad)
+  localStorage.setItem('UVver', '2')
+  unregisterSW();
+  alert('We have run out of bandwith! The site will be slow for the rest of the month sorry!')
+  localStorage.setItem('FirstLoad', 'false')
+}else {
+  }
 
 addEventListener("DOMContentLoaded", async (event) => {
   initTheme();
   //deregister the current v3 sw if they used the website before and register the v2 sw for site support
-  if(firstLoad === null) {
-    navigator.serviceWorker.getRegistrations().then((registrations) => {
-      for (const registration of registrations) {
-        registration.unregister();
-        localStorage.setItem("swregistered", "");
-      }
-    });
-    localStorage.setItem('UVver', '2')
-  }else {
-    }
 
     localStorage.setItem('firstLoad', 'false')
-
-    switch(themeload) {
-      case "on":
-      //Don't do anything if its already set
-      break;
-      case null:
-      selectRandomTheme();
-      break;
-    }
 
   //switches
   switch (blanke) {
@@ -159,23 +151,30 @@ function blank() {
   }
 }
 
-function selectRandomTheme() {
-  var themes = [
-    "Ghost",
-    "catp",
-    "blue",
-    "pink",
-    "green",
-    "greendark",
-    "bluedark",
-    "pinkdark",
-    "purple"
-  ]
-  
-  var hmthemes = themes.length;
-  var random = Math.floor(Math.random() * hmthemes);
+async function registerSWv2() {
+  if (!navigator.serviceWorker) {
+    if (
+      location.protocol !== "https:" &&
+      !swAllowedHostnames.includes(location.hostname)
+    )
+      throw new Error(
+        "Service workers cannot be registered without https.",
+      );
 
-  localStorage.setItem('theme', themes[random])
-  document.body.setAttribute("class", themes[random]);   
-  localStorage.setItem('themeload', 'on')
+    throw new Error("Your browser doesn't support service workers.");
+  }
+  await navigator.serviceWorker.register(stockSW);
+  if (localStorage.getItem("swregistered") === "true") {
+  } else {
+    localStorage.setItem("swregistered", "true");
+  }
+} 
+
+function unregisterSW() {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+    }
+  });
+  localStorage.setItem("swregistered", "");
 }

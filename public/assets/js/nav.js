@@ -3,7 +3,7 @@ function createnav() {
 
   nav.innerHTML = `
         <div class="container">
-        <img onclick="window.location.href='/'" style="width:50px;" src="/school/ghost.png"></img>
+        <img onclick="window.location.href='/'" style="width:50px;" src="/assets/img/ghost.png"></img>
         <div class="desc left-margin" style="height: 50px;">
             <p id="uv-error"></p>
             <pre id="uv-error-code"></pre>

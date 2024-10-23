@@ -14,10 +14,7 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
     />
-    <link
-    rel="stylesheet"
-    href="/assets/css/index.css"
-  />
+    <link rel="stylesheet" href="/assets/styles.css" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -38,11 +35,7 @@
     <meta name="theme-color" content="#e9a40e" />
     <meta name="description" content="A Pretty Spooky Site >:D" />
     <!--Load baremux and epoxy by default to prevent bugging-->
-    <!--Names are changed for cloaking reasons (or to not conflict with the other ones idk)-->
-    <script src="/bearux/index.js"></script>
-    <script src="/bearux/worker.js"></script>
-    <script src="/epox/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/eruda"></script>
+    <!--whoever changed the names is getting fired-->
     <script src="/assets/js/gd.js" type="module"></script>
     <script src="/assets/js/onload.js"></script>
   </head>
@@ -114,12 +107,13 @@ display: none;
   transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
 }
 
-    /* Moved css to css file () */
+    /* big meowmeowm okemoqwpomemwmeowmoqfnfdngjdfsng */
   </style>
   <body>
 
     <button class="barbutton" id="barButton" onclick="openTopbar()"><span class="material-symbols-outlined">arrow_downward</span></button>
     <!--Topbar container-->
+    <!--NOT THE CHATGPT NOTES! :sob:-->
     <div class="topbar" id="topbar" style="color: black;">
       <div class="topbar-content">
         <button class="topbtn" id="topbttn" onclick="closeTopbar()">
@@ -139,6 +133,9 @@ display: none;
       <button class="topbtn" id="bckbttn" onclick="back()" style="left: 30px;">
         <span class="material-symbols-outlined" style="color: black;"> arrow_back </span>
       </button>
+      <button class="topbtn" id="bckbttn" onclick="home()" style="left: 30px;">
+        <span class="material-symbols-outlined" style="color: black;"> home </span>
+      </button>
       <input type="text" class="search" id="forminput" placeholder="Search Or Enter A URL..">
     </div>
     </div>
@@ -146,7 +143,7 @@ display: none;
       <button class="copybttn" id="copybttn" onclick="copyurl()">Copy URL</button>
       <button class="uvbutton" onclick="switchUV3()">
         <a>
-        Ultraviolet v3.2.7
+        Disabled
       </a>
       </button>
       <button class="uvbutton" onclick="switchUV2()">
@@ -160,14 +157,12 @@ display: none;
     </div>
     <iframe class="mainiframe" id="frame"></iframe>
   </body>
-  <!--Iframe functions-->
   <script>
     //using inline js because im shit at coding HEHEHEHEHAHAHHAHAHA (no its just me skidding off of pbs kids again)
     //tobbar stuff
     const iframe = document.getElementById("frame");
     const panelbttn = document.getElementById("panelbttn");
     const uvurl = localStorage.getItem("url");
-    const stockSW = "/search/sw.js";
     const stockSWv2 = "/u/sw.js";
     const barbutton = document.getElementById('barButton')
 
@@ -178,6 +173,10 @@ display: none;
     topbar.classList.add('hiddenbar')
     barbutton.classList.remove('barbutton')
     barbutton.classList.add('showbutton')
+    }
+
+    function home() {
+      window.location.href = '/'
     }
 
     function openTopbar() {
@@ -208,10 +207,9 @@ display: none;
         iframe.contentWindow.history.forward();
       }
 
-
+      //jank!!!
       async function switchUV2() {
-        //warn the user of refreshing the page and unencrypted bare set the ultraviolet version and unregister the service worker then reload
-        alert('This will refresh the page. Ultraviolet V2.0.0 uses bare which sends data unencrypted to the server.')
+        alert('ultraviolet v2 not end to end encrypted')
         localStorage.setItem("UVver", "2");
         const replacedurlV2 = uvurl.replace("/search/", "/u/query/");
         localStorage.setItem("url", replacedurlV2);
@@ -221,14 +219,7 @@ display: none;
       }
       
       async function switchUV3() {
-        //warn the user of refreshing the page set the ultraviolet version and unregister the service worker then reload
-        alert('This will refresh the page. Ultraviolet V3.2.3 uses wisp which sends data encrypted to the server.')
-        localStorage.setItem("UVver", "3");
-        const replacedurlV3 = uvurl.replace("/u/query/", "/search/");
-        localStorage.setItem("url", replacedurlV3);
-        localStorage.setItem("swregistered", "");
-        await unregisterSW();
-        await location.reload();
+        alert('Due To Bing.com Ultraviolet V3 Has Been Disabled')
       }
       
       function openswitchpanel() {
@@ -242,15 +233,6 @@ display: none;
         uvpanel.classList.add('hiddenuvpanel')
         panelbttn.setAttribute("onclick", "openswitchpanel()");
       }
-
-    function unregisterSW() {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    for (const registration of registrations) {
-      registration.unregister();
-    }
-  });
-  localStorage.setItem("swregistered", "");
-}
 
 function op() {
     var win = window.open();
@@ -270,26 +252,6 @@ function op() {
     win.document.body.appendChild(iframe);
   }
 
-async function registerSW() {
-  if (!navigator.serviceWorker) {
-    if (
-      location.protocol !== "https:" &&
-      !swAllowedHostnames.includes(location.hostname)
-    )
-      throw new Error(
-        "Service workers cannot be registered without https.",
-      );
-
-    throw new Error("Your browser doesn't support service workers.");
-  }
-
-  await navigator.serviceWorker.register(stockSW);
-  if (localStorage.getItem("swregistered") === "true") {
-  } else {
-    localStorage.setItem("swregistered", "true");
-    location.reload();
-  }
-}
 async function registerSWv2() {
   if (!navigator.serviceWorker) {
     if (

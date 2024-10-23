@@ -3,7 +3,6 @@ const frame = document.getElementById("frame");
 const form = document.getElementById('forminput')
 const topbar = document.getElementById('topbar')
 const iframe = document.getElementById('frame')
-const connection = new BareMux.BareMuxConnection("/bearux/worker.js");
 const swAllowedHostnames = ["localhost", "127.0.0.1"];
 const stockSW = "/search/sw.js";
 localStorage.setItem("nav", "0");
@@ -23,7 +22,6 @@ const uvver = localStorage.getItem("UVver");
 
 //set transport and load settings
 addEventListener("DOMContentLoaded", async (event) => {
-  await connection.setTransport("/epox/index.mjs", [   { wisp: wispUrl }, ]);
   loadUV();
   frame.src = url;
   setInterval(function() { loadURL() }, 3000);
@@ -175,3 +173,4 @@ function loadURL() {
             console.log("Loaded Ultraviolet");
         }
       }
+      

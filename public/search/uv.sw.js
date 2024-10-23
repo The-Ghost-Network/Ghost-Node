@@ -38,7 +38,7 @@
         </ul>
         <button id="reload">Reload</button>
         <hr />
-        <p><i>Ultraviolet v<span id="uvVersion"></span> || Ghost 2.3.4</i></p>
+        <p><i>Ultraviolet v<span id="uvVersion"></span> || Ghost 2.3.9</i></p>
         <script src="${"data:application/javascript,"+encodeURIComponent(o)}"><\/script>
         </body>
         </html>
