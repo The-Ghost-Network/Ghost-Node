@@ -1,7 +1,4 @@
-//import skid from "skid-server-node";
-import wisp from "wisp-server-node";
-import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
-import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+
 import { createBareServer } from "@tomphttp/bare-server-node";
 import http from "node:http";
 import express from "express"
@@ -16,11 +13,6 @@ const app = express();
 const __dirname = process.cwd();
  //meow 
 
-//https://en.wikipedia.org/wiki/Epoxy
-app.use("/epox/", express.static(epoxyPath));
-//https://en.wikipedia.org/wiki/Bear
-app.use("/bearux/", express.static(baremuxPath));
-
 server.on("request", (req, res) => {
   if (bare.shouldRoute(req)) {
     bare.routeRequest(req, res);
@@ -33,7 +25,6 @@ server.on("upgrade", (req, socket, head) => {
   if (bare.shouldRoute(req)) {
       bare.routeUpgrade(req, socket, head);
   } else {
-      wisp.routeRequest(req, socket, head);
   }
 });
 

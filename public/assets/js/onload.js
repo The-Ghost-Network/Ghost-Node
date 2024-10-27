@@ -9,14 +9,13 @@ const leave = localStorage.getItem("leave");
 const blanke = localStorage.getItem("abt");
 const themeload = localStorage.getItem('themeload')
 const swAllowedHostnames = ["localhost", "127.0.0.1"];
-const stockSW = "/u/query/sw.js";
+const stockSW3 = "/u/query/sw.js";
 const FirstLoad = localStorage.getItem('FirstLoad')
 
 if(FirstLoad === null) {
   console.log(FirstLoad)
   localStorage.setItem('UVver', '2')
   unregisterSW();
-  alert('We have run out of bandwith! The site will be slow for the rest of the month sorry!')
   localStorage.setItem('FirstLoad', 'false')
 }else {
   }
@@ -163,7 +162,7 @@ async function registerSWv2() {
 
     throw new Error("Your browser doesn't support service workers.");
   }
-  await navigator.serviceWorker.register(stockSW);
+  await navigator.serviceWorker.register(stockSW3);
   if (localStorage.getItem("swregistered") === "true") {
   } else {
     localStorage.setItem("swregistered", "true");

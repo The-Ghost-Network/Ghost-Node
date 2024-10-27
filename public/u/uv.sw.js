@@ -270,7 +270,10 @@
   function E(n, t) {
     let i = new URL(n),
       e = `remoteHostname.textContent = ${JSON.stringify(i.hostname)};bareServer.href = ${JSON.stringify(t)};uvHostname.textContent = ${JSON.stringify(location.hostname)};reload.addEventListener("click", () => location.reload());uvVersion.textContent = ${JSON.stringify("2.0.0")};`;
-    return `<!DOCTYPE html><html><head><style>  * { background-color: #171717; color: white; font-family: "Be Vietnam Pro", sans-serif; }</style>
+    return `<!DOCTYPE html><html><head>
+    <style>  
+    * { background-color: #171717; color: white; font-family: "Be Vietnam Pro", sans-serif; }
+    </style>
         <title>Error</title>        </head><body style="color: white; background-color: #171717; "><h1>This site can\u2019t be reached</h1><hr /><p><b id="remoteHostname"></b>\u2019s server IP address could not be found.</p><p>Try:</p><ul><li>Verifying you entered the correct address</li><li>Clearing the site data</li><li>Contacting <b id="uvHostname"></b>'s administrator</li><li>Verifying the <a id='bareServer' title='Bare server'>Bare server</a> isn't censored</li></ul><button id="reload">Reload</button><hr /><p><i>Ultraviolet v<span id="uvVersion"></span></i></p><script src="${"data:application/javascript," + encodeURIComponent(e)}"><\/script></body></html>`;
   }
   function O(n, t, i, e, a, r, c) {

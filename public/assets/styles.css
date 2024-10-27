@@ -7,6 +7,7 @@
   --Primary-Color: #e9a40e;
   --Secondary-Color: #333333;
   --Third-Color: #f84545;
+  --Symbols-Color: white;
 }
 
 .catp {
@@ -15,6 +16,7 @@
   --Primary-Color: #9194ab;
   --Secondary-Color: #5b6078;
   --Third-Color: #a5adcb;
+  --Symbols-Color: white;
 }
 
 .blue {
@@ -23,6 +25,7 @@
   --Primary-Color: #386589;
   --Secondary-Color: #e1eaf3;
   --Third-Color: #1361a1;
+  --Symbols-Color: white;
 }
 
 .pink {
@@ -31,6 +34,7 @@
   --Primary-Color: #d3c6cd;
   --Secondary-Color: #e1eaf3;
   --Third-Color: #cbbec9;
+  --Symbols-Color: black;
 }
 
 .green {
@@ -39,6 +43,7 @@
   --Primary-Color: #a9d1ab;
   --Secondary-Color: #84ab90;
   --Third-Color: #a2ccb0;
+  --Symbols-Color: white;
 }
 
 .greendark {
@@ -47,6 +52,7 @@
   --Primary-Color: #1c7633;
   --Secondary-Color: #17642b;
   --Third-Color: #2e7f39;
+  --Symbols-Color: white;
 }
 
 .pinkdark {
@@ -55,6 +61,7 @@
   --Primary-Color: #732e45;
   --Secondary-Color: #924a66;
   --Third-Color: #5b2536;
+  --Symbols-Color: white;
 }
 
 .bluedark {
@@ -63,6 +70,7 @@
   --Primary-Color: #1f6c95;
   --Secondary-Color: #4791b6;
   --Third-Color: #175473;
+  --Symbols-Color: white;
 }
 
 .purple {
@@ -71,6 +79,7 @@
   --Primary-Color: #5f5b8f;
   --Secondary-Color: #7f7ca5;
   --Third-Color: #8e8ab4;
+  --Symbols-Color: white;
 }
 body {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -374,7 +383,7 @@ xn {
   width: 700px;
   margin-top: 5px;
   border-radius: 7px;
-  color: var(--text-color);
+  color: black;
   transition: border-radius 0.1s;
 }
 

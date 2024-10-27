@@ -117,40 +117,30 @@ display: none;
     <div class="topbar" id="topbar" style="color: black;">
       <div class="topbar-content">
         <button class="topbtn" id="topbttn" onclick="closeTopbar()">
-          <span class="material-symbols-outlined" style="color: black;"> arrow_upward </span>
+          <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> arrow_upward </span>
         </button>
         
         <button class="topbtn" id="panelbttn" onclick="openswitchpanel()">
-          <span class="material-symbols-outlined" style="color: black;"> page_info </span>
+          <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> page_info </span>
         </button>
         
       <button class="topbtn" id="fwdbttn" onclick="forward()" style="left: 10px;">
-        <span class="material-symbols-outlined" style="color: black;"> arrow_forward </span>
+        <span class="material-symbols-outlined" style="color: var(--Symbols-Color);"> arrow_forward </span>
       </button>
       <button class="topbtn" id="rfshbttn" onclick="refresh()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: black;"> refresh </span>
+        <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> refresh </span>
       </button>
       <button class="topbtn" id="bckbttn" onclick="back()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: black;"> arrow_back </span>
+        <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> arrow_back </span>
       </button>
       <button class="topbtn" id="bckbttn" onclick="home()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: black;"> home </span>
+        <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> home </span>
       </button>
       <input type="text" class="search" id="forminput" placeholder="Search Or Enter A URL..">
     </div>
     </div>
     <div class="hiddenuvpanel" id="uvpanel">
       <button class="copybttn" id="copybttn" onclick="copyurl()">Copy URL</button>
-      <button class="uvbutton" onclick="switchUV3()">
-        <a>
-        Disabled
-      </a>
-      </button>
-      <button class="uvbutton" onclick="switchUV2()">
-      <a>
-        Ultraviolet v2.0.0
-      </a>
-      </button>
       <button class="topbtn" id="opbttn" onclick="op()" style="left: 30px; margin-top: 10px;">
         <span class="material-symbols-outlined"> open_in_new </span>
       </button>
@@ -209,16 +199,50 @@ display: none;
 
       //jank!!!
       async function switchUV2() {
+        alert('This will refresh the page. Ultraviolet V2.0.0 uses bare which sends data unencrypted to the server.')
         alert('ultraviolet v2 not end to end encrypted')
         localStorage.setItem("UVver", "2");
         const replacedurlV2 = uvurl.replace("/search/", "/u/query/");
         localStorage.setItem("url", replacedurlV2);
+      }
+
+      function unregisterSW() {
+  navigator.serviceWorker.getRegistrations().then((registrations) => {
+    for (const registration of registrations) {
+      registration.unregister();
+    }
+  });
+  localStorage.setItem("swregistered", "");
+}
+      
+
+
+async function registerSW() {
+  if (!navigator.serviceWorker) {
+    if (
+      location.protocol !== "https:" &&
+      !swAllowedHostnames.includes(location.hostname)
+    )
+      throw new Error(
+        "Service workers cannot be registered without https.",
+      );
+    throw new Error("Your browser doesn't support service workers.");
+  }
+  await navigator.serviceWorker.register(stockSW);
+  if (localStorage.getItem("swregistered") === "true") {
+  } else {
+    localStorage.setItem("swregistered", "true");
+    location.reload();
+  }
+}
+
+      async function switchUV3() {
+        localStorage.setItem("UVver", "3");
+        const replacedurlV3 = uvurl.replace("/u/query/", "/search/");
+        localStorage.setItem("url", replacedurlV3);
         localStorage.setItem("swregistered", "");
         await unregisterSW();
         await location.reload();
-      }
-      
-      async function switchUV3() {
         alert('Due To Bing.com Ultraviolet V3 Has Been Disabled')
       }
       
