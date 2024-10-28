@@ -34,9 +34,6 @@
     <meta name="title" content="Ghost" />
     <meta name="theme-color" content="#e9a40e" />
     <meta name="description" content="A Pretty Spooky Site >:D" />
-    <!--Load baremux and epoxy by default to prevent bugging-->
-    <!--whoever changed the names is getting fired-->
-    <script src="/assets/js/gd.js" type="module"></script>
     <script src="/assets/js/onload.js"></script>
   </head>
   <style>
@@ -49,63 +46,6 @@
       overflow: hidden;
       margin: 0;
     } 
-
-    .showbutton {
-  transform: translateY(-30px);
-  color: white;
-  background-color: var(--Background-Color);
-  border: 1px transparent;
-  transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
-  width: 60px;
-  height: 50px;
-  border-radius: 10px;
-}
-
-.showbutton:hover {
-  background-color: var(--Primary-Color);
-  border: 1px var(--Background-Color);
-  transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
-  border-radius: 5px;
-  transform: translateY(0px);
-}
-
-.showbutton:active {
-  background-color: #30374425;
-}
-
-.barbutton {
-display: none;
-}
-
-.iframe {
-  border: none;
-  outline: none;
-  position: fixed;
-  height: 100vh;
-  width: 100% !important;
-  padding: none;
-  right: 0;
-  left: 0;
-  bottom: 0px;
-  z-index: -1;
-}
-
-.copybttn {
-  width: 180px;
-  height: 30px;
-  color: white;
-  margin-left: 11px;
-  margin-top: 10px;
-  border-radius: 5px;
-  background-color: var(--Primary-Color);
-  border: none;
-
-}
-
-.copybttn:hover {
-  background-color: var(--Secondary-Color);
-  transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
-}
 
     /* big meowmeowm okemoqwpomemwmeowmoqfnfdngjdfsng */
   </style>
@@ -147,153 +87,115 @@ display: none;
     </div>
     <iframe class="mainiframe" id="frame"></iframe>
   </body>
+  <!--JANK JS!!!! -->
   <script>
-    //using inline js because im shit at coding HEHEHEHEHAHAHHAHAHA (no its just me skidding off of pbs kids again)
-    //tobbar stuff
-    const iframe = document.getElementById("frame");
-    const panelbttn = document.getElementById("panelbttn");
-    const uvurl = localStorage.getItem("url");
-    const stockSWv2 = "/u/sw.js";
-    const barbutton = document.getElementById('barButton')
+    //never using prettier on this ever again :sob:
+const frame = document.getElementById("frame");
+const form = document.getElementById('forminput')
+const topbar = document.getElementById('topbar')
+localStorage.setItem("nav", "0");
+const nav = document.getElementById("topbar");
+const navbttn = document.getElementById("navbttn1");
+const uvurl = localStorage.getItem("url");
+const spanel = document.getElementById('spanel');
+const panelbttn = document.getElementById("panelbttn");
+const uvpanel = document.getElementById('uvpanel');
+const panel2bttn = document.getElementById('pnlbttn');
+const url = localStorage.getItem("url");
+const input = document.querySelector(".search");
+const stockSWv2 = "/u/sw.js";
+const barbutton = document.getElementById('barButton')
+const iframe = document.getElementById('frame')
 
-    function closeTopbar() {
-      iframe.classList.remove('mainframe')
-      iframe.classList.add('iframe')
-    topbar.classList.remove('topbar')
-    topbar.classList.add('hiddenbar')
-    barbutton.classList.remove('barbutton')
-    barbutton.classList.add('showbutton')
-    }
+document.addEventListener("DOMContentLoaded", (event) => {
+  LoadURL();
+  setURL();
+});
 
-    function home() {
-      window.location.href = '/'
-    }
-
-    function openTopbar() {
-      barbutton.classList.remove('showbutton')
-      barbutton.classList.add('barbutton')
-      iframe.classList.remove('iframe')
-      iframe.classList.add('mainframe')
-    topbar.classList.remove('hiddenbar')
-    topbar.classList.add('topbar')
-    }
-
-    function copyurl() {
-      const copybttn = document.getElementById('copybttn')
-      navigator.clipboard.writeText(frame.src);
-      copybttn.textContent = 'Copied!'
-      setTimeout("copybttn.textContent = 'Copy URL'", 3000);
-    }
-
-    function refresh() {
-        iframe.src = frame.src;
-      }
-      
-      function back() {
-        iframe.contentWindow.history.back();
-      }
-      
-      function forward() {
-        iframe.contentWindow.history.forward();
-      }
-
-      //jank!!!
-      async function switchUV2() {
-        alert('This will refresh the page. Ultraviolet V2.0.0 uses bare which sends data unencrypted to the server.')
-        alert('ultraviolet v2 not end to end encrypted')
-        localStorage.setItem("UVver", "2");
-        const replacedurlV2 = uvurl.replace("/search/", "/u/query/");
-        localStorage.setItem("url", replacedurlV2);
-      }
-
-      function unregisterSW() {
-  navigator.serviceWorker.getRegistrations().then((registrations) => {
-    for (const registration of registrations) {
-      registration.unregister();
-    }
-  });
-  localStorage.setItem("swregistered", "");
-}
-      
-
-
-async function registerSW() {
-  if (!navigator.serviceWorker) {
-    if (
-      location.protocol !== "https:" &&
-      !swAllowedHostnames.includes(location.hostname)
-    )
-      throw new Error(
-        "Service workers cannot be registered without https.",
-      );
-    throw new Error("Your browser doesn't support service workers.");
-  }
-  await navigator.serviceWorker.register(stockSW);
-  if (localStorage.getItem("swregistered") === "true") {
-  } else {
-    localStorage.setItem("swregistered", "true");
-    location.reload();
-  }
+function closeTopbar() {
+  iframe.classList.remove('mainframe')
+  iframe.classList.add('iframe')
+topbar.classList.remove('topbar')
+topbar.classList.add('hiddenbar')
+barbutton.classList.remove('barbutton')
+barbutton.classList.add('showbutton')
 }
 
-      async function switchUV3() {
-        localStorage.setItem("UVver", "3");
-        const replacedurlV3 = uvurl.replace("/u/query/", "/search/");
-        localStorage.setItem("url", replacedurlV3);
-        localStorage.setItem("swregistered", "");
-        await unregisterSW();
-        await location.reload();
-        alert('Due To Bing.com Ultraviolet V3 Has Been Disabled')
-      }
-      
-      function openswitchpanel() {
-        uvpanel.classList.remove('hiddenuvpanel')
-        uvpanel.classList.add('uvpanel')
-        panelbttn.setAttribute("onclick", "closeswitchpanel()");
-      }
-      
-      function closeswitchpanel() {
-        uvpanel.classList.remove('uvpanel')
-        uvpanel.classList.add('hiddenuvpanel')
-        panelbttn.setAttribute("onclick", "openswitchpanel()");
-      }
+function home() {
+  window.location.href = '/'
+}
+
+function openTopbar() {
+  barbutton.classList.remove('showbutton')
+  barbutton.classList.add('barbutton')
+  iframe.classList.remove('iframe')
+  iframe.classList.add('mainframe')
+topbar.classList.remove('hiddenbar')
+topbar.classList.add('topbar')
+}
+
+function copyurl() {
+  const copybttn = document.getElementById('copybttn')
+  navigator.clipboard.writeText(frame.src);
+  copybttn.textContent = 'Copied!'
+  setTimeout("copybttn.textContent = 'Copy URL'", 3000);
+}
+
+function refresh() {
+    iframe.src = frame.src;
+  }
+  
+  function back() {
+    iframe.contentWindow.history.back();
+  }
+  
+  function forward() {
+    iframe.contentWindow.history.forward();
+  }
+
+  //jank!!!
+
+
+function setURL() {
+  frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
+    iframe.src = '/u/query/' + __uv$config.encodeUrl(url)
+  }
+  const decodedURL = __uv$config.decodeURL(frame.src)
+  form.textContent = decodedURL
+}
+
+function LoadURL() {
+  frame.src = url
+}
+
+function openswitchpanel() {
+  uvpanel.classList.remove('hiddenuvpanel')
+  uvpanel.classList.add('uvpanel')
+  panelbttn.setAttribute("onclick", "closeswitchpanel()");
+}
+
+function closeswitchpanel() {
+  uvpanel.classList.remove('uvpanel')
+  uvpanel.classList.add('hiddenuvpanel')
+  panelbttn.setAttribute("onclick", "openswitchpanel()");
+}
 
 function op() {
-    var win = window.open();
-    var url = "/q/";
-    var iframe = win.document.createElement("iframe");
-    iframe.style.position = "fixed";
-    iframe.style.top = 0;
-    iframe.style.bottom = 0;
-    iframe.style.left = 0;
-    iframe.style.right = 0;
-    iframe.style.border = "none";
-    iframe.style.outline = "none";
-    iframe.style.width = "100%";
-    iframe.style.height = "100%";
-    iframe.src = url;
+var win = window.open();
+var url = "/q/";
+var iframe = win.document.createElement("iframe");
+iframe.style.position = "fixed";
+iframe.style.top = 0;
+iframe.style.bottom = 0;
+iframe.style.left = 0;
+iframe.style.right = 0;
+iframe.style.border = "none";
+iframe.style.outline = "none";
+iframe.style.width = "100%";
+iframe.style.height = "100%";
+iframe.src = url;
 
-    win.document.body.appendChild(iframe);
-  }
-
-async function registerSWv2() {
-  if (!navigator.serviceWorker) {
-    if (
-      location.protocol !== "https:" &&
-      !swAllowedHostnames.includes(location.hostname)
-    )
-      throw new Error(
-        "Service workers cannot be registered without https.",
-      );
-
-    throw new Error("Your browser doesn't support service workers.");
-  }
-  await navigator.serviceWorker.register(stockSWv2);
-  if (localStorage.getItem("swregistered") === "true") {
-  } else {
-    localStorage.setItem("swregistered", "true");
-    location.reload();
-  }
-} 
+win.document.body.appendChild(iframe);
+}
   </script>
 </html>
