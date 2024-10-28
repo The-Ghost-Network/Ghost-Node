@@ -10,7 +10,7 @@ const blanke = localStorage.getItem("abt");
 const themeload = localStorage.getItem('themeload')
 const swAllowedHostnames = ["localhost", "127.0.0.1"];
 const stockSW3 = "/u/sw.js";
-const SWRegistered = localStorage.getItem('SWRegistered')
+const SwRegistered = localStorage.getItem('SwRegistered')
 
 addEventListener("DOMContentLoaded", async (event) => {
   initTheme();
@@ -60,14 +60,17 @@ addEventListener("DOMContentLoaded", async (event) => {
   }
 
   //check if the sw isnt registered because yes
-  if(SWRegistered === null) {
+  if(SwRegistered === null) {
     console.log('Registering SW')
     unregisterSW();
+    localStorage.setItem('SwRegistered', 'true');
+    location.reload();
+  }if(SwRegistered === 'true') {
     registerSWv2();
-    localStorage.setItem('SWRegistered', 'true');
-  }else {
-
-  }
+    localStorage.setItem('SwRegistered', 'true2');
+}
+else {
+  };
 
   //ifs
   if (clickoff1 === "on") {
