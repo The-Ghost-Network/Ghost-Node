@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.querySelector(".input");
   input.addEventListener("keydown", handleInput);
-  const uvver = localStorage.getItem("UVver");
 
   function handleInput(e) {
     // We only want the function to run if the key pressed is the Enter key
@@ -17,11 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
       // Run the formatSearch function on the current value of the input
       const query = formatSearch(input.value);
 
-      if (uvver === "2") {
         localStorage.setItem("url", "/u/query/" + __uv$config.encodeUrl(query));
-      } else {
-        localStorage.setItem("url", "/search/" + __uv$config.encodeUrl(query));
-      }
+
       // Redirect to g.html
       window.location.href = "/q/";
     }

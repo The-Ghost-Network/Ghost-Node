@@ -9,23 +9,11 @@ const leave = localStorage.getItem("leave");
 const blanke = localStorage.getItem("abt");
 const themeload = localStorage.getItem('themeload')
 const swAllowedHostnames = ["localhost", "127.0.0.1"];
-const stockSW3 = "/u/query/sw.js";
-const FirstLoad = localStorage.getItem('FirstLoad')
-
-if(FirstLoad === null) {
-  console.log(FirstLoad)
-  localStorage.setItem('UVver', '2')
-  unregisterSW();
-  localStorage.setItem('FirstLoad', 'false')
-}else {
-  }
+const stockSW3 = "/u/sw.js";
+const SWRegistered = localStorage.getItem('SWRegistered')
 
 addEventListener("DOMContentLoaded", async (event) => {
   initTheme();
-  //deregister the current v3 sw if they used the website before and register the v2 sw for site support
-
-    localStorage.setItem('firstLoad', 'false')
-
   //switches
   switch (blanke) {
     case "on":
@@ -69,6 +57,16 @@ addEventListener("DOMContentLoaded", async (event) => {
       break;
     case "off":
       break;
+  }
+
+  //check if the sw isnt registered because yes
+  if(SWRegistered === null) {
+    console.log('Registering SW')
+    unregisterSW();
+    registerSWv2();
+    localStorage.setItem('SWRegistered', 'true');
+  }else {
+
   }
 
   //ifs
@@ -163,10 +161,6 @@ async function registerSWv2() {
     throw new Error("Your browser doesn't support service workers.");
   }
   await navigator.serviceWorker.register(stockSW3);
-  if (localStorage.getItem("swregistered") === "true") {
-  } else {
-    localStorage.setItem("swregistered", "true");
-  }
 } 
 
 function unregisterSW() {
@@ -175,5 +169,4 @@ function unregisterSW() {
       registration.unregister();
     }
   });
-  localStorage.setItem("swregistered", "");
 }
