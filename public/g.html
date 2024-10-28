@@ -35,6 +35,9 @@
     <meta name="theme-color" content="#e9a40e" />
     <meta name="description" content="A Pretty Spooky Site >:D" />
     <script src="/assets/js/onload.js"></script>
+    <script src="/assets/script.js"></script>
+    <script src="/u/uv.bundle.js"></script>
+    <script src="/u/uv.config.js"></script>
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -46,6 +49,20 @@
       overflow: hidden;
       margin: 0;
     } 
+
+  .input {
+    width: 50%;
+    height: 15px;
+    background-color: var(--Secondary-Color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin-top: 3px !important;
+    font-family: "Be Vietnam Pro", sans-serif;
+    display: inline;
+}
+
 
     /* big meowmeowm okemoqwpomemwmeowmoqfnfdngjdfsng */
   </style>
@@ -76,7 +93,7 @@
       <button class="topbtn" id="bckbttn" onclick="home()" style="left: 30px;">
         <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> home </span>
       </button>
-      <input type="text" class="search" id="forminput" placeholder="Search Or Enter A URL..">
+      <input type="text" class="input" id="forminput" placeholder="Search Or Enter A URL..">
     </div>
     </div>
     <div class="hiddenuvpanel" id="uvpanel">
@@ -160,9 +177,14 @@ function setURL() {
   frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
     iframe.src = '/u/query/' + __uv$config.encodeUrl(url)
   }
-  const decodedURL = __uv$config.decodeURL(frame.src)
-  form.textContent = decodedURL
+  const geturl = frame.contentWindow.location.href
+  const removedUrl = geturl.replace("https://" + location.hostname + "/u/query/", "")
+  const decodedURL = __uv$config.decodeUrl(removedUrl)
+  form.value = decodedURL
+  localStorage.setItem("url", frame.src); 
 }
+
+setInterval(function() { setURL() }, 3000);
 
 function LoadURL() {
   frame.src = url

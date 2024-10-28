@@ -643,19 +643,6 @@ transition: cubic-bezier(1, 1.82, 1, 1.31) 0.25s;
 background-color: var(--Third-Color);
 }
 
-.search {
-width: 50%;
-height: 15px;
-background-color: var(--Secondary-Color);
-color: white;
-border: none;
-border-radius: 5px;
-padding: 10px;
-margin-top: 3px !important;
-font-family: "Be Vietnam Pro", sans-serif;
-display: inline;
-}
-
 .hiddenbar {
 display: none;
 }

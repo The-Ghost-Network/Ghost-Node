@@ -110,21 +110,13 @@
           const i = document.getElementById("trendingg");
           const g = document.createElement("div");
           g.classList.add("game-icon");
-          if(uvvers === '2') {
           g.setAttribute(
             "onclick",
             "localStorage.setItem('url', '" +
               '/u/query/' + __uv$config.encodeUrl(game.href) +
               "'); window.location.href = '/q/'",
           );
-          }else {
-            g.setAttribute(
-            "onclick",
-            "localStorage.setItem('url', '" +
-              '/search/' + __uv$config.encodeUrl(game.href) +
-              "'); window.location.href = '/q/'",
-          );
-          }
+          
 
           const img = document.createElement("button");
           const image = document.createElement("img");
@@ -148,21 +140,13 @@
 
           const g = document.createElement("div");
           g.classList.add("game-icon");
-          if(uvvers === '2') {
           g.setAttribute(
             "onclick",
             "localStorage.setItem('url', '" +
               '/u/query/' + __uv$config.encodeUrl(game.href) +
               "'); window.location.href = '/q/'",
           );
-          }else {
-            g.setAttribute(
-            "onclick",
-            "localStorage.setItem('url', '" +
-              '/search/' + __uv$config.encodeUrl(game.href) +
-              "'); window.location.href = '/q/'",
-          );
-          }
+          
 
           const img = document.createElement("button");
           const image = document.createElement("img");
