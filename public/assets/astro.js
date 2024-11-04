@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
       window.location.replace("/blocked.html");
     } else {
       const query = formatSearch(input.value);
-        localStorage.setItem("url", "/u/service/" + __uv$config.encodeUrl(query));
+        localStorage.setItem("url", "/u/liftoff/" + __uv$config.encodeUrl(query));
       window.location.href = "/q/";
     }
   }
