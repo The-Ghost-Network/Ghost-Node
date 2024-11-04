@@ -180,7 +180,7 @@ function setURL() {
     }else {
 const geturl = frame.contentWindow.location.href
 const removedUrl = geturl.replace("https://" + location.hostname + "/u/liftoff/", "")
-form.value = atob(removedUrl);
+form.value = __uv$config.decodeUrl(removedUrl);
 localStorage.setItem("url", frame.src); 
     }
 }
