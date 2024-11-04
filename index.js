@@ -2,16 +2,14 @@
 import { createBareServer } from "@tomphttp/bare-server-node";
 import http from "node:http";
 import express from "express"
-import  g  from "./server_lib/games.mjs" // i finaly did the thing
+import  g  from "./server_lib/games.mjs"
 import  a  from "./server_lib/apps.mjs"
 
-//guys remember to join us next time for scramming our jets!!! rammerhead included!!!
 const bare = createBareServer("/bare/");
 const server = http.createServer();
 const PORT = 8080;
 const app = express(); 
 const __dirname = process.cwd();
- //meow 
 
 server.on('request', (req, res) => {
 	if (bare.shouldRoute(req)) {
@@ -29,16 +27,12 @@ server.on('upgrade', (req, socket, head) => {
 	}
 });
 
-//weird suttfff!!! weird!!!!!
-
 app.use(express.static(__dirname + "/public"));
-
 
 app.get("/", (req, res) => {
   res.sendFile("/public/index.html", { root: __dirname });
 });
 
-//meow
 app.get("/s/", (req, res) => {
   res.sendFile("/public/settings.html", { root: __dirname });
 });
@@ -62,22 +56,9 @@ app.get("/a/", (req, res) => {
 app.get("/q/", (req, res) => {
   res.sendFile("/public/g.html", { root: __dirname });
 });
-// all ghost apis
-
-app.get("/api/links/v1/", (req, res) => { //if you want to add links back do it here 
-  res.json(["api-depricated"]);
-});
-
-app.get("/api/info/v1/", (req, res) => { // for this weird scuffed panel im gonna make
-  res.json([{
-    "Version": '2.4', 
-    // TODO - Online / offline things
-  }])
-});
 
 var sg = [];
 var sa = [];
-//32 games added
 function getrand() {
   sg.splice(0, sg.length);
   for (var i = 0; i < 8; i++) {
@@ -89,8 +70,7 @@ function getrand() {
       i--;
     }
   }
-}
-
+};
 function getrandapps() {
   sa.splice(0, sa.length);
   for (var i = 0; i < 8; i++) {
@@ -102,12 +82,9 @@ function getrandapps() {
       i--;
     }
   }
-}
-
-//reget apps and games every 5 minutes
+};
 setInterval(getrand, 500000);
 setInterval(getrandapps, 500000);
-//run the function 1 time to start then let the interval rerun it
 getrand();
 getrandapps();
 
@@ -133,7 +110,6 @@ server.on("listening", () => {
   console.log("Ghost Is On http://localhost:" + PORT);
 });
 
-// SIGMA SHUTDOWN
 server.on("SIGTERM", () => {
   debug("SIGTERM signal received: closing HTTP server");
   server.close(() => {

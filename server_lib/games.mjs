@@ -22,7 +22,7 @@ const g = [
     {
       name: "Just One Boss",
       img: "/assets/img/assets/justoneboss.png",
-      href: "https://g.immortal2willlose.xyz/ghost/justoneboss/web/",
+      href: "https://g.immortal2willlose.xyz/ghost/just-one-boss/web/",
     },
     {
       name: "Phisibox",
@@ -132,7 +132,7 @@ const g = [
     {
       name: "Dogeminer",
       img: "/assets/img/assets/dogeminer.png",
-      href: "https://g.immortal2willlose.xyz/ghost/Dogeminer/",
+      href: "https://g.immortal2willlose.xyz/ghost/DogeMiner/",
     },
     {
       name: "Dogeminer 2",
@@ -252,7 +252,7 @@ const g = [
     {
       name: "Retrobowl",
       img: "/assets/img/assets/retrobowl.png",
-      href: "https://shawn43.github.io/retrobowl-unlimited/",
+      href: "https://game316009.konggames.com/gamez/0031/6009/live/index.html",
     },
     {
       name: "Balloons Tower Defence",
@@ -668,6 +668,11 @@ const g = [
       name: "Flappy Bird",
       img: "/assets/img/assets/flappybird.png",
       href: "https://g.immortal2willlose.xyz/ghost/flappy-bird/",
+    },
+    {
+      name: "Roblox",
+      img: "/assets/img/assets/roblox.png",
+      href: "https://now.gg/apps/a/10020/b.html",
     },
   ];
 

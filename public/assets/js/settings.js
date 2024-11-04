@@ -27,21 +27,6 @@ function tabs() {
   location.href = "/";
 }
 
-function clickoff() {
-  const clickofff = localStorage.getItem("clickoff");
-
-  switch (clickofff) {
-    case "off":
-      localStorage.setItem("clickoff", "on");
-      location.href = "/";
-      break;
-    case "on":
-      localStorage.setItem("clickoff", "off");
-      location.href = "/";
-      break;
-  }
-}
-
 function noleave() {
   const leave = localStorage.getItem("leave");
 
@@ -153,6 +138,7 @@ function theme10() {
   localStorage.setItem("theme", "purple");
   document.body.setAttribute("class", "purple");
 }
+
 function tabs() {}
 
 function abt() {

@@ -3,22 +3,12 @@ document.addEventListener("DOMContentLoaded", () => {
   input.addEventListener("keydown", handleInput);
 
   function handleInput(e) {
-    // We only want the function to run if the key pressed is the Enter key
     if (e.key !== "Enter") return;
-
-    // We Intercept The URL
-    // Check if it contains a blocked keyword or website
     if (containsBlockedKeyword(input.value, blocked)) {
-      // Redirect to blockpage
       window.location.replace("/blocked.html");
     } else {
-      // If it doesn't contain a blocked keyword then proceed
-      // Run the formatSearch function on the current value of the input
       const query = formatSearch(input.value);
-
-        localStorage.setItem("url", "/u/query/" + __uv$config.encodeUrl(query));
-
-      // Redirect to g.html
+        localStorage.setItem("url", "/u/service/" + __uv$config.encodeUrl(query));
       window.location.href = "/q/";
     }
   }
@@ -58,5 +48,6 @@ document.addEventListener("DOMContentLoaded", () => {
     "pornhub.com",
     "xxx.com",
     "4chan.org",
+    "xvideos",
   ];
 });
