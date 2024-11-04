@@ -1,9 +1,12 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script src="/assets/js/kit.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="title" content="Ghost" />
+    <meta name="theme-color" content="#e9a40e" />
+    <meta name="description" content="A Pretty Spooky Site >:D" />
+    <script src="/assets/js/galaxy.js?disc=false&num=24" crossorigin="anonymous"></script>
     <link
       rel="shortcut icon"
       id="favicon"
@@ -31,13 +34,10 @@
       gtag("config", "G-WFWKKRRXLT");
     </script>
     <title>Classes</title>
-    <meta name="title" content="Ghost" />
-    <meta name="theme-color" content="#e9a40e" />
-    <meta name="description" content="A Pretty Spooky Site >:D" />
-    <script src="/assets/js/onload.js"></script>
-    <script src="/assets/script.js"></script>
-    <script src="/u/uv.bundle.js"></script>
-    <script src="/u/uv.config.js"></script>
+    <script src="/assets/js/cosmos.js?v=24&ye=1"></script>
+    <script src="/assets/astro.js?skid=true"></script>
+    <script src="/u/space.js?id=10292" defer></script>
+    <script src="/u/liftoff.js?skib=idi" defer></script>
   </head>
   <style>
     @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
@@ -53,7 +53,7 @@
   .input {
     width: 50%;
     height: 15px;
-    background-color: var(--Secondary-Color);
+    background-color: #2F2F35;
     color: white;
     border: none;
     border-radius: 5px;
@@ -74,24 +74,24 @@
     <div class="topbar" id="topbar" style="color: black;">
       <div class="topbar-content">
         <button class="topbtn" id="topbttn" onclick="closeTopbar()">
-          <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> arrow_upward </span>
+          <span class="material-symbols-outlined" style="color: white;"> arrow_upward </span>
         </button>
         
         <button class="topbtn" id="panelbttn" onclick="openswitchpanel()">
-          <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> page_info </span>
+          <span class="material-symbols-outlined" style="color: white;"> page_info </span>
         </button>
         
       <button class="topbtn" id="fwdbttn" onclick="forward()" style="left: 10px;">
-        <span class="material-symbols-outlined" style="color: var(--Symbols-Color);"> arrow_forward </span>
+        <span class="material-symbols-outlined" style="color: white;"> arrow_forward </span>
       </button>
       <button class="topbtn" id="rfshbttn" onclick="refresh()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> refresh </span>
+        <span class="material-symbols-outlined" style="color: white;"> refresh </span>
       </button>
       <button class="topbtn" id="bckbttn" onclick="back()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> arrow_back </span>
+        <span class="material-symbols-outlined" style="color: white;"> arrow_back </span>
       </button>
       <button class="topbtn" id="bckbttn" onclick="home()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: var(--Symbols-Color)"> home </span>
+        <span class="material-symbols-outlined" style="color: white;"> home </span>
       </button>
       <input type="text" class="input" id="forminput" placeholder="Search Or Enter A URL..">
     </div>
@@ -102,7 +102,7 @@
         <span class="material-symbols-outlined"> open_in_new </span>
       </button>
     </div>
-    <iframe class="mainiframe" id="frame"></iframe>
+    <iframe class="mainiframe" id="frame" style="background-color: #1e1e2e;"></iframe>
   </body>
   <!--JANK JS!!!! -->
   <script>
@@ -126,7 +126,6 @@ const iframe = document.getElementById('frame')
 
 document.addEventListener("DOMContentLoaded", (event) => {
   LoadURL();
-  setURL();
 });
 
 function closeTopbar() {
@@ -175,13 +174,15 @@ function refresh() {
 
 function setURL() {
   frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
-    iframe.src = '/u/query/' + __uv$config.encodeUrl(url)
+    iframe.src = '/u/liftoff/' + __uv$config.encodeUrl(url)
   }
-  const geturl = frame.contentWindow.location.href
-  const removedUrl = geturl.replace("https://" + location.hostname + "/u/query/", "")
-  const decodedURL = __uv$config.decodeUrl(removedUrl)
-  form.value = decodedURL
-  localStorage.setItem("url", frame.src); 
+  if(document.activeElement === document.getElementById('forminput')) {
+    }else {
+const geturl = frame.contentWindow.location.href
+const removedUrl = geturl.replace("https://" + location.hostname + "/u/liftoff/", "")
+form.value = atob(removedUrl);
+localStorage.setItem("url", frame.src); 
+    }
 }
 
 setInterval(function() { setURL() }, 3000);
