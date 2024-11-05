@@ -176,3 +176,6 @@ function unregisterSW() {
     }
   });
 }
+
+//run register sw everytime it loads because yes dont ask me why
+registerSWv2();
