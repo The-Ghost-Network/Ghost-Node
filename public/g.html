@@ -39,186 +39,385 @@
     <script src="/u/space.js?id=10292" defer></script>
     <script src="/u/liftoff.js?skib=idi" defer></script>
   </head>
-  <style>
-    @import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+  <<style is:global>
+    /*self host mso for better loading times*/
+    @font-face {
+        font-family: 'Material Symbols Outlined';
+        font-style: normal;
+        font-weight: 100 700;
+        src: url(/assets/mso.woff2) format('woff2');
+    }
+
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;
+        line-height: 1;
+        letter-spacing: normal;
+        text-transform: none;
+        display: inline-block;
+        white-space: nowrap;
+        word-wrap: normal;
+        direction: ltr;
+        -webkit-font-feature-settings: 'liga';
+        -webkit-font-smoothing: antialiased;
+    }
+
+    @font-face {
+        font-family: 'Be Vietnam Pro';
+        font-style: italic;
+        font-weight: 100;
+        font-display: swap;
+        src: url(https://fonts.gstatic.com/s/bevietnampro/v11/QdVLSTAyLFyeg_IDWvOJmVES_HwyPRsibZgmSh8.woff2)
+            format('woff2');
+        unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169,
+            U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309,
+            U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+    }
+
     * {
-      font-family: "Be Vietnam Pro";
+        font-family: 'Be Vietnam Pro';
     }
     body {
-      background: linear-gradient(135deg, #1e1e2e, #534158);
-      overflow: hidden;
-      margin: 0;
-    } 
+        background: linear-gradient(135deg, #1e1e2e, #534158);
+        overflow: hidden;
+        margin: 0;
+    }
 
-  .input {
-    width: 50%;
-    height: 15px;
-    background-color: #2F2F35;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    margin-top: 3px !important;
-    font-family: "Be Vietnam Pro", sans-serif;
-    display: inline;
-}
+    .input {
+        width: 50%;
+        height: 15px;
+        background-color: var(--Secondary-Color);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 5px !important;
+        font-family: 'Be Vietnam Pro', sans-serif;
+        display: inline;
+    }
 
+    @keyframes goOut {
+        0% {
+            width: 200px;
+            opacity: 0.5;
+            transform: translateY(20px);
+        }
+        100% {
+            width: 50%;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .topbar button {
+        animation: riseUp 1s;
+    }
+
+    @keyframes riseUp {
+        0% {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    object {
+        cursor: pointer;
+        margin-right: 5px;
+        margin-top: 5px;
+        padding: 5px;
+    }
 
     /* big meowmeowm okemoqwpomemwmeowmoqfnfdngjdfsng */
-  </style>
-  <body>
-
-    <button class="barbutton" id="barButton" onclick="openTopbar()"><span class="material-symbols-outlined">arrow_downward</span></button>
-    <!--Topbar container-->
-    <!--NOT THE CHATGPT NOTES! :sob:-->
-    <div class="topbar" id="topbar" style="color: black;">
-      <div class="topbar-content">
-        <button class="topbtn" id="topbttn" onclick="closeTopbar()">
-          <span class="material-symbols-outlined" style="color: white;"> arrow_upward </span>
+</style>
+    <button class="barbutton" id="barButton" onclick="
+        openTopbar()"
+        ><span class="material-symbols-outlined">arrow_downward</span></button
+    >
+    <div class="topbar" id="topbar" style="color: white;">
+        <div class="topbar-content">
+            <button class="topbtn" id="topbttn" onclick="closeTopbar()">
+                <span class="material-symbols-outlined" style="color: white;">
+                    arrow_upward
+                </span>
+            </button>
+            <button class="topbtn" id="panelbttn" onclick="openswitchpanel()">
+                <span class="material-symbols-outlined" style="color: white;">
+                    page_info
+                </span>
+            </button>
+            <button
+            class="topbtn"
+            id="fwdbttn"
+            onclick="forward()"
+            style="left: 10px;"
+        >
+        <span class="material-symbols-outlined">
+            arrow_forward_ios
+            </span>
         </button>
-        
-        <button class="topbtn" id="panelbttn" onclick="openswitchpanel()">
-          <span class="material-symbols-outlined" style="color: white;"> page_info </span>
+        <button
+        class="topbtn"
+        id="bckbttn"
+        onclick="back()"
+        style="left: 30px;"
+    >
+    <span class="material-symbols-outlined">
+        arrow_back_ios
+        </span>
+    </button>
+            <button
+                class="topbtn"
+                id="rfshbttn"
+                onclick="refresh()"
+                style="left: 30px;"
+            >
+                <span class="material-symbols-outlined" style="color: white;">
+                    refresh
+                </span>
+            </button>
+            <button
+            class="topbtn"
+            id="bckbttn"
+            onclick="home()"
+            style="left: 30px;"
+        >
+            <span class="material-symbols-outlined" style="color: white;">
+                home
+            </span>
         </button>
-        
-      <button class="topbtn" id="fwdbttn" onclick="forward()" style="left: 10px;">
-        <span class="material-symbols-outlined" style="color: white;"> arrow_forward </span>
-      </button>
-      <button class="topbtn" id="rfshbttn" onclick="refresh()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: white;"> refresh </span>
-      </button>
-      <button class="topbtn" id="bckbttn" onclick="back()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: white;"> arrow_back </span>
-      </button>
-      <button class="topbtn" id="bckbttn" onclick="home()" style="left: 30px;">
-        <span class="material-symbols-outlined" style="color: white;"> home </span>
-      </button>
-      <input type="text" class="input" id="forminput" placeholder="Search Or Enter A URL..">
-    </div>
+            <input
+                type="text"
+                class="input"
+                id="forminput"
+                placeholder="Search Or Enter A URL.."
+            />
+        </div>
     </div>
     <div class="hiddenuvpanel" id="uvpanel">
-      <button class="copybttn" id="copybttn" onclick="copyurl()">Copy URL</button>
-      <button class="topbtn" id="opbttn" onclick="op()" style="left: 30px; margin-top: 10px;">
-        <span class="material-symbols-outlined"> open_in_new </span>
-      </button>
+        <button
+            class="copybttn"
+            id="copybttn"
+            onclick="copyurl()"
+            style="font-family: 'Be Vietnam Pro', sans-serif;">Copy URL</button
+        >
+        <button
+            class="copybttn"
+            id="copybttn"
+            onclick="inspect()"
+            style="font-family: 'Be Vietnam Pro', sans-serif;">Inspect</button
+        >
+        <button
+            class="topbtn"
+            id="opbttn"
+            onclick="op()"
+            style="left: 30px; margin-top: 10px;"
+        >
+            <span class="material-symbols-outlined"> open_in_new</span>
+        </button>
     </div>
-    <iframe class="mainiframe" id="frame" style="background-color: #1e1e2e;"></iframe>
+    <iframe class="mainiframe" id="frame"></iframe>
   </body>
   <!--JANK JS!!!! -->
   <script>
     //never using prettier on this ever again :sob:
-const frame = document.getElementById("frame");
-const form = document.getElementById('forminput')
-const topbar = document.getElementById('topbar')
-localStorage.setItem("nav", "0");
-const nav = document.getElementById("topbar");
-const navbttn = document.getElementById("navbttn1");
-const uvurl = localStorage.getItem("url");
-const spanel = document.getElementById('spanel');
-const panelbttn = document.getElementById("panelbttn");
-const uvpanel = document.getElementById('uvpanel');
-const panel2bttn = document.getElementById('pnlbttn');
-const url = localStorage.getItem("url");
-const input = document.querySelector(".search");
-const stockSWv2 = "/u/sw.js";
-const barbutton = document.getElementById('barButton')
-const iframe = document.getElementById('frame')
+    const frame = document.getElementById('frame')
+    const form = document.getElementById('forminput')
+    const topbar = document.getElementById('topbar')
+    localStorage.setItem('nav', '0')
+    const panelbttn = document.getElementById('panelbttn')
+    const uvpanel = document.getElementById('uvpanel')
+    const url = localStorage.getItem('url')
+    const barbutton = document.getElementById('barButton')
+    const iframe = document.getElementById('frame')
 
-document.addEventListener("DOMContentLoaded", (event) => {
-  LoadURL();
-});
+    document.addEventListener('DOMContentLoaded', (event) => {
+        LoadURL()
+    })
 
-function closeTopbar() {
-  iframe.classList.remove('mainframe')
-  iframe.classList.add('iframe')
-topbar.classList.remove('topbar')
-topbar.classList.add('hiddenbar')
-barbutton.classList.remove('barbutton')
-barbutton.classList.add('showbutton')
-}
-
-function home() {
-  window.location.href = '/'
-}
-
-function openTopbar() {
-  barbutton.classList.remove('showbutton')
-  barbutton.classList.add('barbutton')
-  iframe.classList.remove('iframe')
-  iframe.classList.add('mainframe')
-topbar.classList.remove('hiddenbar')
-topbar.classList.add('topbar')
-}
-
-function copyurl() {
-  const copybttn = document.getElementById('copybttn')
-  navigator.clipboard.writeText(frame.src);
-  copybttn.textContent = 'Copied!'
-  setTimeout("copybttn.textContent = 'Copy URL'", 3000);
-}
-
-function refresh() {
-    iframe.src = frame.src;
-  }
-  
-  function back() {
-    iframe.contentWindow.history.back();
-  }
-  
-  function forward() {
-    iframe.contentWindow.history.forward();
-  }
-
-  //jank!!!
-
-
-function setURL() {
-  frame.contentWindow.window.open = function (url, windowName, windowFeatures) {
-    iframe.src = '/u/liftoff/' + __uv$config.encodeUrl(url)
-  }
-  if(document.activeElement === document.getElementById('forminput')) {
-    }else {
-const geturl = frame.contentWindow.location.href
-const removedUrl = geturl.replace("https://" + location.hostname + "/u/liftoff/", "")
-form.value = __uv$config.decodeUrl(removedUrl);
-localStorage.setItem("url", frame.src); 
+    function closeTopbar() {
+        iframe.classList.remove('mainframe')
+        iframe.classList.add('iframe')
+        topbar.classList.remove('topbar')
+        topbar.classList.add('hiddenbar')
+        barbutton.classList.remove('barbutton')
+        barbutton.classList.add('showbutton')
     }
-}
 
-setInterval(function() { setURL() }, 3000);
+    function home() {
+        window.location.href = '/'
+    }
 
-function LoadURL() {
-  frame.src = url
-}
+    function openTopbar() {
+        barbutton.classList.remove('showbutton')
+        barbutton.classList.add('barbutton')
+        iframe.classList.remove('iframe')
+        iframe.classList.add('mainframe')
+        topbar.classList.remove('hiddenbar')
+        topbar.classList.add('topbar')
+    }
 
-function openswitchpanel() {
-  uvpanel.classList.remove('hiddenuvpanel')
-  uvpanel.classList.add('uvpanel')
-  panelbttn.setAttribute("onclick", "closeswitchpanel()");
-}
+    function copyurl() {
+        const copybttn = document.getElementById('copybttn')
+        navigator.clipboard.writeText(frame.src)
+        copybttn.textContent = 'Copied!'
+        setTimeout("copybttn.textContent = 'Copy URL'", 3000)
+    }
 
-function closeswitchpanel() {
-  uvpanel.classList.remove('uvpanel')
-  uvpanel.classList.add('hiddenuvpanel')
-  panelbttn.setAttribute("onclick", "openswitchpanel()");
-}
+    function refresh() {
+        iframe.src = frame.src
+    }
 
-function op() {
-var win = window.open();
-var url = "/q/";
-var iframe = win.document.createElement("iframe");
-iframe.style.position = "fixed";
-iframe.style.top = 0;
-iframe.style.bottom = 0;
-iframe.style.left = 0;
-iframe.style.right = 0;
-iframe.style.border = "none";
-iframe.style.outline = "none";
-iframe.style.width = "100%";
-iframe.style.height = "100%";
-iframe.src = url;
+    function back() {
+        iframe.contentWindow.history.back()
+    }
 
-win.document.body.appendChild(iframe);
-}
+    function forward() {
+        iframe.contentWindow.history.forward()
+    }
+
+    //jank!!!
+
+    function setURL() {
+        frame.contentWindow.window.open = function (
+            url,
+            windowName,
+            windowFeatures
+        ) {
+            iframe.src = '/u/liftoff/' + __uv$config.encodeUrl(url)
+        }
+        if (document.activeElement === document.getElementById('forminput')) {
+        } else {
+            const geturl = frame.contentWindow.location.href
+            const removedUrl = geturl.replace(
+                'https://' + location.hostname + '/u/liftoff/',
+                ''
+            )
+            form.value = __uv$config.decodeUrl(removedUrl)
+            localStorage.setItem('url', frame.src)
+        }
+    }
+
+    setInterval(function () {
+        setURL()
+    }, 3000)
+
+    function LoadURL() {
+        frame.src = url
+    }
+
+    function openswitchpanel() {
+        uvpanel.classList.remove('hiddenuvpanel')
+        uvpanel.classList.add('uvpanel')
+        panelbttn.setAttribute('onclick', 'closeswitchpanel()')
+    }
+
+    function closeswitchpanel() {
+        uvpanel.classList.remove('uvpanel')
+        uvpanel.classList.add('hiddenuvpanel')
+        panelbttn.setAttribute('onclick', 'openswitchpanel()')
+    }
+
+    function op() {
+        var win = window.open()
+        var url = '/q/'
+        var iframe = win.document.createElement('iframe')
+        iframe.style.position = 'fixed'
+        iframe.style.top = 0
+        iframe.style.bottom = 0
+        iframe.style.left = 0
+        iframe.style.right = 0
+        iframe.style.border = 'none'
+        iframe.style.outline = 'none'
+        iframe.style.width = '100%'
+        iframe.style.height = '100%'
+        iframe.src = url
+
+        win.document.body.appendChild(iframe)
+    }
+
+    function rammer() {
+        //for later
+    }
+
+    function inspect() {
+        document.getElementById('frame').contentWindow.eruda.init()
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const input = document.querySelector('.input')
+        input.addEventListener('keydown', handleInput)
+
+        function handleInput(e) {
+            if (e.key !== 'Enter') return
+            if (containsBlockedKeyword(input.value, blocked)) {
+                window.location.replace('/blocked.html')
+            } else {
+                const query = formatSearch(input.value)
+                localStorage.setItem(
+                    'url',
+                    __uv$config.prefix + __uv$config.encodeUrl(query)
+                )
+                window.location.href = '/q/'
+            }
+        }
+
+        function containsBlockedKeyword(input, blockedList) {
+            for (let i = 0; i < blockedList.length; i++) {
+                if (input.includes(blockedList[i])) {
+                    return true
+                }
+            }
+            return false
+        }
+
+        function formatSearch(query) {
+            const engine = localStorage.getItem('engine')
+            if (engine === null) {
+                localStorage.setItem(
+                    'engine',
+                    'https://www.google.com/search?q='
+                )
+            }
+
+            try {
+                return new URL(query).toString()
+            } catch (e) {}
+
+            try {
+                const url = new URL(`https://${query}`)
+                if (url.hostname.includes('.')) return url.toString()
+            } catch (e) {}
+
+            return new URL(engine + `${query}`).toString()
+        }
+
+        const blocked = [
+            'porn',
+            'sex',
+            'xxx',
+            'hentai',
+            'pornhub.com',
+            'xxx.com',
+            '4chan.org',
+        ]
+    })
+
+    /* switch(p) {
+        case "uv":
+            console.log("Wikipedia Loaded!")
+            break;
+        case "scram!!": 
+        const connection = new BareMux.BareMuxConnection("/baremux/worker.js");
+        let wispurl = (location.protocol === "https:" ? "wss" : "ws") + "://" + location.host + "/wisp/";
+        connection.setTransport("/epoxy/index.mjs", [{ wisp: wispurl }]);
+        console.log("Desmos Loaded!")
+        break;
+    } */
   </script>
 </html>

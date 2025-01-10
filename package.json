@@ -1,11 +1,12 @@
 {
   "name": "ghost-node",
-  "version": "2.0.0",
+  "version": "2.6.1",
   "description": "**Join The Discord Server!**\r https://dsc.gg/The-Ghost-Network\r # Ghost (But its Node!)",
   "main": "index.js",
   "dependencies": {
-    "@tomphttp/bare-server-node": "^2.0.3",
-    "express": "^4.20.0"
+    "@tomphttp/bare-server-node": "^2.0.1",
+    "express": "^4.20.0",
+    "node-fetch": "^3.3.2"
   },
   "scripts": {
     "start": "node index.js"
@@ -13,5 +14,5 @@
   "type": "module",
   "keywords": [],
   "author": "The Ghost Network Development Team",
-  "license": "ISC"
+  "license": "AGPL-3.0-only"
 }

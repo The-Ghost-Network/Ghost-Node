@@ -36,52 +36,53 @@
   </head>
 
   <body>
-    <div class="changeLogs">
-
-    </div>
-    <center>
-      <nav class="navbar" id="nav">
-     </center>
-    <input type="form" id="searchBar" class="input" style="z-index: 20;" placeholder=" Search Or Enter A URL">
-    <center>
-      <br />
-      <br />
-    <p class="ex2" style="animation: fadeIn 2s">Ghost</p>
-        <p style="margin: 0; padding-top: 0" style="animation: fadeIn 2s">
-          <span style="animation: owo 0.5s">A </span>
-          <span style="animation: owo 0.5s; animation-delay: 0.5s">cool</span>
-          <span style="animation: owo 0.5s; animation-delay: 1s; color: #ff6666;"> Ga<x>m</x>es</span>
-          <span style="animation: owo 0.5s; animation-delay: 1.5s; color: #ff6666">
-            Website</span
-          >
-            <span
-            style="animation: owo 0.5s; animation-delay: 2s; color: #ff6666"
-          >
-            :D</span
-          >
-        </p>
-      </div>
-      <button class="button2" onclick="blank()"><shadow-element txt="Open in about:blank"><shadow-element></button>
-      <button class="button2" onclick="window.location.href = '/w/' ">Search Something!</button>
-      <div class="trendingtop">
-        <center>
-          <shadow-element txt="<h1>Recommended g</x>ames<h1>"></shadow-element>
-        </center>
-      </div>
-      <div class="trendingbottom" id="trendingg">
-      </div>
-      <div class="trendingtop">
-        <center>
-          <sh><shadow-element txt="<h1>Recommended Ap<x>ps</x></h1>"></shadow-element>
-        </center>
-      </div>
-      <div
-        class="trendingbottom"
-        id="trendinga"
-        style="margin-bottom: 10px"
-      ></div>
-    </center>
+    <script type='text/javascript' id="ads2" src='//pl25527309.profitablecpmrate.com/4a/2c/3f/4a2c3f91a14a574d0d3d5aa3f11b8464.js'></script>
+    <script async="async" data-cfasync="false" id="ads1"  src="//pl25527333.profitablecpmrate.com/d00b3b529c7e75cacbb98e16680c5373/invoke.js"></script>
+    <div id="nav"></div>
     <br />
+    <center>
+        <p class="ex2" style="animation: fadeIn 2s; font-size: 60px;">Ghost</p>
+        <p>
+            <span style="animation: owo .5s;">A</span>
+            <span style="animation: owo 1s; animation-delay: .5s">Very</span
+            >
+            <span
+                style="animation: owo 1s; animation-delay: 1s; color: var(--Primary-Color);"
+                >Cool</span
+            >
+            <span
+                style="animation: owo 1s; animation-delay: 1.5s; color: var(--Primary-Color);"
+                >Site!</span
+            >
+            <span
+                style="animation: owo 1s; animation-delay: 2s; color: var(--Primary-Color);"
+                >:D</span
+            >
+            <span>you can disable ads in settings</span>
+        </p>
+        <button class="button2" onclick="blank();"
+            >Open in About:blank</button
+        >
+        <button class="button2" onclick="search()">Search Something!</button
+        >
+        <div class="trendingtop">
+            <center>
+                <h1>Recommended Games</h1>
+            </center>
+        </div>
+        <div class="trendingbottom" id="trendingg">
+        </div>
+        <div class="trendingtop">
+            <center>
+                <h1>Recommended Apps</h1>
+            </center>
+        </div>
+        <div class="trendingbottom" id="trendinga"></div>
+<div class="footer">
+<a style="position: absolute; bottom: 0; left: 0;" href="/privacypolicy/">Privacy Policy</a>
+<div id="container-d00b3b529c7e75cacbb98e16680c5373"></div>
+</div>
+    </center>
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -97,123 +98,6 @@
 
       gtag("config", "G-WFWKKRRXLT");
     </script>
-    <script>
-      let rgAPI = '/api/rg/v1/';
-      const uvvers = localStorage.getItem('UVver')
-      //load g and a
-      addEventListener("DOMContentLoaded", async (event) => {
-        const gData = await fetch(rgAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
-        gData.forEach((game) => {
-          const i = document.getElementById("trendingg");
-          const g = document.createElement("div");
-          g.classList.add("game-icon");
-          g.setAttribute(
-            "onclick",
-            "localStorage.setItem('url', '" +
-              '/u/liftoff/' + __uv$config.encodeUrl(game.href) +
-              "'); window.location.href = '/q/'",
-          );
-          
-
-          const img = document.createElement("button");
-          const image = document.createElement("img");
-          image.src = game.img;
-
-          const gname = document.createElement("p");
-          gname.innerText = game.name;
-
-          img.appendChild(image);
-          g.appendChild(img);
-          g.appendChild(gname);
-          i.appendChild(g);
-        });
-      });
-      //load g and a
-      let raAPI = '/api/ra/v1/';
-      addEventListener("DOMContentLoaded", async (event) => {
-        const gData = await fetch(raAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
-        gData.forEach((game) => {
-          const i = document.getElementById("trendinga");
-
-          const g = document.createElement("div");
-          g.classList.add("game-icon");
-          g.setAttribute(
-            "onclick",
-            "localStorage.setItem('url', '" +
-              '/u/liftoff/' + __uv$config.encodeUrl(game.href) +
-              "'); window.location.href = '/q/'",
-          );
-          
-
-          const img = document.createElement("button");
-          const image = document.createElement("img");
-          image.src = game.img;
-
-          const gname = document.createElement("p");
-          gname.innerText = game.name;
-
-          img.appendChild(image);
-          g.appendChild(img);
-          g.appendChild(gname);
-          i.appendChild(g);
-        });
-      });
-      function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      }
-
-      function getRandomLink() {
-        let csites = [
-          "https://google.com",
-          "https://classroom.google.com",
-          "https://docs.google.com",
-          "https://nasa.gov",
-          "https://desmos.com",
-          "https://clever.com",
-          "https://ixl.com",
-        ] 
-        return csites[getRandomInt(0, csites.length-1)]
-      }
-      function blank() {
-        var currentUrl = top.location.href;
-        if (currentUrl === "about:blank") {
-          console.log(currentUrl);
-        } else {
-          var win = window.open();
-          var url = "/";
-          var iframe = win.document.createElement("iframe");
-          top.location.replace(getRandomLink());
-          iframe.style.backgroundColor = "#1e1e2e"
-          iframe.style.position = "fixed";
-          iframe.style.top = 0;
-          iframe.style.bottom = 0;
-          iframe.style.left = 0;
-          iframe.style.right = 0;
-          iframe.style.border = "none";
-          iframe.style.outline = "none";
-          iframe.style.width = "100%";
-          iframe.style.height = "100%";
-          iframe.src = url;
-
-          win.document.body.appendChild(iframe);
-        }
-      }
-
-     function search() {
-      const searchBar = document.getElementById('searchBar')
-      searchBar.style.display = 'block'
-      searchBar.addEventListener('blur', function(event) {
-        clickOff()
-      })
-      
-     }
-
-     function clickOff() {
-      const searchBar = document.getElementById('searchBar')
-            searchBar.style.display = 'none'
-     }
-    </script>
+    <script src="/assets/js/weirdahhscript.js"></script>
   </body>
 </html>

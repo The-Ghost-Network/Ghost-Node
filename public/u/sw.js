@@ -7,7 +7,7 @@
  */
 importScripts('space.js');
 importScripts('liftoff.js');
-importScripts(__uv$config.sw || 'constellation.js');
+importScripts(__uv$config.sw || 'constallations.js');
 
 const sw = new UVServiceWorker();
 

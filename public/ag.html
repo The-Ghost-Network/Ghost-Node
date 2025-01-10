@@ -17,6 +17,8 @@
 <script src="/u/liftoff.js?skib=idi" defer></script>
 </head>
 <body>
+    <script type='text/javascript' id="ads1" src='//pl25527309.profitablecpmrate.com/4a/2c/3f/4a2c3f91a14a574d0d3d5aa3f11b8464.js'></script>
+    <script async="async" data-cfasync="false"  id="ads2" src="//pl25527333.profitablecpmrate.com/d00b3b529c7e75cacbb98e16680c5373/invoke.js"></script>
     <center>
         <nav class="navbar" id="nav">
        </center>
@@ -28,7 +30,8 @@
     </center>
     <div>
       <center>
-            <div class="game-icons" id="game-icons">
+            <div class="gcontainer" id="game-icons">
+                <div id="container-d00b3b529c7e75cacbb98e16680c5373"></div>
               </div>
         </center>
  <!-- Google tag (gtag.js) -->
@@ -44,24 +47,42 @@
             gtag('config', 'G-WFWKKRRXLT');
         </script>
         <script> 
-                       let gAPI = '/api/g/v1/';
+        let gAPI = '/api/g/v1/';
+        let degAPI = '/api/deg/v1/';
     addEventListener("DOMContentLoaded", async (event) => {
         const gData = await fetch(gAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
+        const degData = await fetch(degAPI).then((response) => response.text()).then((text) => {return JSON.parse(text)});
         gData.forEach(game => {
             const gameicons = document.getElementById('game-icons')
 
             const games = document.createElement('div')
-            games.classList.add('game-icon')
+            games.classList.add('ga-icon')
             games.setAttribute('onclick', "localStorage.setItem('url', '" + __uv$config.prefix + __uv$config.encodeUrl(game.href) + "'); window.location.href = '/q/'")
 
             const gameimg = document.createElement('button')
-            const gameimage = document.createElement('img')
-            gameimage.src = game.img
+            games.setAttribute("style", `background-image: url('${game.img}')`);
 
             const gamename = document.createElement('p')
             gamename.innerText = game.name;
 
-            gameimg.appendChild(gameimage);
+            games.appendChild(gameimg);
+            games.appendChild(gamename);
+            gameicons.appendChild(games);
+        })
+
+        degData.forEach(game => {
+            const gameicons = document.getElementById('game-icons')
+
+            const games = document.createElement('div')
+            games.classList.add('ga-icon')
+            games.setAttribute('onclick', "window.location.href = '" + game.href + "'")
+
+            const gameimg = document.createElement('button')
+            games.setAttribute("style", `background-image: url('${game.img}')`);
+
+            const gamename = document.createElement('p')
+            gamename.innerText = game.name;
+
             games.appendChild(gameimg);
             games.appendChild(gamename);
             gameicons.appendChild(games);
