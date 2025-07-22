@@ -110,16 +110,6 @@ const deg = [
       "href": "/gg/drive-mad/index.html"
     },
     {
-      "name": "Minecraft 1.5",
-      "img": "/assets/img/assets/minecraft.png",
-      "href": "/gg/minecraft-15/"
-    },
-    {
-      "name": "Minecraft 1.8",
-      "img": "/assets/img/assets/minecraft.png",
-      "href": "/gg/minecraft-18/"
-    },
-    {
       "name": "Just One Boss",
       "img": "/assets/img/assets/justoneboss.png",
       "href": "/gg/justoneboss/web/"
