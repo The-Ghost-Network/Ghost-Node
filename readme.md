@@ -1,6 +1,7 @@
 # Ghost
 
-> [!WARNING] This repository is no longer maintained!
+> [!WARNING] 
+> This repository is no longer maintained!
 
 A very cool games website :D
 
