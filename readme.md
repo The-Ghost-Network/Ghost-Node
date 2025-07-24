@@ -1,5 +1,7 @@
 # Ghost
 
+> [!WARNING] This repository is no longer maintained!
+
 A very cool games website :D
 
 Join Our Discord server https://discord.gg/dbyDXfs5dN
